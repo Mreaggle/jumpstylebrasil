@@ -7,9 +7,14 @@ const linksManifest = readJson("manifests/source-links.json");
 const errors = [];
 const routes = new Set(siteData.pages.map((page) => page.route));
 
-for (const route of ["/", "/all-star/", "/historia/", "/como-dancar/", "/roadmap/", "/manifesto/", "/musicas/", "/criadores/", "/faq/"]) {
+for (const route of ["/", "/all-star/", "/historia/", "/como-dancar/", "/roadmap/", "/manifesto/", "/musicas/", "/criadores/", "/fireborn-squad/", "/faq/"]) {
   if (!routes.has(route)) errors.push(`Rota obrigatoria ausente: ${route}`);
 }
+
+if (siteData.fbsTeam.members.length !== 28) errors.push("Registro FBS deve conter 28 membros");
+if (siteData.fbsTeam.members.filter((member) => member.active).length !== 22) errors.push("Registro FBS deve conter 22 membros ativos");
+if (siteData.fbsTeam.members.filter((member) => !member.active).length !== 6) errors.push("Registro FBS deve conter 6 desertores");
+if (!fs.existsSync("fbs.png")) errors.push("Brasao FBS ausente na raiz");
 
 for (const page of originalContent.pages) {
   if (!page.text || page.text.length < 5) errors.push(`Pagina original sem texto: ${page.page}`);

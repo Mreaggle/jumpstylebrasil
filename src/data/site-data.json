@@ -32,6 +32,10 @@
       "label": "Figuras historicas JUN",
       "url": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JUNToolkit/KeyFiguresWorldwide/Dance/README.md"
     },
+    "junFbsHistory": {
+      "label": "História da FBS na JUN",
+      "url": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/35812ad5e5e73194a765320a7c7f04bc06761d10/JumpstyleTimeline/Global/global-timeline.md"
+    },
     "allStarArea": {
       "label": "Area Jumper",
       "url": "https://bit.ly/AllStarJumpBR"
@@ -82,6 +86,7 @@
     { "label": "Manifesto", "route": "/manifesto/" },
     { "label": "Musicas", "route": "/musicas/" },
     { "label": "Criadores", "route": "/criadores/" },
+    { "label": "FBS", "route": "/fireborn-squad/" },
     { "label": "FAQ", "route": "/faq/" }
   ],
   "roadmap": [
@@ -175,6 +180,51 @@
     }
   ],
   "creators": ["mreaggle", "lufefbs", "digo3492_", "guilhermedourado", "tauan.rick", "figurinha696", "nakpovs"],
+  "fbsTeam": {
+    "founded": 2017,
+    "name": "Venerável Ordem dos Renascidos do Fogo",
+    "motto": "O mundo respeita quem sangrou, caiu e levantou cuspindo fogo.",
+    "grades": [
+      { "id": "dominus", "symbol": "🥇", "number": "I", "name": "Dominus", "rule": "5+ anos na comunidade" },
+      { "id": "revelator", "symbol": "🥈", "number": "II", "name": "Revelator", "rule": "1+ ano na comunidade" },
+      { "id": "neophytus", "symbol": "🥉", "number": "III", "name": "Neophytus", "rule": "6+ meses na comunidade" }
+    ],
+    "titles": [
+      { "id": "primus", "symbol": "⭐️", "name": "Primus", "rule": "Membros da fundação, entre 2016 e 2017." },
+      { "id": "praetor", "symbol": "🎖️", "name": "Praetor", "rule": "Capitães que colaboraram significativamente nos últimos dois anos ou integram administração e conselho." },
+      { "id": "desertor", "symbol": "💀", "name": "Desertor", "rule": "Membro que se retirou e permanece no registro histórico até retornar." }
+    ],
+    "members": [
+      { "order": 1, "name": "Mreaggle", "grade": "dominus", "active": true, "titles": ["primus", "praetor"] },
+      { "order": 2, "name": "Dourado", "grade": "dominus", "active": true, "titles": ["primus"] },
+      { "order": 3, "name": "ELNT", "grade": "dominus", "active": true, "titles": ["primus", "praetor"] },
+      { "order": 4, "name": "Matrix", "grade": "dominus", "active": true, "titles": ["primus"] },
+      { "order": 5, "name": "Dang3r", "grade": "dominus", "active": true, "titles": ["primus"] },
+      { "order": 6, "name": "Cursebird", "grade": "dominus", "active": true, "titles": ["primus"] },
+      { "order": 7, "name": "Castelar", "grade": "dominus", "active": true, "titles": ["primus"] },
+      { "order": 8, "name": "LuFe", "grade": "dominus", "active": true, "titles": ["primus"] },
+      { "order": 9, "name": "Digo3492", "grade": "revelator", "active": false, "titles": ["desertor"] },
+      { "order": 10, "name": "Luviskh", "grade": "revelator", "active": false, "titles": ["desertor"] },
+      { "order": 11, "name": "RafaJ", "grade": "dominus", "active": true, "titles": ["praetor"] },
+      { "order": 12, "name": "Tibirius", "grade": "dominus", "active": false, "titles": ["desertor"] },
+      { "order": 13, "name": "DinamarkK", "grade": "revelator", "active": true, "titles": [] },
+      { "order": 14, "name": "Tauan", "grade": "revelator", "active": true, "titles": [] },
+      { "order": 15, "name": "Blaze", "grade": "revelator", "active": true, "titles": [] },
+      { "order": 16, "name": "Neo’Trox", "grade": "dominus", "active": true, "titles": [] },
+      { "order": 17, "name": "Blackzin", "grade": "revelator", "active": true, "titles": [] },
+      { "order": 18, "name": "Jota", "grade": "revelator", "active": false, "titles": ["desertor"] },
+      { "order": 19, "name": "Lux", "grade": "revelator", "active": true, "titles": [] },
+      { "order": 20, "name": "Dannyux", "grade": "revelator", "active": false, "titles": ["desertor"] },
+      { "order": 21, "name": "Jads0nz", "grade": "revelator", "active": true, "titles": [] },
+      { "order": 22, "name": "Figura", "grade": "revelator", "active": true, "titles": ["praetor"] },
+      { "order": 23, "name": "Nakpov", "grade": "revelator", "active": false, "titles": ["desertor"] },
+      { "order": 24, "name": "Icro", "grade": "neophytus", "active": true, "titles": ["praetor"] },
+      { "order": 25, "name": "Davz", "grade": "neophytus", "active": true, "titles": [] },
+      { "order": 26, "name": "C0mila", "grade": "revelator", "active": true, "titles": ["praetor"] },
+      { "order": 27, "name": "Mirim", "grade": "neophytus", "active": true, "titles": [] },
+      { "order": 28, "name": "DL", "grade": "neophytus", "active": true, "titles": [] }
+    ]
+  },
   "pages": [
     {
       "route": "/",
@@ -233,6 +283,12 @@
       "title": "Criadores",
       "eyebrow": "Registro visual do site original",
       "lead": "Handles preservados a partir dos snapshots: sem inventar biografias, metricas atuais ou links nao confirmados."
+    },
+    {
+      "route": "/fireborn-squad/",
+      "title": "Fireborn Squad",
+      "eyebrow": "Time nacional de Jumpstyle do Brasil",
+      "lead": "Uma seleção forjada para reunir os melhores jumpers do país entre gerações e regiões. Aqui, legado não é passado: é responsabilidade."
     },
     {
       "route": "/faq/",

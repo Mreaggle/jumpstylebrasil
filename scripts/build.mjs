@@ -13,6 +13,7 @@ fs.mkdirSync(dist, { recursive: true });
 copyFile("src/styles/site.css", "assets/site.css");
 copyFile("src/scripts/main.js", "assets/main.js");
 copyFile("width_200.png", "assets/jumper-logo.png");
+copyFile("fbs.png", "assets/fireborn-squad.png");
 copyFile("width_200.png", "favicon.png");
 copyDir("reference-renders", "reference-renders");
 
@@ -66,11 +67,10 @@ function writeText(file, text) {
 
 function renderPage(page) {
   const original = originalByPage.get(page.sourcePage);
-  const body = [
-    renderHero(page),
-    renderRouteContent(page),
-    renderOriginalSource(original)
-  ].join("\n");
+  const isFbs = page.route === "/fireborn-squad/";
+  const body = isFbs
+    ? [renderFbsHero(page), renderFbs()].join("\n")
+    : [renderHero(page), renderRouteContent(page), original ? renderOriginalSource(original) : ""].join("\n");
 
   return renderShell({
     title: page.route === "/" ? siteData.site.title : `${page.title} | Jumpstyle Brasil`,
@@ -82,6 +82,11 @@ function renderPage(page) {
 
 function renderShell({ title, description, route, body }) {
   const canonical = new URL(route === "/" ? "" : route.slice(1), siteData.site.url).href;
+  const isFbs = route === "/fireborn-squad/";
+  const socialImage = isFbs ? "assets/fireborn-squad.png" : "assets/jumper-logo.png";
+  const signal = isFbs
+    ? ["FIREBORN SQUAD", "ORDEM DE IGNIÇÃO", "BRASIL", "DESDE 2017", "RENASCIDOS DO FOGO", "FIREBORN SQUAD", "ORDEM DE IGNIÇÃO", "BRASIL"]
+    : ["JUMPSTYLE BRASIL", "OLD SCHOOL", "HARDJUMP", "ON BEAT", "POWER", "COMUNIDADE", "JUMPSTYLE BRASIL", "OLD SCHOOL"];
   return `<!doctype html>
 <html lang="pt-BR">
 <head>
@@ -96,7 +101,7 @@ function renderShell({ title, description, route, body }) {
   <meta property="og:title" content="${escapeHtml(title)}">
   <meta property="og:description" content="${escapeHtml(description)}">
   <meta property="og:url" content="${canonical}">
-  <meta property="og:image" content="${new URL("assets/jumper-logo.png", siteData.site.url).href}">
+  <meta property="og:image" content="${new URL(socialImage, siteData.site.url).href}">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -104,13 +109,13 @@ function renderShell({ title, description, route, body }) {
   <link rel="stylesheet" href="${sitePath("assets/site.css")}">
   <script type="application/ld+json">${JSON.stringify(jsonLd())}</script>
 </head>
-<body>
+<body class="${isFbs ? "fbs-page" : ""}">
   <div class="scroll-meter" data-scroll-meter aria-hidden="true"></div>
   <a class="skip-link" href="#conteudo">Pular para o conteudo</a>
-  <div class="signal-bar" aria-hidden="true"><div class="signal-track"><span>JUMPSTYLE BRASIL</span><span>OLD SCHOOL</span><span>HARDJUMP</span><span>ON BEAT</span><span>POWER</span><span>COMUNIDADE</span><span>JUMPSTYLE BRASIL</span><span>OLD SCHOOL</span></div></div>
+  <div class="signal-bar" aria-hidden="true"><div class="signal-track">${signal.map((item) => `<span>${item}</span>`).join("")}</div></div>
   <header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="${sitePath()}" aria-label="Jumpstyle Brasil - Inicio"><span class="brand-mark"><img src="${sitePath("assets/jumper-logo.png")}" alt="" width="199" height="181"></span><span class="brand-copy"><b>Jumpstyle</b><small>Brasil</small></span></a>
+      <a class="brand" href="${isFbs ? sitePath("/fireborn-squad/") : sitePath()}" aria-label="${isFbs ? "Fireborn Squad" : "Jumpstyle Brasil - Inicio"}"><span class="brand-mark"><img src="${sitePath(isFbs ? "assets/fireborn-squad.png" : "assets/jumper-logo.png")}" alt="" width="199" height="181"></span><span class="brand-copy"><b>${isFbs ? "Fireborn" : "Jumpstyle"}</b><small>${isFbs ? "Squad // Brasil" : "Brasil"}</small></span></a>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-button>
         <span class="menu-icon" aria-hidden="true"></span>
         <span class="sr-only">Abrir menu</span>
@@ -183,6 +188,8 @@ function renderRouteContent(page) {
       return renderMusic();
     case "/criadores/":
       return renderCreators();
+    case "/fireborn-squad/":
+      return renderFbs();
     case "/faq/":
       return renderFaq();
     default:
@@ -197,7 +204,8 @@ function renderHome() {
     ["Historia", "/historia/", "Linha do tempo original e ponte para o museu JUN."],
     ["Musicas", "/musicas/", "BPMs, exemplos de musicas e playlists oficiais."],
     ["Manifesto", "/manifesto/", "Valores, regras e missao da comunidade."],
-    ["Criadores", "/criadores/", "Handles documentados no snapshot original."]
+    ["Criadores", "/criadores/", "Handles documentados no snapshot original."],
+    ["Fireborn Squad", "/fireborn-squad/", "A ordem, os graus e o registro do time nacional brasileiro."]
   ];
   return `<section class="section">
   <div class="section-inner">
@@ -305,6 +313,108 @@ function renderCreators() {
   <section class="section"><div class="section-inner">${referenceShot(8, "Render original da pagina Criadores com snapshots")}</div></section>`;
 }
 
+function renderFbsHero(page) {
+  const team = siteData.fbsTeam;
+  const active = team.members.filter((member) => member.active).length;
+  const praetors = team.members.filter((member) => member.titles.includes("praetor")).length;
+  return `<section class="fbs-hero" data-fbs-sanctum>
+  <div class="fbs-embers" aria-hidden="true">${Array.from({ length: 18 }, (_, index) => `<i style="--ember:${index}"></i>`).join("")}</div>
+  <div class="section-inner fbs-hero-grid">
+    <div class="fbs-hero-copy">
+      <p class="fbs-kicker"><span>FBS // ${team.founded}</span>${escapeHtml(page.eyebrow)}</p>
+      <h1><span>Fireborn</span> Squad</h1>
+      <p class="fbs-oath">${escapeHtml(team.motto)}</p>
+      <p class="lead">${escapeHtml(page.lead)}</p>
+      <div class="fbs-actions">
+        <a class="fbs-button" href="#ordem">Conhecer a ordem <span aria-hidden="true">↓</span></a>
+        <button class="fbs-button fbs-button-ghost" type="button" data-fbs-ignite aria-pressed="false"><span class="fbs-button-flame" aria-hidden="true">◆</span> Acender o brasão</button>
+      </div>
+    </div>
+    <div class="fbs-emblem-wrap">
+      <div class="fbs-emblem-halo" aria-hidden="true"></div>
+      <img src="${sitePath("assets/fireborn-squad.png")}" alt="Brasão pixel-art da Fireborn Squad, com uma grande chama laranja" width="620" height="1041">
+      <p data-fbs-ignite-message aria-live="polite">A chama reconhece os que voltam a se levantar.</p>
+    </div>
+  </div>
+  <div class="fbs-stats" aria-label="Resumo da ordem">
+    <div><strong>${String(team.members.length).padStart(2, "0")}</strong><span>nomes no registro</span></div>
+    <div><strong>${String(active).padStart(2, "0")}</strong><span>membros ativos</span></div>
+    <div><strong>${String(praetors).padStart(2, "0")}</strong><span>Praetors</span></div>
+    <div><strong>BR</strong><span>uma só bandeira</span></div>
+  </div>
+</section>`;
+}
+
+function renderFbs() {
+  const team = siteData.fbsTeam;
+  return `<section class="fbs-section fbs-intro" id="ordem">
+  <div class="section-inner">
+    <p class="fbs-section-code">I // ORDEM DE IGNIÇÃO</p>
+    <div class="fbs-section-heading"><h2>${escapeHtml(team.name)}</h2><p>Não é uma lista aberta. É o registro de quem recebeu a responsabilidade de manter acesa a chama brasileira e representar o país dentro e fora das ligas.</p></div>
+    <div class="fbs-grade-grid">${team.grades.map((grade) => `<article class="fbs-grade" data-reveal>
+      <span class="fbs-grade-number">${grade.number}</span>
+      <span class="fbs-grade-symbol" aria-hidden="true">${grade.symbol}</span>
+      <h3>${escapeHtml(grade.name)}</h3>
+      <p>${escapeHtml(grade.rule)}</p>
+    </article>`).join("")}</div>
+  </div>
+</section>
+<section class="fbs-section fbs-titles-section">
+  <div class="section-inner">
+    <p class="fbs-section-code">II // TÍTULOS FILOSÓFICOS</p>
+    <div class="fbs-title-list">${team.titles.map((title) => `<article class="fbs-title-row">
+      <span aria-hidden="true">${title.symbol}</span><h3>${escapeHtml(title.name)}</h3><p>${escapeHtml(title.rule)}</p>
+    </article>`).join("")}</div>
+  </div>
+</section>
+<section class="fbs-section fbs-registry-section" id="registro">
+  <div class="section-inner">
+    <p class="fbs-section-code">III // REGISTRO DOS RENASCIDOS</p>
+    <div class="fbs-section-heading"><h2>Os nomes na chama</h2><p>Verde indica presença ativa na formação. Vermelho preserva no arquivo quem hoje carrega o título de Desertor.</p></div>
+    <div class="fbs-filter" role="group" aria-label="Filtrar membros da Fireborn Squad">
+      <button type="button" data-fbs-filter="all" aria-pressed="true">Todos</button>
+      <button type="button" data-fbs-filter="active" aria-pressed="false">Ativos</button>
+      <button type="button" data-fbs-filter="dominus" aria-pressed="false">🥇 Dominus</button>
+      <button type="button" data-fbs-filter="revelator" aria-pressed="false">🥈 Revelator</button>
+      <button type="button" data-fbs-filter="neophytus" aria-pressed="false">🥉 Neophytus</button>
+      <button type="button" data-fbs-filter="praetor" aria-pressed="false">🎖️ Praetor</button>
+      <button type="button" data-fbs-filter="desertor" aria-pressed="false">💀 Desertores</button>
+    </div>
+    <p class="fbs-result-count" data-fbs-count>${team.members.length} nomes revelados</p>
+    <div class="fbs-roster" role="list">${team.members.map((member) => renderFbsMember(member)).join("")}</div>
+  </div>
+</section>
+<section class="fbs-section fbs-legacy" id="legado">
+  <div class="section-inner">
+    <p class="fbs-section-code">IV // ARQUIVO DE COMBUSTÃO</p>
+    <div class="fbs-section-heading"><h2>O fogo deixa rastro</h2><p>A ordem existe para representar o Brasil, reconectar gerações e transformar retorno em movimento coletivo.</p></div>
+    <ol class="fbs-chronicle">
+      <li><time>2016</time><div><strong>A centelha</strong><p>Mreaggle retorna ao Jumpstyle, convida Dourado e inicia o movimento de reencontro com a velha guarda.</p></div></li>
+      <li><time>2017</time><div><strong>Nasce a Fireborn Squad</strong><p>Oito fundadores formam um time nacional para reunir os melhores jumpers de cada geração e região e defender o Brasil em ligas internacionais.</p></div></li>
+      <li><time>2024</time><div><strong>Jumpstyle Never Dies</strong><p>A comunidade grava com D-Stroyer no Ibirapuera. No mês seguinte, a FBS é convidada a se apresentar ao vivo no Mais Você.</p></div></li>
+      <li><time>AGORA</time><div><strong>A chama é responsabilidade</strong><p>Vinte e oito nomes compõem o registro histórico da ordem. Cada grau mede permanência; cada título registra serviço.</p></div></li>
+    </ol>
+    <div class="fbs-source-note"><span>ARQUIVO VERIFICADO // JUN 35812ad</span><p>História de fundação, missão e marcos públicos baseada na timeline do Jumpstyle United Nations. Graus, títulos e situação dos membros foram fornecidos pela própria equipe.</p>${externalLink("junFbsHistory", "Consultar registro na JUN")}</div>
+  </div>
+</section>
+<section class="fbs-final"><div class="section-inner"><img src="${sitePath("assets/fireborn-squad.png")}" alt="" width="620" height="1041"><p>As grandes mentes por trás do Jumpstyle Brasileiro</p><strong>O fogo não escolhe quem nunca caiu.<br>Escolhe quem decidiu levantar.</strong></div></section>`;
+}
+
+function renderFbsMember(member) {
+  const team = siteData.fbsTeam;
+  const grade = team.grades.find((item) => item.id === member.grade);
+  const titles = member.titles.map((id) => team.titles.find((item) => item.id === id)).filter(Boolean);
+  const filters = [member.grade, member.active ? "active" : "desertor", ...member.titles].join(" ");
+  return `<details class="fbs-member ${member.active ? "is-active" : "is-desertor"}" data-fbs-card data-fbs-tags="${filters}" role="listitem">
+    <summary>
+      <span class="fbs-order">${roman(member.order)}</span>
+      <span class="fbs-member-main"><span class="fbs-status" aria-hidden="true"></span><strong>${escapeHtml(member.name)}</strong><small>${member.active ? "Na formação" : "Desertor"}</small></span>
+      <span class="fbs-member-symbols" aria-label="${escapeHtml([grade.name, ...titles.map((title) => title.name)].join(", "))}">${grade.symbol}${titles.map((title) => title.symbol).join("")}</span>
+    </summary>
+    <div class="fbs-member-detail"><span>Grau ${grade.number}</span><strong>${escapeHtml(grade.name)}</strong>${titles.length ? `<p>${titles.map((title) => `${title.symbol} ${escapeHtml(title.name)}`).join(" · ")}</p>` : "<p>Sem título filosófico adicional.</p>"}</div>
+  </details>`;
+}
+
 function renderFaq() {
   return `<section class="section"><div class="section-inner">
     <div class="faq-tools"><label class="sr-only" for="faq-filter">Filtrar FAQ</label><input id="faq-filter" data-faq-filter type="search" placeholder="Buscar técnica, evento, história..."><span data-faq-count>${siteData.faq.length} respostas</span></div>
@@ -353,11 +463,14 @@ function referenceShot(page, alt) {
 }
 
 function renderMobileDock(route) {
+  if (route === "/fireborn-squad/") {
+    return `<nav class="mobile-dock fbs-mobile-dock" aria-label="Atalhos Fireborn Squad"><a href="${sitePath()}" class="fbs-dock-back"><span aria-hidden="true"></span>JSB</a><a href="#ordem"><span aria-hidden="true"></span>Ordem</a><a href="#registro"><span aria-hidden="true"></span>Registro</a><a href="#legado"><span aria-hidden="true"></span>Legado</a><button type="button" data-dock-menu aria-label="Abrir menu completo"><span aria-hidden="true"></span>Mais</button></nav>`;
+  }
   const items = [
     ["Início", "/"],
     ["Dançar", "/como-dancar/"],
-    ["Roadmap", "/roadmap/"],
-    ["Músicas", "/musicas/"]
+    ["FBS", "/fireborn-squad/"],
+    ["Roadmap", "/roadmap/"]
   ];
   return `<nav class="mobile-dock" aria-label="Atalhos mobile">${items.map(([label, href]) => `<a href="${sitePath(href)}"${route === href ? ' aria-current="page"' : ""}><span aria-hidden="true"></span>${label}</a>`).join("")}<button type="button" data-dock-menu aria-label="Abrir menu completo"><span aria-hidden="true"></span>Mais</button></nav>`;
 }
@@ -393,4 +506,17 @@ function escapeHtml(value) {
 
 function slug(value) {
   return String(value).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+}
+
+function roman(value) {
+  const numerals = [[10, "X"], [9, "IX"], [5, "V"], [4, "IV"], [1, "I"]];
+  let number = value;
+  let result = "";
+  for (const [amount, symbol] of numerals) {
+    while (number >= amount) {
+      result += symbol;
+      number -= amount;
+    }
+  }
+  return result;
 }

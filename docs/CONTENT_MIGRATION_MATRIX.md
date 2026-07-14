@@ -13,3 +13,9 @@
 | 9. FAQ / Sugestoes | `/faq/` | Todas as perguntas e respostas, incluindo Panico Jumpen | Sem links externos na pagina original | `reference-renders/page-9.png` |
 
 Cada rota inclui um bloco expansivel "Texto original preservado" com o texto integral da respectiva pagina de origem. Os scripts `npm run audit:content` e `npm run audit:links` validam essa preservacao.
+
+## Conteúdo editorial posterior
+
+| Área | Rota | Origem | Tratamento |
+|---|---|---|---|
+| Fireborn Squad | `/fireborn-squad/` | Cadastro fornecido pela equipe + timeline JUN no commit `35812ad` | Página temática independente; 28 nomes, três graus, títulos filosóficos, status ativo/desertor e marcos documentais |

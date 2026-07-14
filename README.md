@@ -1,6 +1,6 @@
 # Jumpstyle Brasil
 
-Site estático mobile-first da Jumpstyle Brasil, reconstruído a partir do pacote de migração local e publicado como project site da conta Mreaggle.
+Site estático mobile-first da Jumpstyle Brasil, reconstruído a partir do pacote de migração local e publicado como project site da conta Mreaggle. Inclui uma área temática independente para a Fireborn Squad, com ordem iniciática, roster filtrável e identidade visual própria.
 
 **Produção:** https://mreaggle.github.io/jumpstylebrasil/
 

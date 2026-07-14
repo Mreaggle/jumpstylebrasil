@@ -39,6 +39,47 @@ document.querySelectorAll("[data-beat-stage]").forEach((stage) => {
   });
 });
 
+document.querySelectorAll("[data-fbs-ignite]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const ignited = !body.classList.contains("is-ignited");
+    body.classList.toggle("is-ignited", ignited);
+    button.setAttribute("aria-pressed", String(ignited));
+    const message = document.querySelector("[data-fbs-ignite-message]");
+    if (message) message.textContent = ignited
+      ? "O brasão está aceso. A chama reconhece os que voltam a se levantar."
+      : "A chama reconhece os que voltam a se levantar.";
+  });
+});
+
+const fbsCards = [...document.querySelectorAll("[data-fbs-card]")];
+document.querySelectorAll("[data-fbs-filter]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const filter = button.dataset.fbsFilter || "all";
+    let visible = 0;
+    document.querySelectorAll("[data-fbs-filter]").forEach((item) => {
+      item.setAttribute("aria-pressed", String(item === button));
+    });
+    fbsCards.forEach((card) => {
+      const tags = (card.dataset.fbsTags || "").split(" ");
+      const matches = filter === "all" || tags.includes(filter);
+      card.hidden = !matches;
+      if (!matches) card.open = false;
+      if (matches) visible += 1;
+    });
+    const count = document.querySelector("[data-fbs-count]");
+    if (count) count.textContent = `${visible} ${visible === 1 ? "nome revelado" : "nomes revelados"}`;
+  });
+});
+
+fbsCards.forEach((card) => {
+  card.addEventListener("toggle", () => {
+    if (!card.open) return;
+    fbsCards.forEach((other) => {
+      if (other !== card) other.open = false;
+    });
+  });
+});
+
 document.querySelectorAll("[data-faq-filter]").forEach((input) => {
   input.addEventListener("input", () => {
     const query = input.value.trim().toLocaleLowerCase("pt-BR");
