@@ -1,8 +1,8 @@
 # Jumpstyle Brasil
 
-Site estático mobile-first da Jumpstyle Brasil, reconstruído a partir do pacote de migração local e publicado como project site da conta Mreaggle. Inclui uma área temática independente para a Fireborn Squad, com ordem iniciática, roster filtrável e identidade visual própria.
+Site estático mobile-first da Jumpstyle Brasil, reconstruído a partir do pacote de migração local e publicado via GitHub Pages no domínio próprio. Inclui uma área temática independente para a Fireborn Squad, com ordem iniciática, roster filtrável e identidade visual própria.
 
-**Produção:** https://mreaggle.github.io/jumpstylebrasil/
+**Produção:** https://jumpstyle.com.br/
 
 ## Stack
 
@@ -40,4 +40,4 @@ Os textos de origem permanecem em `src/data/original-content.json` para rastreab
 
 ## Publicacao
 
-O workflow `.github/workflows/deploy-pages.yml` valida e publica `dist/` via GitHub Pages a cada push em `main`. O build usa `/jumpstylebrasil/` como base path para funcionar corretamente em `Mreaggle/jumpstylebrasil`.
+O workflow `.github/workflows/deploy-pages.yml` valida e publica `dist/` via GitHub Pages a cada push em `main`. O build usa `/` como base path para funcionar corretamente no domínio próprio `jumpstyle.com.br`.

@@ -22,7 +22,8 @@ if (!css.includes("overflow-x: hidden")) errors.push("CSS sem protecao contra ov
 if (!css.includes('font-family: "Handjet"')) errors.push("CSS sem tipografia de identidade");
 
 const home = fs.readFileSync("dist/index.html", "utf8");
-if (!home.includes('/jumpstylebrasil/assets/site.css')) errors.push("Build sem base path da modalidade B");
+if (!home.includes('/assets/site.css')) errors.push("Build sem base path de dominio customizado");
+if (home.includes('/jumpstylebrasil/')) errors.push("Build ainda referencia o antigo project path /jumpstylebrasil/");
 if (!home.includes('data-beat-stage') || !home.includes('data-bpm="180"')) errors.push("Hero sem controle reativo de BPM");
 if (!home.includes("data-bpm-readout") || (home.match(/<i>[1-4]<\/i>/g) || []).length !== 4) errors.push("Hero sem contador de compasso 4/4");
 if (!home.includes('assets/jumper-logo.png')) errors.push("Logo oficial ausente no HTML");
