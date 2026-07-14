@@ -31,10 +31,20 @@ document.querySelectorAll("[data-beat-stage]").forEach((stage) => {
   stage.querySelectorAll("[data-bpm]").forEach((button) => {
     button.addEventListener("click", () => {
       const bpm = Number(button.dataset.bpm || 140);
-      stage.style.setProperty("--beat-speed", `${(60 / bpm) * 2}s`);
+      const beatSeconds = 60 / bpm;
+      const measureSeconds = beatSeconds * 4;
+      stage.style.setProperty("--beat-speed", `${beatSeconds}s`);
+      stage.style.setProperty("--measure-speed", `${measureSeconds}s`);
+      const readout = stage.querySelector("[data-bpm-readout]");
+      if (readout) readout.textContent = String(bpm);
       stage.querySelectorAll("[data-bpm]").forEach((item) => {
         item.setAttribute("aria-pressed", String(item === button));
       });
+
+      const animatedItems = stage.querySelectorAll(".logo-stage img, .beat-bars i, .beat-count i");
+      animatedItems.forEach((item) => { item.style.animation = "none"; });
+      void stage.offsetWidth;
+      animatedItems.forEach((item) => { item.style.animation = ""; });
     });
   });
 });

@@ -108,6 +108,7 @@ function renderShell({ title, description, route, body }) {
   <main id="conteudo">
     ${body}
   </main>
+  ${renderSocialRail()}
   ${renderMobileDock(route)}
   <footer class="site-footer">
     <div class="footer-inner">
@@ -140,6 +141,10 @@ function renderHero(page) {
     <aside class="hero-visual" aria-label="Seletor visual de batidas por minuto" data-beat-stage>
       <div class="logo-stage"><span class="orbit orbit-one"></span><span class="orbit orbit-two"></span><img src="${sitePath("assets/jumper-logo.png")}" alt="Silhueta de um jumper executando um chute" width="199" height="181"></div>
       <div class="beat-bars" aria-hidden="true">${Array.from({ length: 12 }, (_, index) => `<i style="--i:${index}"></i>`).join("")}</div>
+      <div class="measure-status">
+        <span class="tempo-readout" aria-live="polite"><strong data-bpm-readout>140</strong> BPM <small>4/4</small></span>
+        <div class="beat-count" aria-hidden="true"><i>1</i><i>2</i><i>3</i><i>4</i></div>
+      </div>
       <div class="bpm-control" role="group" aria-label="Escolha o BPM da animação">
         <button type="button" data-bpm="140" aria-pressed="true"><strong>140</strong><span>Jump</span></button>
         <button type="button" data-bpm="150" aria-pressed="false"><strong>150</strong><span>Hardstyle</span></button>
@@ -417,6 +422,18 @@ function card(title, text, extra = "") {
 function externalLink(key, label = undefined) {
   const link = siteData.externalLinks[key];
   return `<a class="button secondary external" href="${link.url}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(label || link.label)} - abre site externo">${escapeHtml(label || link.label)}</a>`;
+}
+
+function renderSocialRail() {
+  const items = [
+    ["whatsapp", "WA", "Entrar no grupo do WhatsApp"],
+    ["instagram", "IG", "Abrir o Instagram da comunidade"],
+    ["discord", "DC", "Entrar no servidor do Discord"]
+  ];
+  return `<nav class="social-rail" aria-label="Comunidade nas redes">${items.map(([key, mark, label]) => {
+    const link = siteData.externalLinks[key];
+    return `<a class="social-${key}" href="${link.url}" target="_blank" rel="noopener noreferrer" aria-label="${label}" data-label="${label}"><span aria-hidden="true">${mark}</span></a>`;
+  }).join("")}</nav>`;
 }
 
 function renderMobileDock(route) {

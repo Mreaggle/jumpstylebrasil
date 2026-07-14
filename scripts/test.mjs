@@ -24,10 +24,16 @@ if (!css.includes('font-family: "Handjet"')) errors.push("CSS sem tipografia de 
 const home = fs.readFileSync("dist/index.html", "utf8");
 if (!home.includes('/jumpstylebrasil/assets/site.css')) errors.push("Build sem base path da modalidade B");
 if (!home.includes('data-beat-stage') || !home.includes('data-bpm="180"')) errors.push("Hero sem controle reativo de BPM");
+if (!home.includes("data-bpm-readout") || (home.match(/<i>[1-4]<\/i>/g) || []).length !== 4) errors.push("Hero sem contador de compasso 4/4");
 if (!home.includes('assets/jumper-logo.png')) errors.push("Logo oficial ausente no HTML");
 if (!home.includes('class="mobile-dock"')) errors.push("Dock mobile ausente");
+if (!home.includes('class="social-rail"') || !home.includes("social-whatsapp") || !home.includes("social-discord")) errors.push("Atalhos sociais fixos ausentes");
 if (!fs.existsSync("dist/assets/jumper-logo.png") || !fs.existsSync("dist/favicon.png")) errors.push("Logo nao copiado para o build");
 if (home.includes("contrato de migracao") || home.includes("evidencia visual")) errors.push("Home contem linguagem tecnica de migracao");
+
+const mainJs = fs.readFileSync("dist/assets/main.js", "utf8");
+if (!mainJs.includes("const measureSeconds = beatSeconds * 4")) errors.push("Controle de BPM sem compasso 4/4");
+if (!css.includes("logo-kick-4") || css.includes("@keyframes logo-kick {")) errors.push("Animacao do logo nao representa os kicks verticalmente");
 
 const fbs = fs.readFileSync("dist/fireborn-squad/index.html", "utf8");
 if (!fbs.includes('class="fbs-page"')) errors.push("Tema exclusivo FBS ausente");
