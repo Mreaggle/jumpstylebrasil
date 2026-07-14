@@ -106,14 +106,19 @@ img { display: block; max-width: 100%; height: auto; }
   animation: signal-run 18s linear infinite;
 }
 
-.signal-track span {
+.signal-sequence {
+  display: flex;
+  flex: none;
+}
+
+.signal-sequence span {
   display: inline-flex;
   align-items: center;
   height: 29px;
   white-space: nowrap;
 }
 
-.signal-track span::after {
+.signal-sequence span::after {
   content: "/ /";
   padding: 0 1.1rem;
 }
@@ -389,12 +394,12 @@ h3 { font-size: 2rem; }
   z-index: 2;
   width: 155px;
   filter: drop-shadow(0 0 20px rgba(53, 233, 226, .3));
-  animation: logo-kick-4 var(--measure-speed) cubic-bezier(.45, 0, .55, 1) infinite;
+  animation: logo-kick-beat var(--beat-speed) cubic-bezier(.45, 0, .55, 1) infinite;
 }
 
-@keyframes logo-kick-4 {
-  0%, 25%, 50%, 75%, 100% { transform: translateY(0); }
-  12.5%, 37.5%, 62.5%, 87.5% { transform: translateY(-22px); }
+@keyframes logo-kick-beat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-22px); }
 }
 
 .orbit {
@@ -808,7 +813,7 @@ h3 { font-size: 2rem; }
 .fbs-page .scroll-meter { background: var(--fbs-orange); box-shadow: 0 0 12px rgba(255, 90, 0, .7); }
 .fbs-page .signal-bar { background: var(--fbs-orange); color: #090401; }
 .fbs-page .signal-track { animation-duration: 28s; }
-.fbs-page .signal-track span::after { content: "◆"; padding: 0 1.2rem; }
+.fbs-page .signal-sequence span::after { content: "◆"; padding: 0 1.2rem; }
 .fbs-page .site-header { border-color: rgba(255, 90, 0, .22); background: rgba(3, 3, 3, .95); }
 .fbs-page .brand-mark { border-color: rgba(255, 90, 0, .38); background: #050403; }
 .fbs-page .brand-mark img { width: 34px; height: 42px; object-fit: contain; }

@@ -28,12 +28,13 @@ if (!home.includes("data-bpm-readout") || (home.match(/<i>[1-4]<\/i>/g) || []).l
 if (!home.includes('assets/jumper-logo.png')) errors.push("Logo oficial ausente no HTML");
 if (!home.includes('class="mobile-dock"')) errors.push("Dock mobile ausente");
 if (!home.includes('class="social-rail"') || !home.includes("social-whatsapp") || !home.includes("social-discord")) errors.push("Atalhos sociais fixos ausentes");
+if ((home.match(/class="signal-sequence"/g) || []).length !== 2) errors.push("Ticker superior sem sequencia duplicada para loop continuo");
 if (!fs.existsSync("dist/assets/jumper-logo.png") || !fs.existsSync("dist/favicon.png")) errors.push("Logo nao copiado para o build");
 if (home.includes("contrato de migracao") || home.includes("evidencia visual")) errors.push("Home contem linguagem tecnica de migracao");
 
 const mainJs = fs.readFileSync("dist/assets/main.js", "utf8");
 if (!mainJs.includes("const measureSeconds = beatSeconds * 4")) errors.push("Controle de BPM sem compasso 4/4");
-if (!css.includes("logo-kick-4") || css.includes("@keyframes logo-kick {")) errors.push("Animacao do logo nao representa os kicks verticalmente");
+if (!css.includes("logo-kick-beat var(--beat-speed)") || css.includes("logo-kick-4")) errors.push("Logo nao executa um salto completo por beat");
 
 const fbs = fs.readFileSync("dist/fireborn-squad/index.html", "utf8");
 if (!fbs.includes('class="fbs-page"')) errors.push("Tema exclusivo FBS ausente");

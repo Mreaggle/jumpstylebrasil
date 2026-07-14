@@ -67,6 +67,7 @@ function renderShell({ title, description, route, body }) {
   const signal = isFbs
     ? ["FIREBORN SQUAD", "ORDEM DE IGNIÇÃO", "BRASIL", "DESDE 2017", "RENASCIDOS DO FOGO", "FIREBORN SQUAD", "ORDEM DE IGNIÇÃO", "BRASIL"]
     : ["JUMPSTYLE BRASIL", "OLD SCHOOL", "HARDJUMP", "ON BEAT", "POWER", "COMUNIDADE", "JUMPSTYLE BRASIL", "OLD SCHOOL"];
+  const signalSequence = signal.map((item) => `<span>${item}</span>`).join("");
   return `<!doctype html>
 <html lang="pt-BR">
 <head>
@@ -92,7 +93,7 @@ function renderShell({ title, description, route, body }) {
 <body class="${isFbs ? "fbs-page" : ""}">
   <div class="scroll-meter" data-scroll-meter aria-hidden="true"></div>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
-  <div class="signal-bar" aria-hidden="true"><div class="signal-track">${signal.map((item) => `<span>${item}</span>`).join("")}</div></div>
+  <div class="signal-bar" aria-hidden="true"><div class="signal-track"><div class="signal-sequence">${signalSequence}</div><div class="signal-sequence">${signalSequence}</div></div></div>
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="${isFbs ? sitePath("/fireborn-squad/") : sitePath()}" aria-label="${isFbs ? "Fireborn Squad" : "Jumpstyle Brasil - Início"}"><span class="brand-mark"><img src="${sitePath(isFbs ? "assets/fireborn-squad.png" : "assets/jumper-logo.png")}" alt="" width="199" height="181"></span><span class="brand-copy"><b>${isFbs ? "Fireborn" : "Jumpstyle"}</b><small>${isFbs ? "Squad // Brasil" : "Brasil"}</small></span></a>
