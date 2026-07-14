@@ -2,7 +2,7 @@
   "site": {
     "name": "Jumpstyle Brasil",
     "title": "Jumpstyle Brasil | Comunidade brasileira de hard dance",
-    "description": "Hub mobile-first da Jumpstyle Brasil com historia, roadmap, manifesto, musicas, criadores, FAQ e caminhos para entrar na comunidade.",
+    "description": "Jumpstyle Brasil: história, treinos, música, creators, competições e caminhos para entrar na comunidade.",
     "url": "https://mreaggle.github.io/jumpstylebrasil/",
     "base": "/jumpstylebrasil/",
     "locale": "pt_BR"
@@ -29,7 +29,7 @@
       "url": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Global/global-timeline.md"
     },
     "junFigures": {
-      "label": "Figuras historicas JUN",
+      "label": "Figuras históricas JUN",
       "url": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JUNToolkit/KeyFiguresWorldwide/Dance/README.md"
     },
     "junFbsHistory": {
@@ -37,7 +37,7 @@
       "url": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/35812ad5e5e73194a765320a7c7f04bc06761d10/JumpstyleTimeline/Global/global-timeline.md"
     },
     "allStarArea": {
-      "label": "Area Jumper",
+      "label": "Área Jumper",
       "url": "https://bit.ly/AllStarJumpBR"
     },
     "allStarVote": {
@@ -53,11 +53,11 @@
       "url": "https://www.youtube.com/watch?v=X4MajOncy_k"
     },
     "advancedTiktok": {
-      "label": "Tutorial avancado no TikTok",
+      "label": "Tutorial avançado no TikTok",
       "url": "https://vm.tiktok.com/ZMMJYpjGk/"
     },
     "mreaggleTiktok": {
-      "label": "Video de Mreaggle no TikTok",
+      "label": "Vídeo de Mreaggle no TikTok",
       "url": "https://www.tiktok.com/@mreaggle/video/7320740245882801413?_t=8k3IFjBNvjZ&_r=1"
     },
     "youtubePlaylists": {
@@ -73,113 +73,113 @@
       "url": "https://www.youtube.com/playlist?list=PLZqEDYStFZmbF3Tv2hiJgLugJYViEuPjF"
     },
     "tiktokHub": {
-      "label": "Conteudo Jumpstyle no TikTok",
+      "label": "Conteúdo Jumpstyle no TikTok",
       "url": "https://vm.tiktok.com/ZMMccMWYx/"
     }
   },
   "nav": [
-    { "label": "Inicio", "route": "/" },
+    { "label": "Início", "route": "/" },
     { "label": "All-Star", "route": "/all-star/" },
-    { "label": "Historia", "route": "/historia/" },
-    { "label": "Dancar", "route": "/como-dancar/" },
+    { "label": "História", "route": "/historia/" },
+    { "label": "Dançar", "route": "/como-dancar/" },
     { "label": "Roadmap", "route": "/roadmap/" },
     { "label": "Manifesto", "route": "/manifesto/" },
-    { "label": "Musicas", "route": "/musicas/" },
-    { "label": "Criadores", "route": "/criadores/" },
+    { "label": "Músicas", "route": "/musicas/" },
+    { "label": "Creators", "route": "/criadores/" },
     { "label": "FBS", "route": "/fireborn-squad/" },
     { "label": "FAQ", "route": "/faq/" }
   ],
   "roadmap": [
     {
       "level": "Iniciantes",
-      "items": ["Base oldschool", "Base hardjump (stamp)", "Handmoves/Bracos", "Onbeat/Ritmo", "Altura do pulo", "Divisao do joelho", "Chute", "Rotacoes 180 graus"]
+      "items": ["Base Oldschool", "Base Hardjump (Stamp)", "Handmoves/Braços", "Onbeat/Ritmo", "Altura do pulo", "Divisão do joelho", "Chute", "Rotações de 180 graus"]
     },
     {
-      "level": "Intermediarios",
-      "items": ["Back Wheel", "Front Wheel", "Variedade/Tricks", "Tecnica/Execucao", "Equilibrio/Eixo", "Postura"]
+      "level": "Intermediários",
+      "items": ["Back Wheel", "Front Wheel", "Variedade/Tricks", "Técnica/Execução", "Equilíbrio/Eixo", "Postura"]
     },
     {
-      "level": "Avancados",
-      "items": ["Centralizacao", "Power/Energia", "Estilo", "Rotacoes +360 graus", "Spins", "Tricks Aereas"]
+      "level": "Avançados",
+      "items": ["Centralização", "Power/Energia", "Estilo", "Rotações acima de 360 graus", "Spins", "Tricks aéreas"]
     }
   ],
   "timeline": [
-    "1991: Nasce a primeira musica considerada Jump na Belgica a partir do Hardcore holandes.",
-    "1997: Nasce oficialmente a danca Jump/Jumpen na Belgica como alternativa ao Hakken do Hardcore Gabber, inicialmente chamada 'Skieen' (esquiando).",
-    "2005: Popularizacao nas radios da Holanda, o genero ja se chama Jumpstyle.",
-    "2007: Patrick Jumpen viraliza no YouTube, espalhando a danca globalmente.",
-    "Holanda: Patrick Jumpen impulsiona o Jumpstyle, mas a cena evolui para Hardstyle.",
-    "Belgica e Franca: Evoluem para Tekstyle, mantendo-se underground.",
-    "2009 em diante: Alemanha, Russia e Polonia tornam-se centros de desenvolvimento do Jumpstyle, com estilos proprios.",
-    "Globalizacao: Mexico, Indonesia, Franca, Italia, Espanha e Brasil comecam a participar de ligas online.",
-    "2010s: Jumpstyle se torna uma danca esportiva underground, desenvolvida online.",
-    "2021: Yabujin traz o Jumpstyle ao mainstream com estetica Y2K; a danca aparece em jogos como Fortnite e Roblox.",
-    "Yabujincore: Movimento cultural emerge, confundindo a nova geracao sobre a danca.",
-    "2024: Comunidade global se une para guiar a nova geracao pos-Yabujin."
+    "1991: Nasce na Bélgica a primeira música considerada Jump, inspirada pelo Hardcore holandês.",
+    "1997: A dança Jump, também chamada Jumpen, surge oficialmente na Bélgica como alternativa ao Hakken do Hardcore Gabber. No início, era conhecida como 'Skieën' (esquiando).",
+    "2005: O gênero se populariza nas rádios da Holanda e passa a ser conhecido como Jumpstyle.",
+    "2007: Patrick Jumpen viraliza no YouTube e espalha a dança pelo mundo.",
+    "Holanda: Patrick Jumpen impulsiona o Jumpstyle enquanto a cena também avança em direção ao Hardstyle.",
+    "Bélgica e França: O Tekstyle evolui e mantém uma forte presença underground.",
+    "2009 em diante: Alemanha, Rússia e Polônia tornam-se grandes centros do Jumpstyle, cada uma desenvolvendo estilos próprios.",
+    "Globalização: México, Indonésia, França, Itália, Espanha e Brasil passam a participar de ligas online.",
+    "Anos 2010: O Jumpstyle se consolida como uma dança esportiva underground desenvolvida principalmente pela internet.",
+    "2021: Yabujin leva o Jumpstyle a um novo público com a estética Y2K; a dança também aparece em jogos como Fortnite e Roblox.",
+    "Yabujincore: Um novo movimento cultural aproxima outra geração da dança e abre debates sobre sua identidade.",
+    "2024: A comunidade global se une para orientar e acolher a nova geração de jumpers."
   ],
   "faq": [
     {
-      "question": "O que e Jumpstyle?",
-      "answer": "Jumpstyle e uma danca eletronica que surgiu na Belgica em 1997. E considerada uma Hard Dance, Danca Digital ou Danca Pos-internet, desenvolvida principalmente online. Combina elementos de hardcore, hardstyle, jumpstyle e tekstyle e envolve uma variedade de passos e manobras."
+      "question": "O que é Jumpstyle?",
+      "answer": "Jumpstyle é uma dança eletrônica que surgiu na Bélgica em 1997. É considerada uma Hard Dance, Dança Digital ou Dança Pós-internet, desenvolvida principalmente online. Combina elementos de hardcore, hardstyle, jumpstyle e tekstyle e envolve uma grande variedade de passos e manobras."
     },
     {
-      "question": "Quais sao as bases do Jumpstyle?",
-      "answer": "As bases do Jumpstyle sao os fundamentos da danca, essenciais para o progresso dos jumpers. As principais bases sao: Base Oldschool (5 passos), Base Hardjump/Stamp (6 passos) e Base Hardjump/Stamp (4 passos)."
+      "question": "Quais são as bases do Jumpstyle?",
+      "answer": "As bases do Jumpstyle são os fundamentos da dança e sustentam a evolução dos jumpers. As principais são: Base Oldschool (5 passos), Base Hardjump/Stamp (6 passos) e Base Hardjump/Stamp (4 passos)."
     },
     {
-      "question": "O que sao tricks e combos?",
-      "answer": "Tricks sao manobras realizadas durante a danca, como rotacoes, grabs, kicks, hi-ticks, spins, aerials e hops. Combos sao combinacoes de diferentes tricks em sequencia, sem utilizar as bases."
+      "question": "O que são tricks e combos?",
+      "answer": "Tricks são manobras realizadas durante a dança, como rotações, grabs, kicks, hi-ticks, spins, aerials e hops. Combos são combinações de diferentes tricks em sequência, sem utilizar as bases."
     },
     {
-      "question": "Como e avaliado um video de Jumpstyle?",
-      "answer": "Um video de Jumpstyle e avaliado em quatro criterios fundamentais: Tecnica/Execucao, Variedade/Criatividade, Onbeat/Ritmo e Power/Energia."
+      "question": "Como é avaliado um vídeo de Jumpstyle?",
+      "answer": "Um vídeo de Jumpstyle é avaliado em quatro critérios fundamentais: Técnica/Execução, Variedade/Criatividade, Onbeat/Ritmo e Power/Energia."
     },
     {
-      "question": "Quais sao os niveis de jumpers?",
-      "answer": "Os jumpers sao classificados em tres niveis: Iniciante, Intermediario e Avancado, conforme dominio de bases, ritmo, tricks, equilibrio, power, estilo e originalidade."
+      "question": "Quais são os níveis de jumpers?",
+      "answer": "Os jumpers são classificados em três níveis: Iniciante, Intermediário e Avançado, conforme o domínio de bases, ritmo, tricks, equilíbrio, power, estilo e originalidade."
     },
     {
-      "question": "O que e a Liga JSB?",
-      "answer": "A Liga JSB e a Liga Oficial da Jumpstyle Brasil, onde competidores sao avaliados tecnicamente em uma chave de campeonato. A avaliacao e 100% tecnica."
+      "question": "O que é a Liga JSB?",
+      "answer": "A Liga JSB é a liga oficial da Jumpstyle Brasil. Os competidores avançam por uma chave de campeonato com avaliação baseada em seu desempenho na dança."
     },
     {
-      "question": "O que e o All-Star?",
-      "answer": "O All-Star e um evento onde os jumpers competem usando seus melhores solos gravados. A votacao e dividida em 80% opiniao publica e 20% opiniao dos juizes. Os vencedores recebem titulos e feedback tecnico dos juizes."
+      "question": "O que é o All-Star?",
+      "answer": "O All-Star é um evento no qual os jumpers competem com seus melhores solos gravados. A votação é dividida entre 80% de opinião pública e 20% de opinião dos juízes. Os vencedores recebem títulos e comentários dos jurados sobre suas apresentações."
     },
     {
-      "question": "Quais sao os principais eventos de Jumpstyle?",
-      "answer": "All-Star: competicao baseada em videos, com votacao publica e tecnica. JumpBattles: desafio tecnico entre dois jumpers. Liga JSB: competicao oficial com avaliacao tecnica."
+      "question": "Quais são os principais eventos de Jumpstyle?",
+      "answer": "All-Star: competição baseada em vídeos com votação pública e dos jurados. JumpBattles: confronto entre dois jumpers. Liga JSB: competição oficial da comunidade brasileira."
     },
     {
-      "question": "Quem e o Panico Jumpen?",
-      "answer": "Panico Jumpen e um vilao folclorico da comunidade brasileira de jumpstyle, conhecido por reduzir atributos tecnicos de diversos jumpers, facilitando o cansaco, fadiga e lesoes."
+      "question": "Quem é o Pânico Jumpen?",
+      "answer": "Pânico Jumpen é um vilão folclórico da comunidade brasileira de Jumpstyle, conhecido por roubar a energia dos jumpers e facilitar o cansaço, a fadiga e as lesões."
     },
     {
       "question": "Onde ocorrem os encontros de Jumpstyle no Brasil?",
-      "answer": "Os encontros (meetings) geralmente ocorrem no Parque do Ibirapuera, em Sao Paulo, no inicio e/ou no final do ano."
+      "answer": "Os encontros, também chamados de meetings, geralmente ocorrem no Parque do Ibirapuera, em São Paulo, no início e/ou no final do ano."
     },
     {
-      "question": "Quem sao os Fireborn Squad (FBS)?",
-      "answer": "Fireborn Squad e uma equipe de jumpstyle fundada em 2017 por Mreaggle, com o objetivo de revitalizar o jumpstyle no Brasil. Em 2024, Mreaggle organizou com a FBS um encontro nacional de Jumpstyle, levando o movimento a Rede Nacional e a gravacao do clipe Jumpstyle Never Dies, idealizado em conjunto com o D-Stroyer."
+      "question": "Quem é a Fireborn Squad (FBS)?",
+      "answer": "A Fireborn Squad é o time nacional de Jumpstyle do Brasil, fundado em 2017 por Mreaggle para reunir grandes jumpers de diferentes gerações e regiões. Em 2024, a FBS participou do encontro ligado à gravação do clipe Jumpstyle Never Dies, idealizado com D-Stroyer, e levou o movimento à televisão nacional."
     },
     {
-      "question": "Quem e Patrick Jumpen?",
-      "answer": "Patrick Jumpen e um projeto do artista Patrick Pereira, que viralizou o Jumpstyle mundialmente a partir de 2007 com seus tutoriais e videos no YouTube."
+      "question": "Quem é Patrick Jumpen?",
+      "answer": "Patrick Jumpen é um projeto do artista Patrick Pereira, que ajudou a popularizar o Jumpstyle mundialmente a partir de 2007 com seus tutoriais e vídeos no YouTube."
     },
     {
-      "question": "Quem e Yabujin?",
-      "answer": "Yabujin e um artista lituano que trouxe o Jumpstyle de volta a tona durante a pandemia de Covid-19, criando um movimento artistico chamado Yabujincore. Yabujin usou o jumpstyle como elemento de sua obra, popularizando a danca nas plataformas de videos curtos."
+      "question": "Quem é Yabujin?",
+      "answer": "Yabujin é um artista lituano que trouxe o Jumpstyle de volta à tona durante a pandemia de Covid-19 por meio do movimento artístico conhecido como Yabujincore. O artista usou a dança como elemento de sua obra e a popularizou nas plataformas de vídeos curtos."
     },
     {
       "question": "Como posso melhorar no Jumpstyle?",
-      "answer": "Para melhorar no Jumpstyle, foque em treinar atributos especificos e assista videos de jumpers profissionais em camera lenta para reproduzir os movimentos com precisao. Divida o treino em tecnica, variedade, ritmo e energia e leia o roadmap."
+      "answer": "Para melhorar no Jumpstyle, treine habilidades específicas e assista a vídeos de jumpers experientes em câmera lenta para observar os movimentos com precisão. Divida o treino entre técnica, variedade, ritmo e energia e acompanhe o roadmap."
     },
     {
-      "question": "Onde posso encontrar mais informacoes e participar da comunidade?",
-      "answer": "Voce pode se juntar a comunidade de Jumpstyle Brasil nas redes sociais, participar de encontros e eventos, e acompanhar as ultimas novidades e competicoes no site oficial Jumpstyle Brasil."
+      "question": "Onde posso encontrar mais informações e participar da comunidade?",
+      "answer": "Você pode entrar nos grupos da Jumpstyle Brasil, acompanhar as redes sociais e participar de encontros, eventos e competições da comunidade."
     }
   ],
-  "creators": ["mreaggle", "lufefbs", "digo3492_", "guilhermedourado", "tauan.rick", "figurinha696", "nakpovs"],
+  "creators": ["mreaggle", "lufefbs", "digo3492_", "guilhermedourado", "tauan.rick", "figurinha696"],
   "fbsTeam": {
     "founded": 2017,
     "name": "Venerável Ordem dos Renascidos do Fogo",
@@ -231,58 +231,58 @@
       "sourcePage": 1,
       "title": "Jumpstyle Brasil",
       "eyebrow": "Hard dance brasileira, digital e em movimento",
-      "lead": "Um hub rapido para aprender, entrar na comunidade, entender a historia e encontrar as areas originais da Jumpstyle Brasil sem depender do layout antigo de slides.",
-      "primaryCta": { "label": "Comecar a dancar", "route": "/como-dancar/" },
+      "lead": "Seu ponto de encontro para aprender, conhecer a história, encontrar músicas e fazer parte da comunidade brasileira de Jumpstyle.",
+      "primaryCta": { "label": "Começar a dançar", "route": "/como-dancar/" },
       "secondaryCta": { "label": "Ver roadmap", "route": "/roadmap/" }
     },
     {
       "route": "/all-star/",
       "sourcePage": 2,
       "title": "All-Star",
-      "eyebrow": "Exibicao amistosa e memoria competitiva",
-      "lead": "O All-Star e uma exibicao amistosa: cada round gera um deck de cartas colecionaveis com momentos memoraveis de cada jumper."
+      "eyebrow": "Exibição amistosa e memória competitiva",
+      "lead": "O All-Star é uma exibição amistosa em que cada round reúne os melhores momentos dos jumpers em cartas colecionáveis."
     },
     {
       "route": "/historia/",
       "sourcePage": 3,
-      "title": "Historia",
-      "eyebrow": "Da Belgica aos videos curtos",
-      "lead": "A linha do tempo original foi reorganizada para leitura mobile e mantida como registro integral da comunidade."
+      "title": "História",
+      "eyebrow": "Da Bélgica aos vídeos curtos",
+      "lead": "Conheça as eras, os países e as pessoas que transformaram o Jumpstyle em uma dança global."
     },
     {
       "route": "/como-dancar/",
       "sourcePage": 4,
-      "title": "Como Dancar",
-      "eyebrow": "Tutorial fundamental, avancados e treino guiado",
-      "lead": "Caminhos diretos para fundamentos, tutoriais avancados e roadmap, com links originais preservados."
+      "title": "Como Dançar",
+      "eyebrow": "Fundamentos, evolução e treino guiado",
+      "lead": "Comece pelas bases, avance com as playlists de tutoriais e acompanhe sua evolução no roadmap."
     },
     {
       "route": "/roadmap/",
       "sourcePage": 5,
       "title": "Roadmap",
-      "eyebrow": "Checklist de evolucao sem ranking inventado",
-      "lead": "A trilha preserva os itens originais para iniciantes, intermediarios e avancados, usando checklist local para acompanhar treino."
+      "eyebrow": "Sua trilha de evolução",
+      "lead": "Acompanhe seu progresso entre os níveis iniciante, intermediário e avançado, marcando cada habilidade conquistada."
     },
     {
       "route": "/manifesto/",
       "sourcePage": 6,
       "title": "Jumper Manifesto",
       "eyebrow": "Valores da comunidade",
-      "lead": "Manifesto completo preservado com largura de leitura confortavel, indice interno e assinatura original."
+      "lead": "Os princípios que orientam liberdade, dedicação, integridade, evolução e inclusão dentro da comunidade."
     },
     {
       "route": "/musicas/",
       "sourcePage": 7,
-      "title": "Musicas",
+      "title": "Músicas",
       "eyebrow": "Jump, Hardstyle e Hardcore para treinar",
-      "lead": "BPMs, exemplos e playlists originais com fallback de links externos, sem autoplay."
+      "lead": "Jump, Hardstyle e Hardcore: entenda os ritmos, encontre faixas marcantes e escolha uma playlist para treinar."
     },
     {
       "route": "/criadores/",
       "sourcePage": 8,
-      "title": "Criadores",
-      "eyebrow": "Registro visual do site original",
-      "lead": "Handles preservados a partir dos snapshots: sem inventar biografias, metricas atuais ou links nao confirmados."
+      "title": "Creators",
+      "eyebrow": "Conteúdo feito pela comunidade",
+      "lead": "Conheça os creators que compartilham treinos, técnica, cultura e vivências do Jumpstyle brasileiro."
     },
     {
       "route": "/fireborn-squad/",
@@ -294,8 +294,8 @@
       "route": "/faq/",
       "sourcePage": 9,
       "title": "FAQ",
-      "eyebrow": "Perguntas, tecnica e folclore da comunidade",
-      "lead": "FAQ original em accordions acessiveis com filtro local para consulta rapida no celular."
+      "eyebrow": "Perguntas, técnica e folclore da comunidade",
+      "lead": "Encontre respostas sobre dança, eventos, treino, história e participação na comunidade."
     }
   ]
 }

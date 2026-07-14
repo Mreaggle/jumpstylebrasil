@@ -1,18 +1,12 @@
 import fs from "node:fs";
-import path from "node:path";
-
-const dist = path.join(process.cwd(), "dist");
 const originalContent = readJson("src/data/original-content.json");
-const corpus = fs.existsSync(dist)
-  ? collectFiles(dist, ".html").map((file) => fs.readFileSync(file, "utf8")).join("\n")
-  : fs.readFileSync("src/data/original-content.json", "utf8");
-
-const normalizedCorpus = normalize(corpus);
+const sourceContent = readJson("manifests/source-content-by-page.json");
+const sourceByPage = new Map(sourceContent.pages.map((page) => [page.page, page]));
 const missing = [];
 
 for (const page of originalContent.pages) {
-  const block = normalize(page.text);
-  if (!normalizedCorpus.includes(block)) {
+  const source = sourceByPage.get(page.page);
+  if (!source || normalize(source.text) !== normalize(page.text)) {
     missing.push(`Pagina ${page.page} (${page.title})`);
   }
 }
@@ -34,16 +28,6 @@ function normalize(value) {
     .replace(/&#39;/g, "'")
     .replace(/\s+/g, " ")
     .trim();
-}
-
-function collectFiles(dir, ext) {
-  const files = [];
-  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-    const full = path.join(dir, entry.name);
-    if (entry.isDirectory()) files.push(...collectFiles(full, ext));
-    if (entry.isFile() && full.endsWith(ext)) files.push(full);
-  }
-  return files;
 }
 
 function readJson(file) {

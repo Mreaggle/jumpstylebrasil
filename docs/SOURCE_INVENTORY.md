@@ -21,4 +21,4 @@
 
 ## Observacao
 
-Nenhum conteudo novo factual foi incorporado a partir de fontes externas alem dos links/documentos ja indicados no pacote. O site separa explicitamente o conteudo original preservado de chamadas documentais para JUN.
+O acervo original permanece separado da experiência pública. Ampliações históricas usam os documentos da JUN indicados no pacote e na documentação de fontes.

@@ -36,7 +36,7 @@ O build final fica em `dist/`.
 
 ## Conteudo e preservacao
 
-Cada rota publica inclui um bloco expansivel com o texto integral da pagina original correspondente. A auditoria de conteudo verifica que os nove blocos originais estao presentes no HTML gerado ou no dataset do site. A auditoria de links verifica os 16 URLs externos unicos do PDF.
+Os textos de origem permanecem em `src/data/original-content.json` para rastreabilidade interna, mas não são exibidos aos visitantes. A auditoria compara os nove registros internos com o manifesto de migração, enquanto a auditoria de links verifica os 16 URLs externos do acervo.
 
 ## Publicacao
 

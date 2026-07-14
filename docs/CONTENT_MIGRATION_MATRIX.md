@@ -12,7 +12,7 @@
 | 8. Criadores | `/criadores/` | Handles `mreaggle`, `lufefbs`, `digo3492_`, `guilhermedourado`, `tauan.rick`, `figurinha696`, `nakpovs` | Sem links externos confirmados no PDF | `reference-renders/page-8.png` |
 | 9. FAQ / Sugestoes | `/faq/` | Todas as perguntas e respostas, incluindo Panico Jumpen | Sem links externos na pagina original | `reference-renders/page-9.png` |
 
-Cada rota inclui um bloco expansivel "Texto original preservado" com o texto integral da respectiva pagina de origem. Os scripts `npm run audit:content` e `npm run audit:links` validam essa preservacao.
+Os textos integrais e as evidências visuais permanecem somente no acervo interno do repositório. O site público apresenta o conteúdo em linguagem editorial, enquanto `npm run audit:content` e `npm run audit:links` validam a integridade das fontes separadamente.
 
 ## Conteúdo editorial posterior
 
