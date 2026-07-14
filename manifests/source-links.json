@@ -1,0 +1,1154 @@
+{
+  "source_pdf": "inputs/site-original.pdf",
+  "annotation_count": 88,
+  "external_link_annotation_count": 56,
+  "unique_external_urls": [
+    "https://bit.ly/AllStarJumpBR",
+    "https://bit.ly/Round2JumpBR",
+    "https://bit.ly/VotarJumpBR",
+    "https://chat.whatsapp.com/L9WMrarqAkc3GKFvQdv2dK",
+    "https://discord.gg/9CT8uPr",
+    "https://github.com/Mreaggle/JumpstyleUnitedNations/",
+    "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JUNToolkit/KeyFiguresWorldwide/Dance/README.md",
+    "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Global/global-timeline.md",
+    "https://shorturl.at/jKRT8",
+    "https://vm.tiktok.com/ZMMJYpjGk/",
+    "https://vm.tiktok.com/ZMMccMWYx/",
+    "https://www.instagram.com/jumpstylebrasil",
+    "https://www.tiktok.com/@mreaggle/video/7320740245882801413?_t=8k3IFjBNvjZ&_r=1",
+    "https://www.youtube.com/@MreaggleJumpstyle/playlists",
+    "https://www.youtube.com/playlist?list=PLZqEDYStFZmbF3Tv2hiJgLugJYViEuPjF",
+    "https://www.youtube.com/watch?v=X4MajOncy_k"
+  ],
+  "links_by_page": {
+    "1": [
+      "https://vm.tiktok.com/ZMMccMWYx/",
+      "https://chat.whatsapp.com/L9WMrarqAkc3GKFvQdv2dK",
+      "https://discord.gg/9CT8uPr",
+      "https://www.instagram.com/jumpstylebrasil",
+      "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Global/global-timeline.md",
+      "https://github.com/Mreaggle/JumpstyleUnitedNations/",
+      "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JUNToolkit/KeyFiguresWorldwide/Dance/README.md"
+    ],
+    "2": [
+      "https://bit.ly/AllStarJumpBR",
+      "https://bit.ly/VotarJumpBR",
+      "https://bit.ly/Round2JumpBR"
+    ],
+    "3": [
+      "https://github.com/Mreaggle/JumpstyleUnitedNations/",
+      "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Global/global-timeline.md"
+    ],
+    "4": [
+      "https://www.youtube.com/watch?v=X4MajOncy_k",
+      "https://vm.tiktok.com/ZMMJYpjGk/",
+      "https://www.tiktok.com/@mreaggle/video/7320740245882801413?_t=8k3IFjBNvjZ&_r=1",
+      "https://www.youtube.com/@MreaggleJumpstyle/playlists"
+    ],
+    "7": [
+      "https://shorturl.at/jKRT8",
+      "https://www.youtube.com/playlist?list=PLZqEDYStFZmbF3Tv2hiJgLugJYViEuPjF"
+    ]
+  },
+  "all_annotations": [
+    {
+      "page": 1,
+      "kind": 2,
+      "rect": [
+        628.34,
+        288.14,
+        798.59,
+        477.14
+      ],
+      "uri": "https://vm.tiktok.com/ZMMccMWYx/"
+    },
+    {
+      "page": 1,
+      "kind": 4,
+      "rect": [
+        473.83,
+        91.63,
+        588.35,
+        208.46
+      ],
+      "target_page": 2
+    },
+    {
+      "page": 1,
+      "kind": 2,
+      "rect": [
+        398.9,
+        296.36,
+        421.4,
+        318.86
+      ],
+      "uri": "https://chat.whatsapp.com/L9WMrarqAkc3GKFvQdv2dK"
+    },
+    {
+      "page": 1,
+      "kind": 4,
+      "rect": [
+        484.41,
+        311.21,
+        577.41,
+        397.46
+      ],
+      "target_page": 3
+    },
+    {
+      "page": 1,
+      "kind": 2,
+      "rect": [
+        318.89,
+        293.77,
+        390.14,
+        398.77
+      ],
+      "uri": "https://chat.whatsapp.com/L9WMrarqAkc3GKFvQdv2dK"
+    },
+    {
+      "page": 1,
+      "kind": 2,
+      "rect": [
+        948.36,
+        291.74,
+        970.86,
+        314.24
+      ],
+      "uri": "https://discord.gg/9CT8uPr"
+    },
+    {
+      "page": 1,
+      "kind": 4,
+      "rect": [
+        676.2,
+        103.59,
+        754.95,
+        189.09
+      ],
+      "target_page": 7
+    },
+    {
+      "page": 1,
+      "kind": 4,
+      "rect": [
+        663.91,
+        307.5,
+        766.66,
+        383.25
+      ],
+      "target_page": 4
+    },
+    {
+      "page": 1,
+      "kind": 4,
+      "rect": [
+        629.92,
+        483.69,
+        980.92,
+        559.44
+      ],
+      "target_page": 9
+    },
+    {
+      "page": 1,
+      "kind": 4,
+      "rect": [
+        944.21,
+        511.55,
+        966.71,
+        534.05
+      ],
+      "target_page": 9
+    },
+    {
+      "page": 1,
+      "kind": 4,
+      "rect": [
+        646.79,
+        494.68,
+        706.04,
+        548.68
+      ],
+      "target_page": 9
+    },
+    {
+      "page": 1,
+      "kind": 2,
+      "rect": [
+        851.42,
+        306.32,
+        945.92,
+        392.57
+      ],
+      "uri": "https://discord.gg/9CT8uPr"
+    },
+    {
+      "page": 1,
+      "kind": 4,
+      "rect": [
+        307.43,
+        90.37,
+        386.93,
+        194.62
+      ],
+      "target_page": 4
+    },
+    {
+      "page": 1,
+      "kind": 2,
+      "rect": [
+        118.83,
+        497.13,
+        142.01,
+        520.3
+      ],
+      "uri": "https://www.instagram.com/jumpstylebrasil"
+    },
+    {
+      "page": 1,
+      "kind": 2,
+      "rect": [
+        98.91,
+        388.77,
+        161.76,
+        448.09
+      ],
+      "uri": "https://www.instagram.com/jumpstylebrasil"
+    },
+    {
+      "page": 1,
+      "kind": 2,
+      "rect": [
+        93.47,
+        453.07,
+        166.93,
+        469.96
+      ],
+      "uri": "https://www.instagram.com/jumpstylebrasil"
+    },
+    {
+      "page": 1,
+      "kind": 2,
+      "rect": [
+        107.61,
+        469.18,
+        152.79,
+        486.07
+      ],
+      "uri": "https://www.instagram.com/jumpstylebrasil"
+    },
+    {
+      "page": 1,
+      "kind": 4,
+      "rect": [
+        843.05,
+        95.4,
+        956.3,
+        189.9
+      ],
+      "target_page": 6
+    },
+    {
+      "page": 1,
+      "kind": 2,
+      "rect": [
+        104.93,
+        194.27,
+        118.43,
+        207.77
+      ],
+      "uri": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Global/global-timeline.md"
+    },
+    {
+      "page": 1,
+      "kind": 2,
+      "rect": [
+        27.28,
+        199.6,
+        121.03,
+        282.85
+      ],
+      "uri": "https://github.com/Mreaggle/JumpstyleUnitedNations/"
+    },
+    {
+      "page": 1,
+      "kind": 2,
+      "rect": [
+        145.43,
+        192.76,
+        236.18,
+        281.26
+      ],
+      "uri": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JUNToolkit/KeyFiguresWorldwide/Dance/README.md"
+    },
+    {
+      "page": 1,
+      "kind": 2,
+      "rect": [
+        45.46,
+        295.22,
+        106.96,
+        307.97
+      ],
+      "uri": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Global/global-timeline.md"
+    },
+    {
+      "page": 1,
+      "kind": 2,
+      "rect": [
+        43.96,
+        307.22,
+        107.71,
+        319.97
+      ],
+      "uri": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Global/global-timeline.md"
+    },
+    {
+      "page": 1,
+      "kind": 2,
+      "rect": [
+        50.71,
+        319.22,
+        100.96,
+        331.97
+      ],
+      "uri": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Global/global-timeline.md"
+    },
+    {
+      "page": 1,
+      "kind": 2,
+      "rect": [
+        49.96,
+        331.22,
+        101.71,
+        343.97
+      ],
+      "uri": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Global/global-timeline.md"
+    },
+    {
+      "page": 1,
+      "kind": 4,
+      "rect": [
+        314.57,
+        194.45,
+        379.82,
+        221.45
+      ],
+      "target_page": 4
+    },
+    {
+      "page": 1,
+      "kind": 4,
+      "rect": [
+        307.07,
+        219.95,
+        387.32,
+        246.95
+      ],
+      "target_page": 4
+    },
+    {
+      "page": 1,
+      "kind": 4,
+      "rect": [
+        488.14,
+        198.74,
+        574.39,
+        225.74
+      ],
+      "target_page": 2
+    },
+    {
+      "page": 1,
+      "kind": 4,
+      "rect": [
+        487.17,
+        410.81,
+        574.92,
+        437.81
+      ],
+      "target_page": 3
+    },
+    {
+      "page": 1,
+      "kind": 4,
+      "rect": [
+        674.32,
+        194.45,
+        760.57,
+        221.45
+      ],
+      "target_page": 7
+    },
+    {
+      "page": 1,
+      "kind": 4,
+      "rect": [
+        647.32,
+        219.95,
+        787.57,
+        246.95
+      ],
+      "target_page": 7
+    },
+    {
+      "page": 1,
+      "kind": 4,
+      "rect": [
+        668.92,
+        396.35,
+        766.42,
+        423.35
+      ],
+      "target_page": 4
+    },
+    {
+      "page": 1,
+      "kind": 4,
+      "rect": [
+        656.17,
+        421.85,
+        778.42,
+        448.85
+      ],
+      "target_page": 4
+    },
+    {
+      "page": 1,
+      "kind": 2,
+      "rect": [
+        311.79,
+        403.45,
+        383.04,
+        430.45
+      ],
+      "uri": "https://chat.whatsapp.com/L9WMrarqAkc3GKFvQdv2dK"
+    },
+    {
+      "page": 1,
+      "kind": 2,
+      "rect": [
+        288.54,
+        428.95,
+        405.54,
+        455.95
+      ],
+      "uri": "https://chat.whatsapp.com/L9WMrarqAkc3GKFvQdv2dK"
+    },
+    {
+      "page": 1,
+      "kind": 4,
+      "rect": [
+        858.16,
+        191.9,
+        941.41,
+        218.9
+      ],
+      "target_page": 6
+    },
+    {
+      "page": 1,
+      "kind": 4,
+      "rect": [
+        845.41,
+        217.4,
+        954.16,
+        244.4
+      ],
+      "target_page": 6
+    },
+    {
+      "page": 1,
+      "kind": 2,
+      "rect": [
+        853.66,
+        396.35,
+        950.41,
+        423.35
+      ],
+      "uri": "https://discord.gg/9CT8uPr"
+    },
+    {
+      "page": 1,
+      "kind": 2,
+      "rect": [
+        861.16,
+        421.85,
+        942.91,
+        448.85
+      ],
+      "uri": "https://discord.gg/9CT8uPr"
+    },
+    {
+      "page": 1,
+      "kind": 4,
+      "rect": [
+        366.41,
+        495.29,
+        510.41,
+        522.29
+      ],
+      "target_page": 8
+    },
+    {
+      "page": 1,
+      "kind": 4,
+      "rect": [
+        384.41,
+        520.79,
+        492.41,
+        547.79
+      ],
+      "target_page": 8
+    },
+    {
+      "page": 1,
+      "kind": 4,
+      "rect": [
+        737.4,
+        509.39,
+        909.9,
+        536.39
+      ],
+      "target_page": 9
+    },
+    {
+      "page": 1,
+      "kind": 2,
+      "rect": [
+        61.21,
+        282.42,
+        87.46,
+        298.17
+      ],
+      "uri": "https://github.com/Mreaggle/JumpstyleUnitedNations/"
+    },
+    {
+      "page": 1,
+      "kind": 2,
+      "rect": [
+        159.79,
+        295.22,
+        224.29,
+        307.97
+      ],
+      "uri": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JUNToolkit/KeyFiguresWorldwide/Dance/README.md"
+    },
+    {
+      "page": 1,
+      "kind": 2,
+      "rect": [
+        162.04,
+        307.22,
+        221.29,
+        319.97
+      ],
+      "uri": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JUNToolkit/KeyFiguresWorldwide/Dance/README.md"
+    },
+    {
+      "page": 1,
+      "kind": 2,
+      "rect": [
+        170.29,
+        319.22,
+        213.04,
+        331.97
+      ],
+      "uri": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JUNToolkit/KeyFiguresWorldwide/Dance/README.md"
+    },
+    {
+      "page": 1,
+      "kind": 2,
+      "rect": [
+        172.54,
+        331.22,
+        210.79,
+        343.97
+      ],
+      "uri": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JUNToolkit/KeyFiguresWorldwide/Dance/README.md"
+    },
+    {
+      "page": 1,
+      "kind": 2,
+      "rect": [
+        177.04,
+        282.42,
+        203.29,
+        298.17
+      ],
+      "uri": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JUNToolkit/KeyFiguresWorldwide/Dance/README.md"
+    },
+    {
+      "page": 1,
+      "kind": 2,
+      "rect": [
+        218.84,
+        192.76,
+        232.34,
+        206.26
+      ],
+      "uri": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JUNToolkit/KeyFiguresWorldwide/Dance/README.md"
+    },
+    {
+      "page": 2,
+      "kind": 2,
+      "rect": [
+        344.7,
+        358.45,
+        388.95,
+        402.7
+      ],
+      "uri": "https://bit.ly/AllStarJumpBR"
+    },
+    {
+      "page": 2,
+      "kind": 2,
+      "rect": [
+        293.05,
+        123.16,
+        440.05,
+        264.91
+      ],
+      "uri": "https://bit.ly/AllStarJumpBR"
+    },
+    {
+      "page": 2,
+      "kind": 2,
+      "rect": [
+        534.29,
+        124.45,
+        695.54,
+        288.7
+      ],
+      "uri": "https://bit.ly/VotarJumpBR"
+    },
+    {
+      "page": 2,
+      "kind": 2,
+      "rect": [
+        592.9,
+        358.45,
+        637.15,
+        402.7
+      ],
+      "uri": "https://bit.ly/VotarJumpBR"
+    },
+    {
+      "page": 2,
+      "kind": 2,
+      "rect": [
+        841.1,
+        358.45,
+        885.35,
+        402.7
+      ],
+      "uri": "https://bit.ly/Round2JumpBR"
+    },
+    {
+      "page": 2,
+      "kind": 2,
+      "rect": [
+        796.24,
+        104.6,
+        929.74,
+        298.1
+      ],
+      "uri": "https://bit.ly/Round2JumpBR"
+    },
+    {
+      "page": 2,
+      "kind": 2,
+      "rect": [
+        333.03,
+        288.19,
+        399.78,
+        320.44
+      ],
+      "uri": "https://bit.ly/AllStarJumpBR"
+    },
+    {
+      "page": 2,
+      "kind": 2,
+      "rect": [
+        315.78,
+        318.94,
+        417.03,
+        351.19
+      ],
+      "uri": "https://bit.ly/AllStarJumpBR"
+    },
+    {
+      "page": 2,
+      "kind": 2,
+      "rect": [
+        573.73,
+        303.57,
+        652.48,
+        335.82
+      ],
+      "uri": "https://bit.ly/VotarJumpBR"
+    },
+    {
+      "page": 2,
+      "kind": 2,
+      "rect": [
+        788.93,
+        303.57,
+        936.68,
+        335.82
+      ],
+      "uri": "https://bit.ly/Round2JumpBR"
+    },
+    {
+      "page": 2,
+      "kind": 4,
+      "rect": [
+        90.6,
+        462.57,
+        154.35,
+        484.32
+      ],
+      "target_page": 1
+    },
+    {
+      "page": 3,
+      "kind": 4,
+      "rect": [
+        833.53,
+        491.34,
+        916.03,
+        518.34
+      ],
+      "target_page": 1
+    },
+    {
+      "page": 3,
+      "kind": 2,
+      "rect": [
+        40.93,
+        449.98,
+        134.68,
+        533.23
+      ],
+      "uri": "https://github.com/Mreaggle/JumpstyleUnitedNations/"
+    },
+    {
+      "page": 3,
+      "kind": 2,
+      "rect": [
+        139.86,
+        469.43,
+        201.36,
+        482.18
+      ],
+      "uri": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Global/global-timeline.md"
+    },
+    {
+      "page": 3,
+      "kind": 2,
+      "rect": [
+        138.36,
+        481.43,
+        202.11,
+        494.18
+      ],
+      "uri": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Global/global-timeline.md"
+    },
+    {
+      "page": 3,
+      "kind": 2,
+      "rect": [
+        145.11,
+        493.43,
+        195.36,
+        506.18
+      ],
+      "uri": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Global/global-timeline.md"
+    },
+    {
+      "page": 3,
+      "kind": 2,
+      "rect": [
+        144.36,
+        505.43,
+        196.11,
+        518.18
+      ],
+      "uri": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Global/global-timeline.md"
+    },
+    {
+      "page": 3,
+      "kind": 2,
+      "rect": [
+        228.52,
+        121.8,
+        254.77,
+        137.55
+      ],
+      "uri": "https://github.com/Mreaggle/JumpstyleUnitedNations/"
+    },
+    {
+      "page": 4,
+      "kind": 2,
+      "rect": [
+        399.52,
+        404.31,
+        443.77,
+        448.56
+      ],
+      "uri": "https://www.youtube.com/watch?v=X4MajOncy_k"
+    },
+    {
+      "page": 4,
+      "kind": 4,
+      "rect": [
+        841.1,
+        404.31,
+        885.35,
+        448.56
+      ],
+      "target_page": 5
+    },
+    {
+      "page": 4,
+      "kind": 2,
+      "rect": [
+        349.73,
+        176.35,
+        492.98,
+        328.6
+      ],
+      "uri": "https://vm.tiktok.com/ZMMJYpjGk/"
+    },
+    {
+      "page": 4,
+      "kind": 4,
+      "rect": [
+        785.01,
+        183.91,
+        941.01,
+        329.41
+      ],
+      "target_page": 5
+    },
+    {
+      "page": 4,
+      "kind": 2,
+      "rect": [
+        368.35,
+        334.05,
+        474.85,
+        366.3
+      ],
+      "uri": "https://www.tiktok.com/@mreaggle/video/7320740245882801413?_t=8k3IFjBNvjZ&_r=1"
+    },
+    {
+      "page": 4,
+      "kind": 2,
+      "rect": [
+        332.35,
+        364.8,
+        510.85,
+        397.05
+      ],
+      "uri": "https://www.tiktok.com/@mreaggle/video/7320740245882801413?_t=8k3IFjBNvjZ&_r=1"
+    },
+    {
+      "page": 4,
+      "kind": 4,
+      "rect": [
+        794.93,
+        349.42,
+        927.68,
+        381.67
+      ],
+      "target_page": 5
+    },
+    {
+      "page": 4,
+      "kind": 4,
+      "rect": [
+        803.95,
+        504.05,
+        904.45,
+        537.05
+      ],
+      "target_page": 1
+    },
+    {
+      "page": 4,
+      "kind": 2,
+      "rect": [
+        620.31,
+        404.31,
+        664.56,
+        448.56
+      ],
+      "uri": "https://www.youtube.com/@MreaggleJumpstyle/playlists"
+    },
+    {
+      "page": 4,
+      "kind": 2,
+      "rect": [
+        580.89,
+        334.05,
+        700.14,
+        366.3
+      ],
+      "uri": "https://www.youtube.com/@MreaggleJumpstyle/playlists"
+    },
+    {
+      "page": 4,
+      "kind": 2,
+      "rect": [
+        565.89,
+        364.8,
+        715.89,
+        397.05
+      ],
+      "uri": "https://www.youtube.com/@MreaggleJumpstyle/playlists"
+    },
+    {
+      "page": 4,
+      "kind": 2,
+      "rect": [
+        569.96,
+        200.48,
+        710.96,
+        304.73
+      ],
+      "uri": "https://www.youtube.com/@MreaggleJumpstyle/playlists"
+    },
+    {
+      "page": 5,
+      "kind": 4,
+      "rect": [
+        744.65,
+        472.93,
+        881.9,
+        517.93
+      ],
+      "target_page": 1
+    },
+    {
+      "page": 7,
+      "kind": 2,
+      "rect": [
+        46.84,
+        177.07,
+        250.09,
+        399.07
+      ],
+      "uri": "https://shorturl.at/jKRT8"
+    },
+    {
+      "page": 7,
+      "kind": 2,
+      "rect": [
+        116.69,
+        402.3,
+        179.69,
+        423.3
+      ],
+      "uri": "https://shorturl.at/jKRT8"
+    },
+    {
+      "page": 7,
+      "kind": 2,
+      "rect": [
+        120.44,
+        421.8,
+        175.94,
+        442.8
+      ],
+      "uri": "https://shorturl.at/jKRT8"
+    },
+    {
+      "page": 7,
+      "kind": 2,
+      "rect": [
+        148.34,
+        441.97,
+        186.59,
+        480.22
+      ],
+      "uri": "https://www.youtube.com/playlist?list=PLZqEDYStFZmbF3Tv2hiJgLugJYViEuPjF"
+    },
+    {
+      "page": 7,
+      "kind": 2,
+      "rect": [
+        100.62,
+        441.97,
+        148.62,
+        489.22
+      ],
+      "uri": "https://shorturl.at/jKRT8"
+    },
+    {
+      "page": 7,
+      "kind": 4,
+      "rect": [
+        833.53,
+        521.97,
+        916.03,
+        548.97
+      ],
+      "target_page": 1
+    },
+    {
+      "page": 8,
+      "kind": 4,
+      "rect": [
+        6.87,
+        335.97,
+        33.87,
+        418.47
+      ],
+      "target_page": 1
+    },
+    {
+      "page": 9,
+      "kind": 4,
+      "rect": [
+        854.18,
+        548.94,
+        936.68,
+        575.94
+      ],
+      "target_page": 1
+    }
+  ],
+  "html_anchor_count": 32,
+  "html_anchors": [
+    {
+      "text": "Saltar a navegação",
+      "href": "https://www.canva.com/design/DAGH5AHi9lI/UsEKbtbkLmN_ymRxGx6w4A/edit#_r_0_2"
+    },
+    {
+      "text": "Saltar para o conteúdo principal",
+      "href": "https://www.canva.com/design/DAGH5AHi9lI/UsEKbtbkLmN_ymRxGx6w4A/edit#_r_0_3"
+    },
+    {
+      "text": "Como",
+      "href": "https://www.canva.com/design/DAGH5AHi9lI/UsEKbtbkLmN_ymRxGx6w4A/edit#page-3"
+    },
+    {
+      "text": "Dançar",
+      "href": "https://www.canva.com/design/DAGH5AHi9lI/UsEKbtbkLmN_ymRxGx6w4A/edit#page-3"
+    },
+    {
+      "text": "All-Star",
+      "href": "https://www.canva.com/design/DAGH5AHi9lI/UsEKbtbkLmN_ymRxGx6w4A/edit#page-1"
+    },
+    {
+      "text": "Músicas",
+      "href": "https://www.canva.com/design/DAGH5AHi9lI/UsEKbtbkLmN_ymRxGx6w4A/edit#page-6"
+    },
+    {
+      "text": "para Dançar",
+      "href": "https://www.canva.com/design/DAGH5AHi9lI/UsEKbtbkLmN_ymRxGx6w4A/edit#page-6"
+    },
+    {
+      "text": "Jumper",
+      "href": "https://www.canva.com/design/DAGH5AHi9lI/UsEKbtbkLmN_ymRxGx6w4A/edit#page-5"
+    },
+    {
+      "text": "Manifesto",
+      "href": "https://www.canva.com/design/DAGH5AHi9lI/UsEKbtbkLmN_ymRxGx6w4A/edit#page-5"
+    },
+    {
+      "text": "JUN",
+      "href": "https://github.com/Mreaggle/JumpstyleUnitedNations/"
+    },
+    {
+      "text": "O Museu da comunidade Global de Jumpstyle",
+      "href": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Global/global-timeline.md"
+    },
+    {
+      "text": "JUN",
+      "href": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JUNToolkit/KeyFiguresWorldwide/Dance/README.md"
+    },
+    {
+      "text": "Os melhores Jumpers de todos os tempos",
+      "href": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JUNToolkit/KeyFiguresWorldwide/Dance/README.md"
+    },
+    {
+      "text": "Instagram",
+      "href": "https://www.instagram.com/jumpstylebrasil"
+    },
+    {
+      "text": "Oficial",
+      "href": "https://www.instagram.com/jumpstylebrasil"
+    },
+    {
+      "text": "Grupo",
+      "href": "https://chat.whatsapp.com/L9WMrarqAkc3GKFvQdv2dK"
+    },
+    {
+      "text": "WhatsApp",
+      "href": "https://chat.whatsapp.com/L9WMrarqAkc3GKFvQdv2dK"
+    },
+    {
+      "text": "História",
+      "href": "https://www.canva.com/design/DAGH5AHi9lI/UsEKbtbkLmN_ymRxGx6w4A/edit#page-2"
+    },
+    {
+      "text": "Tutoriais",
+      "href": "https://www.canva.com/design/DAGH5AHi9lI/UsEKbtbkLmN_ymRxGx6w4A/edit#page-3"
+    },
+    {
+      "text": "Avançados",
+      "href": "https://www.canva.com/design/DAGH5AHi9lI/UsEKbtbkLmN_ymRxGx6w4A/edit#page-3"
+    },
+    {
+      "text": "Servidor",
+      "href": "https://discord.gg/9CT8uPr"
+    },
+    {
+      "text": "Discord",
+      "href": "https://discord.gg/9CT8uPr"
+    },
+    {
+      "text": "Criadores de Conteúdo",
+      "href": "https://www.canva.com/design/DAGH5AHi9lI/UsEKbtbkLmN_ymRxGx6w4A/edit#page-7"
+    },
+    {
+      "text": "FAQ/Sugestões",
+      "href": "https://www.canva.com/design/DAGH5AHi9lI/UsEKbtbkLmN_ymRxGx6w4A/edit#page-8"
+    },
+    {
+      "text": "Área",
+      "href": "https://bit.ly/AllStarJumpBR"
+    },
+    {
+      "text": "Jumper",
+      "href": "https://bit.ly/AllStarJumpBR"
+    },
+    {
+      "text": "Votar",
+      "href": "https://bit.ly/VotarJumpBR"
+    },
+    {
+      "text": "Resultados",
+      "href": "https://bit.ly/Round2JumpBR"
+    },
+    {
+      "text": "INÍCIO",
+      "href": "https://www.canva.com/design/DAGH5AHi9lI/UsEKbtbkLmN_ymRxGx6w4A/edit#page-0"
+    },
+    {
+      "text": "JUN",
+      "href": "https://github.com/Mreaggle/JumpstyleUnitedNations/"
+    },
+    {
+      "text": "O Museu da comunidade Global de Jumpstyle",
+      "href": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Global/global-timeline.md"
+    },
+    {
+      "text": "INÍCIO",
+      "href": "https://www.canva.com/design/DAGH5AHi9lI/UsEKbtbkLmN_ymRxGx6w4A/edit#page-0"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "jumpstyle-brasil-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Site estatico da comunidade Jumpstyle Brasil, reconstruido a partir do pacote de migracao.",
+  "scripts": {
+    "check": "node scripts/check.mjs",
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/test.mjs",
+    "audit:content": "node scripts/audit-content.mjs",
+    "audit:links": "node scripts/audit-links.mjs",
+    "preview": "node scripts/serve.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "SEE LICENSE IN NOTICE.md"
+}

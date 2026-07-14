@@ -1,0 +1,396 @@
+import fs from "node:fs";
+import path from "node:path";
+
+const root = process.cwd();
+const dist = path.join(root, "dist");
+const siteData = readJson("src/data/site-data.json");
+const originalContent = readJson("src/data/original-content.json");
+const routes = new Map(siteData.pages.map((page) => [page.route, page]));
+const originalByPage = new Map(originalContent.pages.map((page) => [page.page, page]));
+
+fs.rmSync(dist, { recursive: true, force: true });
+fs.mkdirSync(dist, { recursive: true });
+copyFile("src/styles/site.css", "assets/site.css");
+copyFile("src/scripts/main.js", "assets/main.js");
+copyFile("width_200.png", "assets/jumper-logo.png");
+copyFile("width_200.png", "favicon.png");
+copyDir("reference-renders", "reference-renders");
+
+for (const page of siteData.pages) {
+  writeRoute(page.route, renderPage(page));
+}
+
+writeRoute("/404.html", render404());
+writeText("robots.txt", `User-agent: *\nAllow: /\n\nSitemap: ${siteData.site.url}sitemap.xml\n`);
+writeText("sitemap.xml", renderSitemap());
+writeText("favicon.svg", renderFavicon());
+
+function copyFile(from, to) {
+  const target = path.join(dist, to);
+  fs.mkdirSync(path.dirname(target), { recursive: true });
+  fs.copyFileSync(path.join(root, from), target);
+}
+
+function readJson(file) {
+  return JSON.parse(fs.readFileSync(path.join(root, file), "utf8"));
+}
+
+function copyDir(from, to) {
+  const source = path.join(root, from);
+  if (!fs.existsSync(source)) return;
+  const target = path.join(dist, to);
+  fs.mkdirSync(target, { recursive: true });
+  for (const entry of fs.readdirSync(source, { withFileTypes: true })) {
+    if (entry.name.endsWith(":Zone.Identifier")) continue;
+    const sourcePath = path.join(source, entry.name);
+    const targetPath = path.join(target, entry.name);
+    if (entry.isDirectory()) {
+      copyDir(path.join(from, entry.name), path.join(to, entry.name));
+    } else {
+      fs.copyFileSync(sourcePath, targetPath);
+    }
+  }
+}
+
+function writeRoute(route, html) {
+  const target = route.endsWith(".html")
+    ? path.join(dist, route)
+    : path.join(dist, route, "index.html");
+  fs.mkdirSync(path.dirname(target), { recursive: true });
+  fs.writeFileSync(target, html);
+}
+
+function writeText(file, text) {
+  fs.writeFileSync(path.join(dist, file), text);
+}
+
+function renderPage(page) {
+  const original = originalByPage.get(page.sourcePage);
+  const body = [
+    renderHero(page),
+    renderRouteContent(page),
+    renderOriginalSource(original)
+  ].join("\n");
+
+  return renderShell({
+    title: page.route === "/" ? siteData.site.title : `${page.title} | Jumpstyle Brasil`,
+    description: page.lead,
+    route: page.route,
+    body
+  });
+}
+
+function renderShell({ title, description, route, body }) {
+  const canonical = new URL(route === "/" ? "" : route.slice(1), siteData.site.url).href;
+  return `<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>${escapeHtml(title)}</title>
+  <meta name="description" content="${escapeHtml(description)}">
+  <link rel="canonical" href="${canonical}">
+  <link rel="icon" href="${sitePath("favicon.png")}" type="image/png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="${siteData.site.locale}">
+  <meta property="og:title" content="${escapeHtml(title)}">
+  <meta property="og:description" content="${escapeHtml(description)}">
+  <meta property="og:url" content="${canonical}">
+  <meta property="og:image" content="${new URL("assets/jumper-logo.png", siteData.site.url).href}">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="${sitePath("assets/site.css")}">
+  <script type="application/ld+json">${JSON.stringify(jsonLd())}</script>
+</head>
+<body>
+  <div class="scroll-meter" data-scroll-meter aria-hidden="true"></div>
+  <a class="skip-link" href="#conteudo">Pular para o conteudo</a>
+  <div class="signal-bar" aria-hidden="true"><div class="signal-track"><span>JUMPSTYLE BRASIL</span><span>OLD SCHOOL</span><span>HARDJUMP</span><span>ON BEAT</span><span>POWER</span><span>COMUNIDADE</span><span>JUMPSTYLE BRASIL</span><span>OLD SCHOOL</span></div></div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="${sitePath()}" aria-label="Jumpstyle Brasil - Inicio"><span class="brand-mark"><img src="${sitePath("assets/jumper-logo.png")}" alt="" width="199" height="181"></span><span class="brand-copy"><b>Jumpstyle</b><small>Brasil</small></span></a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-button>
+        <span class="menu-icon" aria-hidden="true"></span>
+        <span class="sr-only">Abrir menu</span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Principal" data-site-nav>
+        ${siteData.nav.map((item) => `<a href="${sitePath(item.route)}"${item.route === route ? ' aria-current="page"' : ""}>${escapeHtml(item.label)}</a>`).join("")}
+      </nav>
+    </div>
+  </header>
+  <main id="conteudo">
+    ${body}
+  </main>
+  ${renderMobileDock(route)}
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand"><img src="${sitePath("assets/jumper-logo.png")}" alt="" width="199" height="181"><strong>Jumpstyle Brasil</strong></div>
+      <p>Movimento, memória e comunidade. Site reconstruído a partir do acervo original da Jumpstyle Brasil.</p>
+      <div class="link-grid">
+        ${externalLink("instagram", "Instagram oficial")}
+        ${externalLink("whatsapp", "Grupo WhatsApp")}
+        ${externalLink("discord", "Servidor Discord")}
+        ${externalLink("jun", "Museu global JUN")}
+      </div>
+    </div>
+  </footer>
+  <script src="${sitePath("assets/main.js")}" defer></script>
+</body>
+</html>`;
+}
+
+function renderHero(page) {
+  const primary = page.primaryCta ? `<a class="button" href="${sitePath(page.primaryCta.route)}">${escapeHtml(page.primaryCta.label)}<span aria-hidden="true">→</span></a>` : "";
+  const secondary = page.secondaryCta ? `<a class="button secondary" href="${sitePath(page.secondaryCta.route)}">${escapeHtml(page.secondaryCta.label)}</a>` : "";
+  return `<section class="hero">
+  <div class="section-inner hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow"><span>JSB</span>${escapeHtml(page.eyebrow)}</p>
+      <h1>${escapeHtml(page.title)}</h1>
+      <p class="lead">${escapeHtml(page.lead)}</p>
+      ${primary || secondary ? `<div class="actions">${primary}${secondary}</div>` : ""}
+    </div>
+    <aside class="hero-visual" aria-label="Seletor visual de batidas por minuto" data-beat-stage>
+      <div class="logo-stage"><span class="orbit orbit-one"></span><span class="orbit orbit-two"></span><img src="${sitePath("assets/jumper-logo.png")}" alt="Silhueta de um jumper executando um chute" width="199" height="181"></div>
+      <div class="beat-bars" aria-hidden="true">${Array.from({ length: 12 }, (_, index) => `<i style="--i:${index}"></i>`).join("")}</div>
+      <div class="bpm-control" role="group" aria-label="Escolha o BPM da animação">
+        <button type="button" data-bpm="140" aria-pressed="true"><strong>140</strong><span>Jump</span></button>
+        <button type="button" data-bpm="150" aria-pressed="false"><strong>150</strong><span>Hardstyle</span></button>
+        <button type="button" data-bpm="180" aria-pressed="false"><strong>180</strong><span>Hardcore</span></button>
+      </div>
+    </aside>
+  </div>
+</section>`;
+}
+
+function renderRouteContent(page) {
+  switch (page.route) {
+    case "/":
+      return renderHome();
+    case "/all-star/":
+      return renderAllStar();
+    case "/historia/":
+      return renderHistory();
+    case "/como-dancar/":
+      return renderHowTo();
+    case "/roadmap/":
+      return renderRoadmap();
+    case "/manifesto/":
+      return renderManifesto();
+    case "/musicas/":
+      return renderMusic();
+    case "/criadores/":
+      return renderCreators();
+    case "/faq/":
+      return renderFaq();
+    default:
+      return "";
+  }
+}
+
+function renderHome() {
+  const quick = [
+    ["Como dancar", "/como-dancar/", "Tutorial fundamental, avancados e playlists para comecar."],
+    ["All-Star", "/all-star/", "Area Jumper, votacao e resultados externos preservados."],
+    ["Historia", "/historia/", "Linha do tempo original e ponte para o museu JUN."],
+    ["Musicas", "/musicas/", "BPMs, exemplos de musicas e playlists oficiais."],
+    ["Manifesto", "/manifesto/", "Valores, regras e missao da comunidade."],
+    ["Criadores", "/criadores/", "Handles documentados no snapshot original."]
+  ];
+  return `<section class="section">
+  <div class="section-inner">
+    <div class="section-head"><h2>Entre no passo</h2><p>Os atalhos principais do site original viraram cards compactos para navegar rapido no celular.</p></div>
+    <div class="quick-grid">${quick.map(([title, href, text], index) => `<article class="route-card" data-reveal><span class="route-number">0${index + 1}</span><div><strong>${escapeHtml(title)}</strong><p>${escapeHtml(text)}</p></div><a href="${sitePath(href)}" aria-label="Abrir ${escapeHtml(title)}"><span>Abrir área</span><b aria-hidden="true">↗</b></a></article>`).join("")}</div>
+  </div>
+</section>
+<section class="section">
+  <div class="section-inner">
+    <div class="section-head"><h2>Comunidade</h2><p>CTAs externos originais preservados com rotulo claro de saida.</p></div>
+    <div class="link-grid">
+      ${externalLink("whatsapp", "Grupo WhatsApp")}
+      ${externalLink("discord", "Servidor Discord")}
+      ${externalLink("instagram", "Instagram oficial")}
+      ${externalLink("tiktokHub", "Conteudo Jumpstyle no TikTok")}
+    </div>
+  </div>
+</section>
+<section class="section">
+  <div class="section-inner card-grid">
+    ${card("JUN", "Museu da comunidade global de Jumpstyle e base documental prioritaria para ampliacoes verificadas.", externalLink("jun", "Abrir JUN"))}
+    ${card("Timeline global", "Fonte documental externa para contexto historico, sem substituir o texto original da Jumpstyle Brasil.", externalLink("junTimeline", "Ver timeline"))}
+    ${card("Figuras historicas", "Repositorio de nomes e registros globais mantido no Jumpstyle United Nations.", externalLink("junFigures", "Ver figuras"))}
+  </div>
+</section>
+<section class="section">
+  <div class="section-inner">
+    <div class="section-head"><h2>Registro original</h2><p>Render da primeira pagina usado como evidencia visual, nao como base de codigo.</p></div>
+    ${referenceShot(1, "Render da pagina inicial original da Jumpstyle Brasil")}
+  </div>
+</section>`;
+}
+
+function renderAllStar() {
+  return `<section class="section"><div class="section-inner">
+    <div class="section-head"><h2>Links do evento</h2><p>Destinos externos originais do PDF, preservados como contrato de migracao.</p></div>
+    <div class="card-grid">
+      ${card("Area Jumper", "Acesso externo para participantes do All-Star.", externalLink("allStarArea", "Abrir area"))}
+      ${card("Votar", "Destino externo de votacao do All-Star.", externalLink("allStarVote", "Votar"))}
+      ${card("Resultados", "Rounds e resultados externos preservados.", externalLink("allStarResults", "Ver resultados"))}
+    </div>
+  </div></section>
+  <section class="section"><div class="section-inner">${referenceShot(2, "Render original da pagina All-Star")}</div></section>`;
+}
+
+function renderHistory() {
+  return `<section class="section"><div class="section-inner">
+    <div class="section-head"><h2>Linha do tempo original</h2><p>Conteudo reorganizado semanticamente a partir da pagina Historia do PDF.</p></div>
+    <ol class="timeline">${siteData.timeline.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ol>
+  </div></section>
+  <section class="section"><div class="section-inner card-grid">
+    ${card("Museu global JUN", "Referencia documental externa indicada no site original.", externalLink("jun", "Abrir museu"))}
+    ${card("Timeline global", "Ampliacoes historicas devem citar esta fonte quando usadas.", externalLink("junTimeline", "Abrir timeline"))}
+    ${card("Resumo original", "Jumpstyle e hoje uma danca digital expressiva e competitiva, conectando jumpers de todo o mundo.", "")}
+  </div></section>`;
+}
+
+function renderHowTo() {
+  return `<section class="section"><div class="section-inner">
+    <div class="section-head"><h2>Trilha de aprendizado</h2><p>Os links originais foram agrupados por uso: fundamento, avancado e biblioteca.</p></div>
+    <div class="card-grid">
+      ${card("Tutorial Fundamental", "Primeiro contato com base, ritmo e execucao.", externalLink("fundamentalYoutube", "Assistir no YouTube"))}
+      ${card("Tutoriais Avancados", "Videos curtos e repertorio para evoluir tricks.", `${externalLink("advancedTiktok", "Abrir TikTok")} ${externalLink("mreaggleTiktok", "Video Mreaggle")}`)}
+      ${card("Playlists", "Biblioteca externa de aulas e referencias.", externalLink("youtubePlaylists", "Ver playlists"))}
+    </div>
+  </div></section>
+  <section class="section"><div class="section-inner">${card("Roadmap", "Depois do fundamento, avance pelos niveis originais sem transformar a trilha em graduacao oficial inventada.", `<a class="button" href="${sitePath("/roadmap/")}">Abrir roadmap</a>`)}</div></section>`;
+}
+
+function renderRoadmap() {
+  return `<section class="section"><div class="section-inner">
+    <div class="section-head"><h2>Checklist local</h2><p>Marcações ficam somente no seu navegador. A lista preserva todos os itens originais.</p></div>
+    <div class="roadmap">${siteData.roadmap.map((level) => `<article class="roadmap-level" data-roadmap-level>
+      <div class="roadmap-top"><h3>${escapeHtml(level.level)}</h3><strong data-roadmap-count>0/${level.items.length}</strong></div>
+      <div class="meter" data-roadmap-meter aria-hidden="true"></div>
+      <div class="check-list">${level.items.map((item) => `<label><input data-roadmap-check type="checkbox" value="${slug(level.level)}:${slug(item)}"> ${escapeHtml(item)}</label>`).join("")}</div>
+    </article>`).join("")}</div>
+  </div></section>`;
+}
+
+function renderManifesto() {
+  const original = originalByPage.get(6).text;
+  const lines = original.split("\n").filter((line) => line.trim() && line !== "Mr.");
+  return `<section class="section"><div class="section-inner">
+    <div class="section-head"><h2>Indice</h2><p>Prologo, Liberdade de Expressao, Dedicacao e Evolucao, Integridade e Justica, Comunidade e Inclusao.</p></div>
+    <article class="prose">${lines.map((line) => `<p>${escapeHtml(line)}</p>`).join("")}</article>
+  </div></section>`;
+}
+
+function renderMusic() {
+  const jump = ["Holiday - Patrick Jumpen", "The Return - DJ Coone", "Madness - Mark with a K"];
+  const hardstyle = ["Tonight - Headhunterz & Wildstylez ft. Noisecontrollers", "Imaginary - Brennan Heart", "Symbols - Frontliner"];
+  return `<section class="section"><div class="section-inner card-grid">
+    ${card("Jump / 140 BPM", "O Jumpstyle ja foi somente um genero musical, conhecido por Jump.", jump.map((item) => `<p>${escapeHtml(item)}</p>`).join(""))}
+    ${card("Hardstyle / 150 BPM", "Hoje tambem se danca usando Hardstyle.", hardstyle.map((item) => `<p>${escapeHtml(item)}</p>`).join(""))}
+    ${card("Hardcore / 180 BPM", "Hardcore tambem aparece como energia de treino, mantendo o Oldschool com Jump.", `${externalLink("officialPlaylist", "Playlist oficial")} ${externalLink("youtubeMusicPlaylist", "Playlist YouTube")}`)}
+  </div></section>`;
+}
+
+function renderCreators() {
+  return `<section class="section"><div class="section-inner">
+    <div class="section-head"><h2>Handles preservados</h2><p>Pagina original mostra snapshots. Sem verificacao individual de URL oficial, os nomes ficam como registro historico.</p></div>
+    <div class="creator-grid">${siteData.creators.map((name) => `<article class="creator-card"><strong>@${escapeHtml(name)}</strong><p>Registro historico do site original. Biografia, link oficial e metricas atuais nao foram inferidos.</p></article>`).join("")}</div>
+  </div></section>
+  <section class="section"><div class="section-inner">${referenceShot(8, "Render original da pagina Criadores com snapshots")}</div></section>`;
+}
+
+function renderFaq() {
+  return `<section class="section"><div class="section-inner">
+    <div class="faq-tools"><label class="sr-only" for="faq-filter">Filtrar FAQ</label><input id="faq-filter" data-faq-filter type="search" placeholder="Buscar técnica, evento, história..."><span data-faq-count>${siteData.faq.length} respostas</span></div>
+    <div class="faq-list">${siteData.faq.map((item, index) => `<details class="faq-item" data-faq-item ${index === 0 ? "open" : ""}><summary>${escapeHtml(item.question)}</summary><p>${escapeHtml(item.answer)}</p></details>`).join("")}</div>
+  </div></section>`;
+}
+
+function renderOriginalSource(original) {
+  return `<section class="section"><div class="section-inner">
+    <details class="source-original">
+      <summary>Texto original preservado da pagina ${original.page}: ${escapeHtml(original.title)}</summary>
+      <pre>${escapeHtml(original.text)}</pre>
+    </details>
+  </div></section>`;
+}
+
+function render404() {
+  return renderShell({
+    title: "Pagina nao encontrada | Jumpstyle Brasil",
+    description: "Rota nao encontrada no site estatico da Jumpstyle Brasil.",
+    route: "/404.html",
+    body: `<section class="hero"><div class="section-inner"><p class="eyebrow">404</p><h1>Página fora do beat</h1><p class="lead">A rota não existe no build estático. Volte para o início ou use a navegação principal.</p><div class="actions"><a class="button" href="${sitePath()}">Início</a><a class="button secondary" href="${sitePath("/faq/")}">FAQ</a></div></div></section>`
+  });
+}
+
+function renderSitemap() {
+  const urls = siteData.pages.map((page) => `<url><loc>${new URL(page.route === "/" ? "" : page.route.slice(1), siteData.site.url).href}</loc></url>`);
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${urls.join("")}</urlset>\n`;
+}
+
+function renderFavicon() {
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="8" fill="#070b12"/><path d="M10 42h14V14h10v28c0 8-5 12-13 12-4 0-8-1-11-3l4-9c2 1 4 2 6 2 3 0 4-1 4-5V24H10V14h24v40H10V42Zm30 1c3 2 7 3 10 3 3 0 5-1 5-3 0-6-18-2-18-17 0-8 7-13 16-13 5 0 10 1 14 4l-5 9c-3-2-6-3-9-3s-5 1-5 3c0 6 18 2 18 17 0 8-7 13-17 13-6 0-12-2-16-5l7-8Z" fill="#00f0c8"/></svg>`;
+}
+
+function card(title, text, extra = "") {
+  return `<article class="card"><strong>${escapeHtml(title)}</strong><p>${escapeHtml(text)}</p>${extra}</article>`;
+}
+
+function externalLink(key, label = undefined) {
+  const link = siteData.externalLinks[key];
+  return `<a class="button secondary external" href="${link.url}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(label || link.label)} - abre site externo">${escapeHtml(label || link.label)}</a>`;
+}
+
+function referenceShot(page, alt) {
+  return `<figure class="reference-shot"><img src="${sitePath(`reference-renders/page-${page}.png`)}" alt="${escapeHtml(alt)}" loading="lazy"><figcaption class="sr-only">${escapeHtml(alt)}</figcaption></figure>`;
+}
+
+function renderMobileDock(route) {
+  const items = [
+    ["Início", "/"],
+    ["Dançar", "/como-dancar/"],
+    ["Roadmap", "/roadmap/"],
+    ["Músicas", "/musicas/"]
+  ];
+  return `<nav class="mobile-dock" aria-label="Atalhos mobile">${items.map(([label, href]) => `<a href="${sitePath(href)}"${route === href ? ' aria-current="page"' : ""}><span aria-hidden="true"></span>${label}</a>`).join("")}<button type="button" data-dock-menu aria-label="Abrir menu completo"><span aria-hidden="true"></span>Mais</button></nav>`;
+}
+
+function sitePath(value = "/") {
+  const base = siteData.site.base || "/";
+  const cleanBase = base.endsWith("/") ? base : `${base}/`;
+  if (value === "/") return cleanBase;
+  return `${cleanBase}${String(value).replace(/^\//, "")}`;
+}
+
+function jsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Jumpstyle Brasil",
+    url: siteData.site.url,
+    sameAs: [
+      siteData.externalLinks.instagram.url,
+      siteData.externalLinks.jun.url
+    ]
+  };
+}
+
+function escapeHtml(value) {
+  return String(value)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#39;");
+}
+
+function slug(value) {
+  return String(value).normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+}

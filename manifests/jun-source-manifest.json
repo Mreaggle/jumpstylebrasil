@@ -1,0 +1,20 @@
+{
+  "repository": "Mreaggle/JumpstyleUnitedNations",
+  "default_branch": "main",
+  "snapshot_commit_observed": "35812ad5e5e73194a765320a7c7f04bc06761d10",
+  "priority_sources": [
+    {
+      "path": "JumpstyleTimeline/Global/global-timeline.md",
+      "observed_blob_sha": "02aa62c004dcf0a2723bb0094fb44b9c7982a053"
+    },
+    {
+      "path": "JumpstyleTimeline/Brazil/br-timeline.md",
+      "observed_blob_sha": "2efd99916e7a34ae219f0b5cd797d48598751c7f"
+    },
+    {
+      "path": "JUNToolkit/KeyFiguresWorldwide/Dance/README.md",
+      "observed_blob_sha": "19dccaaa1bf7c213976a5f12005c612c79abf787"
+    }
+  ],
+  "ingestion_warning": "The repository contains templates, placeholder text, # links and incomplete entries. Do not publish placeholders such as '[Event or Contribution 1]' or '[Brief Overview of Contributions]'. Only ingest substantive, traceable material."
+}
