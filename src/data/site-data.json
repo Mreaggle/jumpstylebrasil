@@ -211,7 +211,7 @@
       { "order": 14, "name": "Tauan", "grade": "revelator", "active": true, "titles": [] },
       { "order": 15, "name": "Blaze", "grade": "revelator", "active": true, "titles": [] },
       { "order": 16, "name": "Neo’Trox", "grade": "dominus", "active": true, "titles": [] },
-      { "order": 17, "name": "Blackzin", "grade": "revelator", "active": true, "titles": [] },
+      { "order": 17, "name": "Blackzin", "grade": "revelator", "active": false, "titles": [] },
       { "order": 18, "name": "Jota", "grade": "revelator", "active": false, "titles": ["desertor"] },
       { "order": 19, "name": "Lux", "grade": "revelator", "active": true, "titles": [] },
       { "order": 20, "name": "Dannyux", "grade": "revelator", "active": false, "titles": ["desertor"] },
