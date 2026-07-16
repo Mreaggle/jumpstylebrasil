@@ -1311,6 +1311,14 @@ h3 { font-size: 2rem; }
 .jun-section-heading p { max-width: 720px; margin: 0; color: var(--jun-muted); }
 .jun-timeline-section { background: #040811; }
 
+.jun-view-tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin-bottom: 1rem; border: 1px solid var(--jun-line); border-radius: 4px; background: var(--jun-panel); }
+.jun-view-tabs button { min-width: 0; min-height: 72px; display: grid; align-content: center; gap: .2rem; padding: .75rem 1rem; border: 0; border-right: 1px solid var(--jun-line); background: transparent; color: var(--jun-muted); text-align: left; cursor: pointer; }
+.jun-view-tabs button:last-child { border-right: 0; }
+.jun-view-tabs button[aria-selected="true"] { background: var(--jun-blue); color: var(--jun-white); }
+.jun-view-tabs span { font-family: "Pixel Operator", monospace; font-size: 1.05rem; font-weight: 700; text-transform: uppercase; }
+.jun-view-tabs small { color: inherit; font-size: .58rem; font-weight: 700; text-transform: uppercase; opacity: .8; }
+[data-jun-view-panel][hidden] { display: none; }
+
 .jun-timeline-tools { margin-bottom: 1rem; border: 1px solid var(--jun-line); border-radius: 4px; background: var(--jun-panel); }
 .jun-era-filter { display: flex; gap: 0; overflow-x: auto; border-bottom: 1px solid var(--jun-line); scrollbar-color: var(--jun-green) transparent; }
 .jun-era-filter button { min-width: 116px; min-height: 64px; display: grid; align-content: center; flex: 1 0 auto; padding: .55rem .7rem; border: 0; border-right: 1px solid var(--jun-line); background: transparent; color: var(--jun-muted); text-align: left; cursor: pointer; }
@@ -1325,7 +1333,8 @@ h3 { font-size: 2rem; }
 .jun-search-row select { cursor: pointer; }
 .jun-timeline-meta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .7rem; margin: 1rem 0; }
 .jun-timeline-meta p { margin: 0; color: var(--jun-green); font-family: "Pixel Operator", monospace; font-size: 1rem; }
-.jun-timeline-meta a { color: var(--jun-cyan); font-size: .75rem; font-weight: 700; text-decoration: none; }
+.jun-timeline-meta a,
+.jun-timeline-meta button { padding: 0; border: 0; background: transparent; color: var(--jun-cyan); font-size: .75rem; font-weight: 700; text-decoration: none; cursor: pointer; }
 .jun-timeline { position: relative; display: grid; gap: .65rem; }
 .jun-timeline::before { content: ""; position: absolute; top: 0; bottom: 0; left: 39px; width: 1px; background: rgba(37, 184, 244, .28); }
 .jun-event {
@@ -1351,6 +1360,46 @@ h3 { font-size: 2rem; }
 .jun-event > a { grid-column: 2; display: flex; align-items: center; justify-content: space-between; gap: .5rem; padding: .75rem 1rem; border-top: 1px solid var(--jun-line); color: var(--jun-cyan); font-size: .68rem; font-weight: 700; text-decoration: none; }
 .jun-event > a b { color: var(--jun-green); font-size: 1rem; }
 .jun-empty { margin: 2rem 0 0; padding: 2rem; border: 1px solid var(--jun-line); color: var(--jun-muted); text-align: center; }
+
+.jun-full-archive { min-width: 0; scroll-margin-top: 88px; }
+.jun-full-head { display: grid; gap: 1rem; padding: 1.25rem 0 2rem; border-bottom: 1px solid var(--jun-line); }
+.jun-full-head > div > p:first-child { margin: 0 0 .6rem; color: var(--jun-green); font-family: "Pixel Operator", monospace; font-size: .78rem; text-transform: uppercase; }
+.jun-full-head h3 { color: var(--jun-white); font-family: "Pixel Operator", monospace; font-size: 2.35rem; line-height: .9; }
+.jun-full-head > div > p:last-child { max-width: 800px; margin: .8rem 0 0; color: var(--jun-muted); font-size: .82rem; }
+.jun-full-head > a { min-height: 46px; display: inline-flex; align-items: center; justify-content: space-between; gap: 1rem; align-self: end; padding: .7rem .8rem; border: 1px solid var(--jun-cyan); border-radius: 3px; color: var(--jun-cyan); font-size: .7rem; font-weight: 700; text-decoration: none; text-transform: uppercase; }
+.jun-full-tools { display: grid; gap: .7rem; padding: 1rem 0; border-bottom: 1px solid var(--jun-line); }
+.jun-full-tools label { display: grid; gap: .35rem; color: var(--jun-green); font-size: .58rem; font-weight: 700; text-transform: uppercase; }
+.jun-full-tools input { width: 100%; min-height: 48px; padding: .7rem .8rem; border: 1px solid var(--jun-line); border-radius: 3px; background: #030712; color: var(--jun-white); font-size: .86rem; }
+.jun-full-tools p { margin: 0; color: var(--jun-cyan); font-family: "Pixel Operator", monospace; font-size: .92rem; }
+.jun-year-nav { display: flex; gap: 1px; overflow-x: auto; padding: 1rem 0; border-bottom: 1px solid var(--jun-line); scrollbar-color: var(--jun-green) transparent; }
+.jun-year-nav a { flex: 0 0 auto; min-width: 62px; padding: .5rem; background: var(--jun-panel); color: var(--jun-cyan); font-family: "Pixel Operator", monospace; font-size: .8rem; text-align: center; text-decoration: none; }
+.jun-year-nav a:hover { background: var(--jun-blue); color: var(--jun-white); }
+.jun-full-eras { display: grid; }
+.jun-full-era { padding: 2.4rem 0; border-bottom: 1px solid var(--jun-line); }
+.jun-full-era[hidden] { display: none; }
+.jun-full-era > header { display: grid; grid-template-columns: 44px minmax(0, 1fr); align-items: start; gap: .7rem; margin-bottom: 1rem; }
+.jun-full-era > header span { color: var(--jun-green); font-family: "Pixel Operator", monospace; font-size: .9rem; }
+.jun-full-era > header h3 { color: var(--jun-white); font-family: "Pixel Operator", monospace; font-size: 1.65rem; line-height: .95; }
+.jun-full-year { scroll-margin-top: 88px; border-top: 1px solid var(--jun-line); }
+.jun-full-year:last-child { border-bottom: 1px solid var(--jun-line); }
+.jun-full-year[hidden] { display: none; }
+.jun-full-year summary { min-height: 64px; display: grid; grid-template-columns: minmax(0, 1fr) auto 24px; align-items: center; gap: 1rem; padding: .7rem 0; color: var(--jun-white); cursor: pointer; list-style: none; }
+.jun-full-year summary::-webkit-details-marker { display: none; }
+.jun-full-year summary strong { font-family: "Pixel Operator", monospace; font-size: 1.8rem; }
+.jun-full-year summary span { color: var(--jun-muted); font-size: .62rem; font-weight: 700; text-transform: uppercase; }
+.jun-full-year summary::after { content: "+"; grid-column: 3; grid-row: 1; justify-self: end; color: var(--jun-green); font-family: "Pixel Operator", monospace; font-size: 1.2rem; }
+.jun-full-year[open] summary::after { content: "−"; }
+.jun-full-year-body { padding: 0 0 1rem; }
+.jun-full-year blockquote { margin: 0 0 .7rem; padding: .8rem 1rem; border-left: 3px solid var(--jun-green); background: var(--jun-panel); color: var(--jun-muted); font-size: .78rem; }
+.jun-full-year ol { display: grid; gap: 1px; margin: 0; padding: 0; background: var(--jun-line); list-style: none; }
+.jun-full-year li { min-width: 0; display: grid; grid-template-columns: 86px minmax(0, 1fr); background: var(--jun-panel); }
+.jun-full-year li[hidden] { display: none; }
+.jun-full-year li > span { padding: .8rem .65rem; border-right: 1px solid var(--jun-line); color: var(--jun-green); font-family: "Pixel Operator", monospace; font-size: .72rem; text-transform: uppercase; }
+.jun-full-year li > div { min-width: 0; padding: .8rem; color: var(--jun-muted); font-size: .78rem; overflow-wrap: anywhere; }
+.jun-full-year li a { color: var(--jun-cyan); font-weight: 600; text-decoration: none; }
+.jun-full-year li a span { margin-left: .3rem; color: var(--jun-green); }
+.jun-full-year code { padding: .1rem .25rem; background: #02050c; color: var(--jun-green); font-family: "Pixel Operator", monospace; }
+.jun-full-pending { margin: 0; padding: 1rem; border: 1px dashed var(--jun-line); color: var(--jun-muted); font-size: .75rem; }
 
 .jun-nations-section { background: #02050c; }
 .jun-country-grid { display: grid; gap: .7rem; }
@@ -1467,6 +1516,11 @@ h3 { font-size: 2rem; }
   .jun-museum-title { font-size: 1.65rem; }
   .jun-hero-stats { grid-template-columns: repeat(4, 1fr); }
   .jun-search-row { grid-template-columns: 1.3fr .7fr; }
+  .jun-full-head { grid-template-columns: minmax(0, 1fr) 210px; align-items: end; }
+  .jun-full-tools { grid-template-columns: minmax(0, 1fr) auto; align-items: end; }
+  .jun-full-era > header { grid-template-columns: 70px minmax(0, 1fr); }
+  .jun-full-era > header h3 { font-size: 2.2rem; }
+  .jun-full-year li { grid-template-columns: 130px minmax(0, 1fr); }
   .jun-section-heading { grid-template-columns: 1.1fr .9fr; align-items: end; }
   .jun-section-heading h2 { font-size: 4rem; }
   .jun-event { grid-template-columns: 110px minmax(0, 1fr) 180px; align-items: stretch; }

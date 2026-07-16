@@ -129,6 +129,77 @@ document.querySelectorAll("[data-jun-era]").forEach((button) => {
 junSearch?.addEventListener("input", updateJunTimeline);
 junCountry?.addEventListener("change", updateJunTimeline);
 
+const junViewButtons = [...document.querySelectorAll("[data-jun-view]")];
+const junViewPanels = [...document.querySelectorAll("[data-jun-view-panel]")];
+
+function setJunView(view, { focus = false, scroll = false } = {}) {
+  const activeButton = junViewButtons.find((button) => button.dataset.junView === view);
+  if (!activeButton) return;
+  junViewButtons.forEach((button) => {
+    const active = button === activeButton;
+    button.setAttribute("aria-selected", String(active));
+    button.tabIndex = active ? 0 : -1;
+  });
+  junViewPanels.forEach((panel) => {
+    panel.hidden = panel.dataset.junViewPanel !== view;
+  });
+  if (focus) activeButton.focus();
+  if (scroll) document.querySelector("#timeline")?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+junViewButtons.forEach((button, index) => {
+  button.addEventListener("click", () => setJunView(button.dataset.junView || "curated"));
+  button.addEventListener("keydown", (event) => {
+    if (!["ArrowLeft", "ArrowRight"].includes(event.key)) return;
+    event.preventDefault();
+    const direction = event.key === "ArrowRight" ? 1 : -1;
+    const next = junViewButtons[(index + direction + junViewButtons.length) % junViewButtons.length];
+    setJunView(next.dataset.junView || "curated", { focus: true });
+  });
+});
+
+document.querySelectorAll("[data-jun-open-complete], [data-jun-switch-complete]").forEach((control) => {
+  control.addEventListener("click", (event) => {
+    event.preventDefault();
+    setJunView("complete", { scroll: true });
+    history.replaceState(null, "", "#complete-archive");
+  });
+});
+
+const junFullSearch = document.querySelector("[data-jun-full-search]");
+const junFullEvents = [...document.querySelectorAll("[data-jun-full-event]")];
+const junFullYears = [...document.querySelectorAll("[data-jun-full-year]")];
+const junFullEras = [...document.querySelectorAll("[data-jun-full-era]")];
+
+function updateJunFullTimeline() {
+  const query = junFullSearch?.value.trim().toLocaleLowerCase("en") || "";
+  let visible = 0;
+
+  junFullYears.forEach((year) => {
+    const metaMatches = Boolean(query && (year.dataset.junFullMeta || "").includes(query));
+    let yearVisible = 0;
+    year.querySelectorAll("[data-jun-full-event]").forEach((event) => {
+      const matches = !query || metaMatches || (event.dataset.junFullSearchable || "").includes(query);
+      event.hidden = !matches;
+      if (matches) yearVisible += 1;
+    });
+    year.hidden = Boolean(query && !metaMatches && yearVisible === 0);
+    if (query && !year.hidden) year.open = true;
+    visible += yearVisible;
+  });
+
+  junFullEras.forEach((era) => {
+    era.hidden = [...era.querySelectorAll("[data-jun-full-year]")].every((year) => year.hidden);
+  });
+  const count = document.querySelector("[data-jun-full-count]");
+  if (count) count.textContent = `${visible} detailed ${visible === 1 ? "record" : "records"} on view`;
+  const empty = document.querySelector("[data-jun-full-empty]");
+  if (empty) empty.hidden = visible !== 0;
+}
+
+junFullSearch?.addEventListener("input", updateJunFullTimeline);
+if (location.hash === "#complete-archive") setJunView("complete");
+
 document.querySelectorAll("[data-faq-filter]").forEach((input) => {
   input.addEventListener("input", () => {
     const query = input.value.trim().toLocaleLowerCase("pt-BR");

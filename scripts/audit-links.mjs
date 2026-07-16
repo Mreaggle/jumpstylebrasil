@@ -39,8 +39,9 @@ function collectFiles(dir, ext) {
 }
 
 function existsRoute(href) {
-  let route = href;
+  let route = href.split(/[?#]/)[0];
   if (siteBase && route.startsWith(siteBase)) route = route.slice(siteBase.length) || "/";
+  if (path.extname(route)) return fs.existsSync(path.join("dist", route));
   if (route.startsWith("/assets/") || route.startsWith("/reference-renders/") || route === "/favicon.svg" || route === "/favicon.png") {
     return fs.existsSync(path.join("dist", route));
   }

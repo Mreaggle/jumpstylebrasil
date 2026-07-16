@@ -5,6 +5,8 @@ const root = process.cwd();
 const dist = path.join(root, "dist");
 const siteData = readJson("src/data/site-data.json");
 const junData = readJson("src/data/jun-data.json");
+const globalTimelineMarkdown = fs.readFileSync(path.join(root, "src/data/global-timeline.md"), "utf8");
+const globalTimeline = parseGlobalTimeline(globalTimelineMarkdown);
 const originalContent = readJson("src/data/original-content.json");
 const originalByPage = new Map(originalContent.pages.map((page) => [page.page, page]));
 
@@ -29,6 +31,7 @@ writeText("sitemap.xml", renderSitemap());
 writeText("favicon.svg", renderFavicon());
 writeText("llms.txt", renderLlmsIndex());
 writeText("JUN/llms.txt", renderJunLlms());
+writeText("JUN/global-timeline.md", globalTimelineMarkdown);
 
 function copyFile(from, to) {
   const target = path.join(dist, to);
@@ -389,7 +392,7 @@ function renderJunHero() {
       <h1><span>Jumpstyle</span> United Nations</h1>
       <p class="jun-museum-title">${escapeHtml(junData.tagline)}</p>
       <p class="lead">${escapeHtml(junData.lead)}</p>
-      <div class="jun-actions"><a class="jun-button" href="#timeline">Enter the timeline <span aria-hidden="true">↓</span></a><a class="jun-button jun-button-ghost" href="${junData.repositoryUrl}" target="_blank" rel="noopener noreferrer">Open the archive <span aria-hidden="true">↗</span></a></div>
+      <div class="jun-actions"><a class="jun-button" href="#timeline">Enter the timeline <span aria-hidden="true">↓</span></a><a class="jun-button jun-button-ghost" href="#complete-archive" data-jun-open-complete>Read the complete record <span aria-hidden="true">↓</span></a></div>
     </div>
     <div class="jun-emblem" aria-label="Jumpstyle United Nations emblem">
       <span class="jun-emblem-axis" aria-hidden="true"></span>
@@ -397,7 +400,7 @@ function renderJunHero() {
       <p><span>Archive coordinates</span> 50.8503 N / 4.3517 E</p>
     </div>
   </div>
-  <div class="jun-hero-stats" aria-label="Archive overview"><div><strong>${startYear}-${endYear}</strong><span>documented range</span></div><div><strong>${junData.timeline.length}</strong><span>featured milestones</span></div><div><strong>${junData.countries.length}</strong><span>national archives</span></div><div><strong>${junData.figures.length}</strong><span>key figures</span></div></div>
+  <div class="jun-hero-stats" aria-label="Archive overview"><div><strong>${startYear}-${endYear}</strong><span>documented range</span></div><div><strong>${junData.timeline.length}/${globalTimeline.events.length}</strong><span>featured / full records</span></div><div><strong>${junData.countries.length}</strong><span>national archives</span></div><div><strong>${junData.figures.length}</strong><span>key figures</span></div></div>
 </section>`;
 }
 
@@ -407,13 +410,22 @@ function renderJun() {
   <div class="section-inner">
     <p class="jun-section-code">01 // THE GLOBAL TIMELINE</p>
     <div class="jun-section-heading"><h2>From club floors to a world network</h2><p>Every milestone links back to a record, publication, video or preserved community page. The full research timeline remains open for national perspectives and new evidence.</p></div>
-    <div class="jun-timeline-tools">
+    <div class="jun-view-tabs" role="tablist" aria-label="Global Timeline views">
+      <button type="button" role="tab" aria-selected="true" aria-controls="jun-curated-timeline" data-jun-view="curated"><span>Curated highlights</span><small>${junData.timeline.length} milestones</small></button>
+      <button type="button" role="tab" aria-selected="false" aria-controls="complete-archive" data-jun-view="complete"><span>Complete record</span><small>${globalTimeline.events.length} detailed entries</small></button>
+    </div>
+    <div id="jun-curated-timeline" role="tabpanel" data-jun-view-panel="curated">
+      <div class="jun-timeline-tools">
       <div class="jun-era-filter" role="group" aria-label="Filter timeline by era"><button type="button" data-jun-era="all" aria-pressed="true">All eras</button>${junData.eras.map((era) => `<button type="button" data-jun-era="${era.id}" aria-pressed="false"><span>${escapeHtml(era.label)}</span><small>${era.years}</small></button>`).join("")}</div>
       <div class="jun-search-row"><label><span>Search the archive</span><input type="search" data-jun-search placeholder="Name, event, country or year"></label><label><span>National view</span><select data-jun-country><option value="all">All countries</option>${countryOptions}</select></label></div>
+      </div>
+      <div class="jun-timeline-meta"><p data-jun-count>${junData.timeline.length} milestones on view</p><button type="button" data-jun-switch-complete>Open all ${globalTimeline.events.length} detailed records <span aria-hidden="true">→</span></button></div>
+      <div class="jun-timeline" data-jun-timeline>${junData.timeline.map(renderJunEvent).join("")}</div>
+      <p class="jun-empty" data-jun-empty hidden>No milestones match this view.</p>
     </div>
-    <div class="jun-timeline-meta"><p data-jun-count>${junData.timeline.length} milestones on view</p><a href="${junData.timelineUrl}" target="_blank" rel="noopener noreferrer">Read the complete research timeline <span aria-hidden="true">↗</span></a></div>
-    <div class="jun-timeline" data-jun-timeline>${junData.timeline.map(renderJunEvent).join("")}</div>
-    <p class="jun-empty" data-jun-empty hidden>No milestones match this view.</p>
+    <div id="complete-archive" class="jun-full-archive" role="tabpanel" data-jun-view-panel="complete" hidden>
+      ${renderJunFullTimeline()}
+    </div>
   </div>
 </section>
 <section class="jun-section jun-nations-section" id="nations">
@@ -442,6 +454,119 @@ function renderJun() {
   </div>
 </section>
 <section class="jun-final"><div class="section-inner"><img src="${sitePath("assets/jun-logo.png")}" alt="" width="1080" height="1080"><p>Jumpstyle United Nations</p><strong>Every country holds a piece.<br>The archive keeps them together.</strong><div><a class="jun-button" href="${junData.repositoryUrl}" target="_blank" rel="noopener noreferrer">Contribute on GitHub <span aria-hidden="true">↗</span></a><a class="jun-button jun-button-dark" href="#timeline">Return to timeline <span aria-hidden="true">↑</span></a></div></div></section>`;
+}
+
+function renderJunFullTimeline() {
+  const years = [...new Set(globalTimeline.eras.flatMap((era) => era.years.map((year) => year.year)))];
+  const anchoredYears = new Set();
+  return `<div class="jun-full-head">
+    <div><p>Canonical source transcription</p><h3>Every Global Timeline record</h3><p>${escapeHtml(globalTimeline.preamble)} The complete view below preserves all ${globalTimeline.events.length} detailed entries, the foundational context and empty year markers from the source Markdown.</p></div>
+    <a href="${sitePath("JUN/global-timeline.md")}" target="_blank" rel="noopener noreferrer">Open raw Markdown <span aria-hidden="true">↗</span></a>
+  </div>
+  <div class="jun-full-tools">
+    <label><span>Search all details</span><input type="search" data-jun-full-search placeholder="Person, meeting, country, track, year or source"></label>
+    <p data-jun-full-count>${globalTimeline.events.length} detailed records on view</p>
+  </div>
+  <nav class="jun-year-nav" aria-label="Complete timeline years">${years.map((year) => `<a href="#jun-full-${year}">${year}</a>`).join("")}</nav>
+  <div class="jun-full-eras">${globalTimeline.eras.map((era, index) => renderJunFullEra(era, index, anchoredYears)).join("")}</div>
+  <p class="jun-empty" data-jun-full-empty hidden>No complete records match this search.</p>`;
+}
+
+function renderJunFullEra(era, eraIndex, anchoredYears) {
+  return `<section class="jun-full-era" data-jun-full-era>
+    <header><span>${String(eraIndex + 1).padStart(2, "0")}</span><h3>${escapeHtml(era.title)}</h3></header>
+    <div>${era.years.map((year, yearIndex) => renderJunFullYear(year, yearIndex, anchoredYears)).join("")}</div>
+  </section>`;
+}
+
+function renderJunFullYear(year, yearIndex, anchoredYears) {
+  const shouldAnchor = !anchoredYears.has(year.year);
+  if (shouldAnchor) anchoredYears.add(year.year);
+  const id = shouldAnchor ? ` id="jun-full-${year.year}"` : "";
+  const context = year.context.map((text) => `<blockquote data-jun-full-context>${renderTimelineInline(text)}</blockquote>`).join("");
+  const yearMeta = `${year.year} ${year.context.join(" ")}`.toLowerCase();
+  const records = year.events.length
+    ? `<ol>${year.events.map((event) => `<li data-jun-full-event data-jun-full-searchable="${escapeHtml(`${year.year} ${event.month} ${event.markdown}`.toLowerCase())}"><span>${escapeHtml(event.month)}</span><div>${renderTimelineInline(event.markdown)}</div></li>`).join("")}</ol>`
+    : `<p class="jun-full-pending">No detailed record has been added for this year yet.</p>`;
+  return `<details class="jun-full-year" data-jun-full-year data-jun-full-meta="${escapeHtml(yearMeta)}"${id}${yearIndex === 0 ? " open" : ""}><summary><strong>${year.year}</strong><span>${year.events.length} ${year.events.length === 1 ? "record" : "records"}</span></summary><div class="jun-full-year-body">${context}${records}</div></details>`;
+}
+
+function renderTimelineInline(markdown) {
+  let result = "";
+  let cursor = 0;
+  const links = /\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g;
+  for (const match of markdown.matchAll(links)) {
+    result += renderTimelineText(markdown.slice(cursor, match.index));
+    result += `<a href="${escapeHtml(match[2])}" target="_blank" rel="noopener noreferrer">${renderTimelineText(match[1])}<span aria-hidden="true">↗</span></a>`;
+    cursor = match.index + match[0].length;
+  }
+  return result + renderTimelineText(markdown.slice(cursor));
+}
+
+function renderTimelineText(text) {
+  return escapeHtml(text).replace(/`([^`]+)`/g, "<code>$1</code>");
+}
+
+function timelinePlainText(markdown) {
+  return String(markdown)
+    .replace(/\[([^\]]+)\]\(https?:\/\/[^)]+\)/g, "$1")
+    .replaceAll("`", "");
+}
+
+function timelineCitation(markdown) {
+  return String(markdown).match(/\[[^\]]+\]\((https?:\/\/[^)]+)\)/)?.[1];
+}
+
+function parseGlobalTimeline(markdown) {
+  const eras = [];
+  const events = [];
+  const preamble = [];
+  let era = null;
+  let year = null;
+  let month = "Context";
+  let beforeGlobal = true;
+
+  for (const line of markdown.split(/\r?\n/)) {
+    if (/^## Global/.test(line)) {
+      beforeGlobal = false;
+      continue;
+    }
+    if (beforeGlobal && line && !line.startsWith("#")) preamble.push(line);
+    const eraMatch = line.match(/^#{2,3} (?!Global)(.+)$/);
+    if (eraMatch) {
+      era = { title: eraMatch[1].trim(), years: [] };
+      eras.push(era);
+      year = null;
+      continue;
+    }
+    const yearMatch = line.match(/^#### (\d{4})/);
+    if (yearMatch) {
+      if (!era) {
+        era = { title: "Global context", years: [] };
+        eras.push(era);
+      }
+      year = { year: yearMatch[1], context: [], events: [] };
+      era.years.push(year);
+      month = "Context";
+      continue;
+    }
+    const monthMatch = line.match(/^\s*-\s+\*\*([^*]+)\*\*:\s*$/);
+    if (monthMatch) {
+      month = monthMatch[1].trim();
+      continue;
+    }
+    if (year && /^>/.test(line)) {
+      year.context.push(line.replace(/^>\s?/, ""));
+      continue;
+    }
+    if (year && /^[ ]{2}-[ ]+/.test(line)) {
+      const event = { year: year.year, month, markdown: line.replace(/^[ ]{2}-[ ]+/, "") };
+      year.events.push(event);
+      events.push(event);
+    }
+  }
+
+  return { preamble: preamble.join(" ").trim(), eras, events };
 }
 
 function renderJunEvent(event) {
@@ -635,7 +760,7 @@ function renderJunLlms() {
   const timeline = junData.timeline.map((event) => `- ${event.date} | ${event.country} | ${event.title}: ${event.text} Source: ${event.url}`).join("\n");
   const figures = junData.figures.map((figure) => `- ${figure.name} (${figure.country}, ${figure.era}): ${figure.note} Archive: ${figure.url}`).join("\n");
   const nations = junData.countries.map((country) => `- ${country.name}: ${country.focus} Key figures: ${country.figures}. National archive: ${country.archive}`).join("\n");
-  return `# Jumpstyle United Nations (JUN)\n\n> ${junData.tagline}\n\nJUN is an open, living archive of Jumpstyle history, dance, music, meetings, leagues and key figures. The public museum is available at ${new URL("JUN/", siteData.site.url).href}. The canonical collaborative repository is ${junData.repositoryUrl}.\n\n## Editorial policy\n\nEvents should use a date stated in a title or description. When neither survives, the upload date may be used as an explicitly identified approximation. Existing timeline records are preserved while new sourced material is added. National contributors review local perspectives.\n\n## Global timeline\n\n${timeline}\n\n## National archives\n\n${nations}\n\n## Key figures worldwide\n\n${figures}\n\n## Canonical research files\n\n- Global Timeline: ${junData.timelineUrl}\n- Key Figures Worldwide: ${junData.figuresUrl}\n- Repository: ${junData.repositoryUrl}\n`;
+  return `# Jumpstyle United Nations (JUN)\n\n> ${junData.tagline}\n\nJUN is an open, living archive of Jumpstyle history, dance, music, meetings, leagues and key figures. The public museum is available at ${new URL("JUN/", siteData.site.url).href}. The canonical collaborative repository is ${junData.repositoryUrl}.\n\n## Editorial policy\n\nEvents should use a date stated in a title or description. When neither survives, the upload date may be used as an explicitly identified approximation. Existing timeline records are preserved while new sourced material is added. National contributors review local perspectives.\n\n## Featured Global Timeline\n\n${timeline}\n\n## National archives\n\n${nations}\n\n## Key figures worldwide\n\n${figures}\n\n## Complete Global Timeline source\n\n${globalTimelineMarkdown}\n\n## Canonical research files\n\n- Complete local transcription: ${new URL("JUN/global-timeline.md", siteData.site.url).href}\n- Global Timeline repository source: ${junData.timelineUrl}\n- Key Figures Worldwide: ${junData.figuresUrl}\n- Repository: ${junData.repositoryUrl}\n`;
 }
 
 function jsonLd(route) {
@@ -669,20 +794,22 @@ function jsonLd(route) {
           "@type": "ItemList",
           "@id": `${url}#timeline`,
           name: "Jumpstyle Global Timeline",
-          numberOfItems: junData.timeline.length,
+          numberOfItems: globalTimeline.events.length,
           itemListOrder: "https://schema.org/ItemListOrderAscending",
-          itemListElement: junData.timeline.map((event, index) => ({
-            "@type": "ListItem",
-            position: index + 1,
-            item: {
-              "@type": "CreativeWork",
-              name: `${event.year}: ${event.title}`,
-              description: event.text,
-              spatialCoverage: event.country,
-              temporalCoverage: event.date,
-              citation: event.url
-            }
-          }))
+          itemListElement: globalTimeline.events.map((event, index) => {
+            const citation = timelineCitation(event.markdown);
+            return {
+              "@type": "ListItem",
+              position: index + 1,
+              item: {
+                "@type": "CreativeWork",
+                name: `${event.year} ${event.month}: ${timelinePlainText(event.markdown)}`,
+                description: timelinePlainText(event.markdown),
+                temporalCoverage: event.year,
+                ...(citation ? { citation } : {})
+              }
+            };
+          })
         }
       ]
     };

@@ -2,6 +2,7 @@ import fs from "node:fs";
 
 const siteData = readJson("src/data/site-data.json");
 const junData = readJson("src/data/jun-data.json");
+const globalTimeline = fs.readFileSync("src/data/global-timeline.md", "utf8");
 const originalContent = readJson("src/data/original-content.json");
 const linksManifest = readJson("manifests/source-links.json");
 
@@ -21,6 +22,9 @@ if (blackzin?.active || !blackzin?.titles.includes("desertor")) errors.push("Bla
 if (!fs.existsSync("fbs.png")) errors.push("Brasao FBS ausente na raiz");
 if (!fs.existsSync("JUN LOGO.png")) errors.push("Logo JUN ausente na raiz");
 if (!fs.existsSync("src/assets/fonts/PixelOperator.woff") || !fs.existsSync("src/assets/fonts/PixelOperator-Bold.woff")) errors.push("Fonte Pixel Operator ausente");
+const globalEventCount = (globalTimeline.match(/^[ ]{2}-[ ]+/gm) || []).length;
+if (globalEventCount !== 122) errors.push(`Global Timeline integral deve conter 122 registros detalhados; encontrados: ${globalEventCount}`);
+if ((globalTimeline.match(/^#### \d{4}/gm) || []).length < 30) errors.push("Global Timeline integral perdeu secoes anuais");
 
 if (junData.timeline.length < 25) errors.push("Timeline JUN deve conter pelo menos 25 marcos globais");
 if (junData.countries.length !== 20) errors.push("JUN deve mapear os 20 paises presentes nos arquivos e no Key Figures");
