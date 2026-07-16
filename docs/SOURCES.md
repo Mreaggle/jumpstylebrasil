@@ -13,8 +13,8 @@
 ## Jumpstyle United Nations
 
 - URL: https://github.com/Mreaggle/JumpstyleUnitedNations/
-- Commit verificado: `35812ad5e5e73194a765320a7c7f04bc06761d10`
-- Data de acesso: 2026-07-14
+- Commit verificado: `fd71444`
+- Data de acesso: 2026-07-16
 - Tipo de fonte: repositorio documental da comunidade
 - Status: commit HEAD confirmado via `git ls-remote`
 
@@ -40,15 +40,26 @@ Primary and editorial anchors used in the current release:
 - https://fortnite.gg/cosmetics?id=4008&type=emote
 - https://web.archive.org/web/20090416222333/http://www.jumpstylepolska.pl/
 - https://web.archive.org/web/20090210025827/http://jumpstylers.ru/
+- https://jumpstylers.ru/forum/23-Event-Movies.html
+- https://jumpstylers.ru/jumpstyle-league-winners.html
+- https://taf.k5v.de/ceis/webShowCompetitionResultsListTaf.do?mandant=3&selYear=2008
+- https://collectiflahorde.com/production/age-of-content
+- https://www.bassevents.be/tags/flashback-festival
+- https://www.lehrtersv.de/tsa-aktuelles/1062-taf-deutsche-meisterschaft-jumpstyle-und-deutschland-cup-shuffle-lehrte-praesentiert-sich-als-top-ausrichter
+
+The automatic translation selector uses the alphabetized Neural Machine
+Translation language catalog published by Google Cloud:
+
+- https://docs.cloud.google.com/translate/docs/languages
 
 The private WhatsApp export was used only as a discovery aid. It is not copied to `dist/`, linked, quoted or treated as an independently verifiable source.
 
 ### Fireborn Squad
 
-A página `/fireborn-squad/` usa o registro de membros, graus e títulos fornecido diretamente pela equipe em 2026-07-14. Fundação, missão, oito membros iniciais e marcos de 2024 foram conferidos na timeline global da JUN no commit `35812ad5e5e73194a765320a7c7f04bc06761d10`:
+A página `/fireborn-squad/` usa o registro de membros, graus e títulos fornecido diretamente pela equipe em 2026-07-14. Fundação, missão, oito membros iniciais e marcos de 2024 foram conferidos na timeline global da JUN, posteriormente sincronizada com o commit `fd71444`:
 
-- https://github.com/Mreaggle/JumpstyleUnitedNations/blob/35812ad5e5e73194a765320a7c7f04bc06761d10/JumpstyleTimeline/Global/global-timeline.md
-- https://github.com/Mreaggle/JumpstyleUnitedNations/blob/35812ad5e5e73194a765320a7c7f04bc06761d10/JumpstyleArchive/README.md
+- https://github.com/Mreaggle/JumpstyleUnitedNations/blob/fd71444/JumpstyleTimeline/Global/global-timeline.md
+- https://github.com/Mreaggle/JumpstyleUnitedNations/blob/fd71444/JumpstyleArchive/README.md
 
 ## Politica editorial
 

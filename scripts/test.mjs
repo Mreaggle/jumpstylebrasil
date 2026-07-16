@@ -59,6 +59,8 @@ if ((jun.match(/data-jun-event/g) || []).length !== junData.timeline.length) err
 if ((jun.match(/data-jun-full-event/g) || []).length !== fullTimelineEvents.length) errors.push("Global Timeline integral incompleta no HTML");
 if (!jun.includes('data-jun-view="complete"') || !jun.includes('id="complete-archive"') || !jun.includes("data-jun-full-search")) errors.push("Guia integral da Global Timeline ausente");
 if ((jun.match(/class="jun-country"/g) || []).length !== junData.countries.length) errors.push("Arquivos nacionais JUN incompletos no HTML");
+if (!jun.includes("data-jun-translate-toggle") || !jun.includes("data-jun-translate-language")) errors.push("Tradutor automatico JUN ausente");
+if (!jun.includes("data-jun-nation-search") || !jun.includes("data-jun-nation-filter")) errors.push("Busca e filtros nacionais JUN ausentes");
 if ((jun.match(/class="jun-figure"/g) || []).length !== junData.figures.length) errors.push("Figuras historicas JUN incompletas no HTML");
 if (!jun.includes("data-jun-search") || !jun.includes("data-jun-country") || !jun.includes("data-jun-era")) errors.push("Filtros da timeline JUN ausentes");
 if (!jun.includes('"@type":"CollectionPage"') || !jun.includes('"@type":"ItemList"')) errors.push("Dados estruturados da JUN ausentes");

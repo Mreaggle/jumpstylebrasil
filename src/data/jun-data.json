@@ -6,11 +6,31 @@
   "figuresUrl": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JUNToolkit/KeyFiguresWorldwide/Dance/README.md",
   "instagramUrl": "https://www.instagram.com/jumpstyleunitednations",
   "eras": [
-    { "id": "roots", "label": "Club roots", "years": "1991-2004" },
-    { "id": "web", "label": "Web explosion", "years": "2005-2007" },
-    { "id": "league", "label": "League era", "years": "2008-2015" },
-    { "id": "network", "label": "Global network", "years": "2016-2019" },
-    { "id": "revival", "label": "New revival", "years": "2020-now" }
+    {
+      "id": "roots",
+      "label": "Club roots",
+      "years": "1991-2004"
+    },
+    {
+      "id": "web",
+      "label": "Web explosion",
+      "years": "2005-2007"
+    },
+    {
+      "id": "league",
+      "label": "League era",
+      "years": "2008-2015"
+    },
+    {
+      "id": "network",
+      "label": "Global network",
+      "years": "2016-2019"
+    },
+    {
+      "id": "revival",
+      "label": "New revival",
+      "years": "2020-now"
+    }
   ],
   "timeline": [
     {
@@ -345,55 +365,2256 @@
     }
   ],
   "figures": [
-    { "name": "Patrick Jumpen", "country": "Netherlands", "code": "NL", "era": "2006-2008", "note": "The project that brought tutorials, performances and Jumpstyle videos to a global mass audience.", "url": "https://youtu.be/VFVM0Y0X9Hg" },
-    { "name": "DannieL", "country": "Poland", "code": "PL", "era": "2008-2012", "note": "A defining Ownstyle reference during Poland's rise as a technical and competitive center.", "url": "https://youtu.be/LxxqlHv6X7k" },
-    { "name": "Samurai", "country": "Russia", "code": "RU", "era": "2008-2012", "note": "An early Russian icon associated with Sidejump, power and the first league generation.", "url": "https://youtu.be/-wouLYwkyUs" },
-    { "name": "Rumun / Freakaz", "country": "Poland", "code": "PL", "era": "2008-2010", "note": "A major early Polish jumper who also produced music for the community.", "url": "https://youtu.be/F3NNfmnCw0c" },
-    { "name": "Xardas", "country": "Poland", "code": "PL", "era": "2010-2012", "note": "A leading figure in the high-complexity Polish evolution era.", "url": "https://youtu.be/rAQPVHzSkp4" },
-    { "name": "Badsz", "country": "Russia", "code": "RU", "era": "2010-2012", "note": "A Russian reference whose videos and compilations helped define a generation.", "url": "https://youtu.be/xQIGg9rXsb0" },
-    { "name": "Effect", "country": "Poland", "code": "PL", "era": "2010-2012", "note": "One of Poland's widely cited technical figures from the league era.", "url": "https://youtu.be/smAqN_S9-4g" },
-    { "name": "Spiady", "country": "France", "code": "FR", "era": "2010-2012", "note": "A key French figure associated with style, technical structure and HSA.", "url": "https://youtu.be/1uTKW-AYsr4" },
-    { "name": "Rey'Steal", "country": "France", "code": "FR", "era": "2010-2012", "note": "A French reference remembered for style, spinning and competitive influence.", "url": "https://youtu.be/2K5HqjDEavw" },
-    { "name": "Jagr", "country": "Russia", "code": "RU", "era": "2010-2012", "note": "A prominent Russian jumper in the international complexity era.", "url": "https://youtu.be/Pbg5TSDb54o" },
-    { "name": "Dany", "country": "Italy", "code": "IT", "era": "2012-now", "note": "An Italian figure recognized for originality and innovation.", "url": "https://youtu.be/RVzg5YvG6k0" },
-    { "name": "Walle", "country": "Mexico", "code": "MX", "era": "2012-now", "note": "A powerful Mexican reference who made the country visible internationally.", "url": "https://youtu.be/yiLAYlTyR4g" },
-    { "name": "Lukier", "country": "Poland", "code": "PL", "era": "2012-now", "note": "Part of the modern Polish generation that continued advancing technique.", "url": "https://youtu.be/g3PYeM9BCng" },
-    { "name": "Lauth", "country": "Chile", "code": "CL", "era": "2012-now", "note": "A central Chilean figure and an active bridge between South American and European scenes.", "url": "https://youtu.be/1_Z3f4ZFfxQ" },
-    { "name": "Cosmic", "country": "Indonesia", "code": "ID", "era": "2012-now", "note": "An Indonesian reference associated with rhythm and technical ambition.", "url": "https://youtu.be/dR5fJsl9dXw" },
-    { "name": "Sosho", "country": "Poland", "code": "PL", "era": "2012-now", "note": "A modern Polish influence whose technique and visual identity traveled worldwide.", "url": "https://youtu.be/hOUJ8-q4xUY" },
-    { "name": "Phantom", "country": "Poland", "code": "PL", "era": "2012-now", "note": "A modern-era Polish figure with lasting international visibility.", "url": "https://youtu.be/oxFx6b94NpY" },
-    { "name": "Mreaggle", "country": "Brazil", "code": "BR", "era": "2016-now", "note": "Organizer, jumper and founder of JUN, focused on reconnecting generations and preserving global history.", "url": "https://www.youtube.com/watch?v=Me1ai6JBvmo" }
+    {
+      "name": "Patrick Jumpen",
+      "country": "Netherlands",
+      "code": "NL",
+      "era": "2006-2008",
+      "note": "The project that brought tutorials, performances and Jumpstyle videos to a global mass audience.",
+      "url": "https://youtu.be/VFVM0Y0X9Hg"
+    },
+    {
+      "name": "DannieL",
+      "country": "Poland",
+      "code": "PL",
+      "era": "2008-2012",
+      "note": "A defining Ownstyle reference during Poland's rise as a technical and competitive center.",
+      "url": "https://youtu.be/LxxqlHv6X7k"
+    },
+    {
+      "name": "Samurai",
+      "country": "Russia",
+      "code": "RU",
+      "era": "2008-2012",
+      "note": "An early Russian icon associated with Sidejump, power and the first league generation.",
+      "url": "https://youtu.be/-wouLYwkyUs"
+    },
+    {
+      "name": "Rumun / Freakaz",
+      "country": "Poland",
+      "code": "PL",
+      "era": "2008-2010",
+      "note": "A major early Polish jumper who also produced music for the community.",
+      "url": "https://youtu.be/F3NNfmnCw0c"
+    },
+    {
+      "name": "Xardas",
+      "country": "Poland",
+      "code": "PL",
+      "era": "2010-2012",
+      "note": "A leading figure in the high-complexity Polish evolution era.",
+      "url": "https://youtu.be/rAQPVHzSkp4"
+    },
+    {
+      "name": "Badsz",
+      "country": "Russia",
+      "code": "RU",
+      "era": "2010-2012",
+      "note": "A Russian reference whose videos and compilations helped define a generation.",
+      "url": "https://youtu.be/xQIGg9rXsb0"
+    },
+    {
+      "name": "Effect",
+      "country": "Poland",
+      "code": "PL",
+      "era": "2010-2012",
+      "note": "One of Poland's widely cited technical figures from the league era.",
+      "url": "https://youtu.be/smAqN_S9-4g"
+    },
+    {
+      "name": "Spiady",
+      "country": "France",
+      "code": "FR",
+      "era": "2010-2012",
+      "note": "A key French figure associated with style, technical structure and HSA.",
+      "url": "https://youtu.be/1uTKW-AYsr4"
+    },
+    {
+      "name": "Rey'Steal",
+      "country": "France",
+      "code": "FR",
+      "era": "2010-2012",
+      "note": "A French reference remembered for style, spinning and competitive influence.",
+      "url": "https://youtu.be/2K5HqjDEavw"
+    },
+    {
+      "name": "Jagr",
+      "country": "Russia",
+      "code": "RU",
+      "era": "2010-2012",
+      "note": "A prominent Russian jumper in the international complexity era.",
+      "url": "https://youtu.be/Pbg5TSDb54o"
+    },
+    {
+      "name": "Dany",
+      "country": "Italy",
+      "code": "IT",
+      "era": "2012-now",
+      "note": "An Italian figure recognized for originality and innovation.",
+      "url": "https://youtu.be/RVzg5YvG6k0"
+    },
+    {
+      "name": "Walle",
+      "country": "Mexico",
+      "code": "MX",
+      "era": "2012-now",
+      "note": "A powerful Mexican reference who made the country visible internationally.",
+      "url": "https://youtu.be/yiLAYlTyR4g"
+    },
+    {
+      "name": "Lukier",
+      "country": "Poland",
+      "code": "PL",
+      "era": "2012-now",
+      "note": "Part of the modern Polish generation that continued advancing technique.",
+      "url": "https://youtu.be/g3PYeM9BCng"
+    },
+    {
+      "name": "Lauth",
+      "country": "Chile",
+      "code": "CL",
+      "era": "2012-now",
+      "note": "A central Chilean figure and an active bridge between South American and European scenes.",
+      "url": "https://youtu.be/1_Z3f4ZFfxQ"
+    },
+    {
+      "name": "Cosmic",
+      "country": "Indonesia",
+      "code": "ID",
+      "era": "2012-now",
+      "note": "An Indonesian reference associated with rhythm and technical ambition.",
+      "url": "https://youtu.be/dR5fJsl9dXw"
+    },
+    {
+      "name": "Sosho",
+      "country": "Poland",
+      "code": "PL",
+      "era": "2012-now",
+      "note": "A modern Polish influence whose technique and visual identity traveled worldwide.",
+      "url": "https://youtu.be/hOUJ8-q4xUY"
+    },
+    {
+      "name": "Phantom",
+      "country": "Poland",
+      "code": "PL",
+      "era": "2012-now",
+      "note": "A modern-era Polish figure with lasting international visibility.",
+      "url": "https://youtu.be/oxFx6b94NpY"
+    },
+    {
+      "name": "Mreaggle",
+      "country": "Brazil",
+      "code": "BR",
+      "era": "2016-now",
+      "note": "Organizer, jumper and founder of JUN, focused on reconnecting generations and preserving global history.",
+      "url": "https://www.youtube.com/watch?v=Me1ai6JBvmo"
+    }
   ],
   "countries": [
-    { "code": "BE", "name": "Belgium", "focus": "Jump music, club roots, Tekstyle and the labels that named the sound.", "figures": "Da Boy Tommy, Da Rick, Marjin V, Patje", "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Belgium/be-timeline.md" },
-    { "code": "NL", "name": "Netherlands", "focus": "Hardjump, early tutorials, chart breakthrough and the Patrick Jumpen web era.", "figures": "Patrick Jumpen, Dion Teurlings, Styl3dd, Jelle", "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Netherlands/nl-timeline.md" },
-    { "code": "PL", "name": "Poland", "focus": "National meetings, Ownstyle, leagues and one of the deepest technical lineages.", "figures": "DannieL, Rumun, Xardas, Effect, Sosho", "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Poland/pl-timeline.md" },
-    { "code": "RU", "name": "Russia", "focus": "Sidejump, Jumpstylers.ru, the first Russian leagues and power-based evolution.", "figures": "Samurai, Yarche, Badsz, Jagr, Cost", "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Russia/ru-timeline.md" },
-    { "code": "UA", "name": "Ukraine", "focus": "Complexity, speed, organizers and a technically influential 2010s generation.", "figures": "Woren, J*Air, Belir, Shkap", "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Ukraine/ua-timeline.md" },
-    { "code": "FR", "name": "France", "focus": "Northern club exchange, Tekstyle and a distinctive competitive generation.", "figures": "Spiady, Rey'Steal, Mr. Covin, Snak'e", "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/France/fr-timeline.md" },
-    { "code": "IT", "name": "Italy", "focus": "Early league adoption, originality and a long-running competitive presence.", "figures": "Dany, Yalser, 2Jumperz, Rooler", "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Italy/it-timeline.md" },
-    { "code": "DE", "name": "Germany", "focus": "Large meetings, multijump culture and an early bridge across European scenes.", "figures": "SonnyJumpen, Rebel-S, Owen, Linda, Ducci", "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/tree/main/JumpstyleTimeline" },
-    { "code": "BR", "name": "Brazil", "focus": "Orkut communities, national meetings, JSB leagues, FBS and the JUN initiative.", "figures": "RafaJumpen, Matrix, Cursebird, Mreaggle, LuFe", "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Brazil/br-timeline.md" },
-    { "code": "MX", "name": "Mexico", "focus": "A powerful competitive lineage and an active Latin American presence.", "figures": "Walle, Marshall", "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Mexico/mx-timeline.md" },
-    { "code": "CL", "name": "Chile", "focus": "South American innovation, meetings and international exchange.", "figures": "Lauth, Kada, Mat1", "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Chile/cl-timeline.md" },
-    { "code": "ID", "name": "Indonesia", "focus": "A large online community recognized for rhythm and technical progression.", "figures": "Cosmic, Bimo, MKP", "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Indonesia/id-timeline.md" },
-    { "code": "US", "name": "United States", "focus": "Regional hard-dance communities, Los Angeles meetings and a later national online network.", "figures": "Travsz, Zoe, Double-Hel!x", "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/USA/us-timeline.md" },
-    { "code": "AR", "name": "Argentina", "focus": "A JUN national archive with cross-border meeting leads that still require stable public records.", "figuresLabel": "Research status", "figures": "Open evidence queue", "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Argentina/ar-timeline.md" },
-    { "code": "CZ", "name": "Czech Republic", "focus": "An open national history awaiting verified crews, meetings, leagues and original uploads.", "figuresLabel": "Research status", "figures": "Open evidence queue", "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Czech%20Republic/cz-timeline.md" },
-    { "code": "JP", "name": "Japan", "focus": "An open JUN research route for local dancers, hard-dance exchange and meeting records.", "figuresLabel": "Research status", "figures": "Open evidence queue", "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Japan/jp-timeline.md" },
-    { "code": "LT", "name": "Lithuania", "focus": "The Yabujin and DJ GYROTTA ZAO revival lead opens a route into Lithuania's wider dance history.", "figuresLabel": "Research status", "figures": "Music lead verified; dance archive open", "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Lithuania/lt-timeline.md" },
-    { "code": "MY", "name": "Malaysia", "focus": "An open national archive for regional crews, gatherings and links with Southeast Asian communities.", "figuresLabel": "Research status", "figures": "Open evidence queue", "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Malaysia/my-timeline.md" },
-    { "code": "ES", "name": "Spain", "focus": "An open research route for meetings, battles and Spanish-language community archives.", "figuresLabel": "Research status", "figures": "Open evidence queue", "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Spain/es-timeline.md" },
-    { "code": "VE", "name": "Venezuela", "focus": "An open national history for meeting videos, crews and the Latin American network.", "figuresLabel": "Research status", "figures": "Open evidence queue", "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Venezuela/ve-timeline.md" }
+    {
+      "code": "AF",
+      "name": "Afghanistan",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Afghanistan/af-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "AX",
+      "name": "Åland Islands",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/%C3%85land%20Islands/ax-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "AL",
+      "name": "Albania",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Albania/al-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "DZ",
+      "name": "Algeria",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Algeria/dz-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "AS",
+      "name": "American Samoa",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/American%20Samoa/as-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "AD",
+      "name": "Andorra",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Andorra/ad-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "AO",
+      "name": "Angola",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Angola/ao-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "AI",
+      "name": "Anguilla",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Anguilla/ai-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "AQ",
+      "name": "Antarctica",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Antarctica/aq-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "AG",
+      "name": "Antigua and Barbuda",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Antigua%20and%20Barbuda/ag-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "AR",
+      "name": "Argentina",
+      "focus": "A JUN national archive with cross-border meeting leads that still require stable public records.",
+      "figuresLabel": "Research status",
+      "figures": "Open evidence queue",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Argentina/ar-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "AM",
+      "name": "Armenia",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Armenia/am-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "AW",
+      "name": "Aruba",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Aruba/aw-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "AU",
+      "name": "Australia",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Australia/au-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "AT",
+      "name": "Austria",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Austria/at-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "AZ",
+      "name": "Azerbaijan",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Azerbaijan/az-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "BS",
+      "name": "Bahamas",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Bahamas/bs-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "BH",
+      "name": "Bahrain",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Bahrain/bh-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "BD",
+      "name": "Bangladesh",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Bangladesh/bd-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "BB",
+      "name": "Barbados",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Barbados/bb-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "BY",
+      "name": "Belarus",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Belarus/by-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "BE",
+      "name": "Belgium",
+      "focus": "Jump music, club roots, Tekstyle and the labels that named the sound.",
+      "figures": "Da Boy Tommy, Da Rick, Marjin V, Patje",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Belgium/be-timeline.md",
+      "status": "research-in-progress"
+    },
+    {
+      "code": "BZ",
+      "name": "Belize",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Belize/bz-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "BJ",
+      "name": "Benin",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Benin/bj-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "BM",
+      "name": "Bermuda",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Bermuda/bm-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "BT",
+      "name": "Bhutan",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Bhutan/bt-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "BO",
+      "name": "Bolivia, Plurinational State of",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Bolivia%2C%20Plurinational%20State%20of/bo-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "BQ",
+      "name": "Bonaire, Sint Eustatius and Saba",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Bonaire%2C%20Sint%20Eustatius%20and%20Saba/bq-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "BA",
+      "name": "Bosnia and Herzegovina",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Bosnia%20and%20Herzegovina/ba-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "BW",
+      "name": "Botswana",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Botswana/bw-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "BV",
+      "name": "Bouvet Island",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Bouvet%20Island/bv-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "BR",
+      "name": "Brazil",
+      "focus": "Orkut communities, national meetings, JSB leagues, FBS and the JUN initiative.",
+      "figures": "RafaJumpen, Matrix, Cursebird, Mreaggle, LuFe",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Brazil/br-timeline.md",
+      "status": "research-in-progress"
+    },
+    {
+      "code": "IO",
+      "name": "British Indian Ocean Territory",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/British%20Indian%20Ocean%20Territory/io-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "BN",
+      "name": "Brunei Darussalam",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Brunei%20Darussalam/bn-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "BG",
+      "name": "Bulgaria",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Bulgaria/bg-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "BF",
+      "name": "Burkina Faso",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Burkina%20Faso/bf-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "BI",
+      "name": "Burundi",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Burundi/bi-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "CV",
+      "name": "Cabo Verde",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Cabo%20Verde/cv-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "KH",
+      "name": "Cambodia",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Cambodia/kh-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "CM",
+      "name": "Cameroon",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Cameroon/cm-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "CA",
+      "name": "Canada",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Canada/ca-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "KY",
+      "name": "Cayman Islands",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Cayman%20Islands/ky-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "CF",
+      "name": "Central African Republic",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Central%20African%20Republic/cf-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "TD",
+      "name": "Chad",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Chad/td-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "CL",
+      "name": "Chile",
+      "focus": "South American innovation, meetings and international exchange.",
+      "figures": "Lauth, Kada, Mat1",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Chile/cl-timeline.md",
+      "status": "research-in-progress"
+    },
+    {
+      "code": "CN",
+      "name": "China",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/China/cn-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "CX",
+      "name": "Christmas Island",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Christmas%20Island/cx-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "CC",
+      "name": "Cocos (Keeling) Islands",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Cocos%20(Keeling)%20Islands/cc-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "CO",
+      "name": "Colombia",
+      "focus": "Sourced national records synchronized from the complete Global Timeline.",
+      "figures": "Community record in progress.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Colombia/co-timeline.md",
+      "status": "research-in-progress"
+    },
+    {
+      "code": "KM",
+      "name": "Comoros",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Comoros/km-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "CG",
+      "name": "Congo",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Congo/cg-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "CD",
+      "name": "Congo, The Democratic Republic of the",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Congo%2C%20The%20Democratic%20Republic%20of%20the/cd-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "CK",
+      "name": "Cook Islands",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Cook%20Islands/ck-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "CR",
+      "name": "Costa Rica",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Costa%20Rica/cr-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "CI",
+      "name": "Côte d'Ivoire",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/C%C3%B4te%20d'Ivoire/ci-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "HR",
+      "name": "Croatia",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Croatia/hr-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "CU",
+      "name": "Cuba",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Cuba/cu-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "CW",
+      "name": "Curaçao",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Cura%C3%A7ao/cw-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "CY",
+      "name": "Cyprus",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Cyprus/cy-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "CZ",
+      "name": "Czech Republic",
+      "focus": "An open national history awaiting verified crews, meetings, leagues and original uploads.",
+      "figuresLabel": "Research status",
+      "figures": "Open evidence queue",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Czech%20Republic/cz-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "DK",
+      "name": "Denmark",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Denmark/dk-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "DJ",
+      "name": "Djibouti",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Djibouti/dj-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "DM",
+      "name": "Dominica",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Dominica/dm-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "DO",
+      "name": "Dominican Republic",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Dominican%20Republic/do-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "EC",
+      "name": "Ecuador",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Ecuador/ec-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "EG",
+      "name": "Egypt",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Egypt/eg-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "SV",
+      "name": "El Salvador",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/El%20Salvador/sv-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "GQ",
+      "name": "Equatorial Guinea",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Equatorial%20Guinea/gq-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "ER",
+      "name": "Eritrea",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Eritrea/er-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "EE",
+      "name": "Estonia",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Estonia/ee-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "SZ",
+      "name": "Eswatini",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Eswatini/sz-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "ET",
+      "name": "Ethiopia",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Ethiopia/et-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "FK",
+      "name": "Falkland Islands (Malvinas)",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Falkland%20Islands%20(Malvinas)/fk-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "FO",
+      "name": "Faroe Islands",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Faroe%20Islands/fo-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "FJ",
+      "name": "Fiji",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Fiji/fj-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "FI",
+      "name": "Finland",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Finland/fi-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "FR",
+      "name": "France",
+      "focus": "Northern club exchange, Tekstyle and a distinctive competitive generation.",
+      "figures": "Spiady, Rey'Steal, Mr. Covin, Snak'e",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/France/fr-timeline.md",
+      "status": "research-in-progress"
+    },
+    {
+      "code": "GF",
+      "name": "French Guiana",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/French%20Guiana/gf-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "PF",
+      "name": "French Polynesia",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/French%20Polynesia/pf-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "TF",
+      "name": "French Southern Territories",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/French%20Southern%20Territories/tf-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "GA",
+      "name": "Gabon",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Gabon/ga-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "GM",
+      "name": "Gambia",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Gambia/gm-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "GE",
+      "name": "Georgia",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Georgia/ge-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "DE",
+      "name": "Germany",
+      "focus": "Large meetings, multijump culture and an early bridge across European scenes.",
+      "figures": "SonnyJumpen, Rebel-S, Owen, Linda, Ducci",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Germany/de-timeline.md",
+      "status": "research-in-progress"
+    },
+    {
+      "code": "GH",
+      "name": "Ghana",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Ghana/gh-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "GI",
+      "name": "Gibraltar",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Gibraltar/gi-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "GR",
+      "name": "Greece",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Greece/gr-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "GL",
+      "name": "Greenland",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Greenland/gl-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "GD",
+      "name": "Grenada",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Grenada/gd-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "GP",
+      "name": "Guadeloupe",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Guadeloupe/gp-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "GU",
+      "name": "Guam",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Guam/gu-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "GT",
+      "name": "Guatemala",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Guatemala/gt-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "GG",
+      "name": "Guernsey",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Guernsey/gg-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "GN",
+      "name": "Guinea",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Guinea/gn-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "GW",
+      "name": "Guinea-Bissau",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Guinea-Bissau/gw-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "GY",
+      "name": "Guyana",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Guyana/gy-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "HT",
+      "name": "Haiti",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Haiti/ht-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "HM",
+      "name": "Heard Island and McDonald Islands",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Heard%20Island%20and%20McDonald%20Islands/hm-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "VA",
+      "name": "Holy See (Vatican City State)",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Holy%20See%20(Vatican%20City%20State)/va-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "HN",
+      "name": "Honduras",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Honduras/hn-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "HK",
+      "name": "Hong Kong",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Hong%20Kong/hk-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "HU",
+      "name": "Hungary",
+      "focus": "Sourced national records synchronized from the complete Global Timeline.",
+      "figures": "Community record in progress.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Hungary/hu-timeline.md",
+      "status": "research-in-progress"
+    },
+    {
+      "code": "IS",
+      "name": "Iceland",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Iceland/is-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "IN",
+      "name": "India",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/India/in-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "ID",
+      "name": "Indonesia",
+      "focus": "A large online community recognized for rhythm and technical progression.",
+      "figures": "Cosmic, Bimo, MKP",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Indonesia/id-timeline.md",
+      "status": "research-in-progress"
+    },
+    {
+      "code": "IR",
+      "name": "Iran, Islamic Republic of",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Iran%2C%20Islamic%20Republic%20of/ir-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "IQ",
+      "name": "Iraq",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Iraq/iq-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "IE",
+      "name": "Ireland",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Ireland/ie-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "IM",
+      "name": "Isle of Man",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Isle%20of%20Man/im-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "IL",
+      "name": "Israel",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Israel/il-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "IT",
+      "name": "Italy",
+      "focus": "Early league adoption, originality and a long-running competitive presence.",
+      "figures": "Dany, Yalser, 2Jumperz, Rooler",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Italy/it-timeline.md",
+      "status": "research-in-progress"
+    },
+    {
+      "code": "JM",
+      "name": "Jamaica",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Jamaica/jm-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "JP",
+      "name": "Japan",
+      "focus": "An open JUN research route for local dancers, hard-dance exchange and meeting records.",
+      "figuresLabel": "Research status",
+      "figures": "Open evidence queue",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Japan/jp-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "JE",
+      "name": "Jersey",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Jersey/je-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "JO",
+      "name": "Jordan",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Jordan/jo-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "KZ",
+      "name": "Kazakhstan",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Kazakhstan/kz-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "KE",
+      "name": "Kenya",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Kenya/ke-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "KI",
+      "name": "Kiribati",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Kiribati/ki-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "KP",
+      "name": "Korea, Democratic People's Republic of",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Korea%2C%20Democratic%20People's%20Republic%20of/kp-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "KR",
+      "name": "Korea, Republic of",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Korea%2C%20Republic%20of/kr-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "XK",
+      "name": "Kosovo",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Kosovo/xk-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "KW",
+      "name": "Kuwait",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Kuwait/kw-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "KG",
+      "name": "Kyrgyzstan",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Kyrgyzstan/kg-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "LA",
+      "name": "Lao People's Democratic Republic",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Lao%20People's%20Democratic%20Republic/la-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "LV",
+      "name": "Latvia",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Latvia/lv-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "LB",
+      "name": "Lebanon",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Lebanon/lb-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "LS",
+      "name": "Lesotho",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Lesotho/ls-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "LR",
+      "name": "Liberia",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Liberia/lr-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "LY",
+      "name": "Libya",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Libya/ly-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "LI",
+      "name": "Liechtenstein",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Liechtenstein/li-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "LT",
+      "name": "Lithuania",
+      "focus": "The Yabujin and DJ GYROTTA ZAO revival lead opens a route into Lithuania's wider dance history.",
+      "figuresLabel": "Research status",
+      "figures": "Music lead verified; dance archive open",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Lithuania/lt-timeline.md",
+      "status": "research-in-progress"
+    },
+    {
+      "code": "LU",
+      "name": "Luxembourg",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Luxembourg/lu-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "MO",
+      "name": "Macao",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Macao/mo-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "MG",
+      "name": "Madagascar",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Madagascar/mg-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "MW",
+      "name": "Malawi",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Malawi/mw-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "MY",
+      "name": "Malaysia",
+      "focus": "An open national archive for regional crews, gatherings and links with Southeast Asian communities.",
+      "figuresLabel": "Research status",
+      "figures": "Open evidence queue",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Malaysia/my-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "MV",
+      "name": "Maldives",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Maldives/mv-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "ML",
+      "name": "Mali",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Mali/ml-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "MT",
+      "name": "Malta",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Malta/mt-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "MH",
+      "name": "Marshall Islands",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Marshall%20Islands/mh-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "MQ",
+      "name": "Martinique",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Martinique/mq-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "MR",
+      "name": "Mauritania",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Mauritania/mr-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "MU",
+      "name": "Mauritius",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Mauritius/mu-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "YT",
+      "name": "Mayotte",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Mayotte/yt-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "MX",
+      "name": "Mexico",
+      "focus": "A powerful competitive lineage and an active Latin American presence.",
+      "figures": "Walle, Marshall",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Mexico/mx-timeline.md",
+      "status": "research-in-progress"
+    },
+    {
+      "code": "FM",
+      "name": "Micronesia, Federated States of",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Micronesia%2C%20Federated%20States%20of/fm-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "MD",
+      "name": "Moldova, Republic of",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Moldova%2C%20Republic%20of/md-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "MC",
+      "name": "Monaco",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Monaco/mc-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "MN",
+      "name": "Mongolia",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Mongolia/mn-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "ME",
+      "name": "Montenegro",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Montenegro/me-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "MS",
+      "name": "Montserrat",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Montserrat/ms-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "MA",
+      "name": "Morocco",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Morocco/ma-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "MZ",
+      "name": "Mozambique",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Mozambique/mz-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "MM",
+      "name": "Myanmar",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Myanmar/mm-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "NA",
+      "name": "Namibia",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Namibia/na-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "NR",
+      "name": "Nauru",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Nauru/nr-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "NP",
+      "name": "Nepal",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Nepal/np-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "NL",
+      "name": "Netherlands",
+      "focus": "Hardjump, early tutorials, chart breakthrough and the Patrick Jumpen web era.",
+      "figures": "Patrick Jumpen, Dion Teurlings, Styl3dd, Jelle",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Netherlands/nl-timeline.md",
+      "status": "research-in-progress"
+    },
+    {
+      "code": "NC",
+      "name": "New Caledonia",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/New%20Caledonia/nc-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "NZ",
+      "name": "New Zealand",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/New%20Zealand/nz-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "NI",
+      "name": "Nicaragua",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Nicaragua/ni-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "NE",
+      "name": "Niger",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Niger/ne-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "NG",
+      "name": "Nigeria",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Nigeria/ng-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "NU",
+      "name": "Niue",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Niue/nu-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "NF",
+      "name": "Norfolk Island",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Norfolk%20Island/nf-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "MK",
+      "name": "North Macedonia",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/North%20Macedonia/mk-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "MP",
+      "name": "Northern Mariana Islands",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Northern%20Mariana%20Islands/mp-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "NO",
+      "name": "Norway",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Norway/no-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "OM",
+      "name": "Oman",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Oman/om-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "PK",
+      "name": "Pakistan",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Pakistan/pk-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "PW",
+      "name": "Palau",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Palau/pw-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "PS",
+      "name": "Palestine, State of",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Palestine%2C%20State%20of/ps-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "PA",
+      "name": "Panama",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Panama/pa-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "PG",
+      "name": "Papua New Guinea",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Papua%20New%20Guinea/pg-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "PY",
+      "name": "Paraguay",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Paraguay/py-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "PE",
+      "name": "Peru",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Peru/pe-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "PH",
+      "name": "Philippines",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Philippines/ph-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "PN",
+      "name": "Pitcairn",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Pitcairn/pn-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "PL",
+      "name": "Poland",
+      "focus": "National meetings, Ownstyle, leagues and one of the deepest technical lineages.",
+      "figures": "DannieL, Rumun, Xardas, Effect, Sosho",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Poland/pl-timeline.md",
+      "status": "research-in-progress"
+    },
+    {
+      "code": "PT",
+      "name": "Portugal",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Portugal/pt-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "PR",
+      "name": "Puerto Rico",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Puerto%20Rico/pr-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "QA",
+      "name": "Qatar",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Qatar/qa-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "RE",
+      "name": "Réunion",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/R%C3%A9union/re-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "RO",
+      "name": "Romania",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Romania/ro-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "RU",
+      "name": "Russia",
+      "focus": "Sidejump, Jumpstylers.ru, the first Russian leagues and power-based evolution.",
+      "figures": "Samurai, Yarche, Badsz, Jagr, Cost",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Russia/ru-timeline.md",
+      "status": "research-in-progress"
+    },
+    {
+      "code": "RW",
+      "name": "Rwanda",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Rwanda/rw-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "BL",
+      "name": "Saint Barthélemy",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Saint%20Barth%C3%A9lemy/bl-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "SH",
+      "name": "Saint Helena, Ascension and Tristan da Cunha",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Saint%20Helena%2C%20Ascension%20and%20Tristan%20da%20Cunha/sh-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "KN",
+      "name": "Saint Kitts and Nevis",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Saint%20Kitts%20and%20Nevis/kn-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "LC",
+      "name": "Saint Lucia",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Saint%20Lucia/lc-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "MF",
+      "name": "Saint Martin (French part)",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Saint%20Martin%20(French%20part)/mf-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "PM",
+      "name": "Saint Pierre and Miquelon",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Saint%20Pierre%20and%20Miquelon/pm-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "VC",
+      "name": "Saint Vincent and the Grenadines",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Saint%20Vincent%20and%20the%20Grenadines/vc-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "WS",
+      "name": "Samoa",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Samoa/ws-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "SM",
+      "name": "San Marino",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/San%20Marino/sm-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "ST",
+      "name": "Sao Tome and Principe",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Sao%20Tome%20and%20Principe/st-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "SA",
+      "name": "Saudi Arabia",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Saudi%20Arabia/sa-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "SN",
+      "name": "Senegal",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Senegal/sn-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "RS",
+      "name": "Serbia",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Serbia/rs-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "SC",
+      "name": "Seychelles",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Seychelles/sc-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "SL",
+      "name": "Sierra Leone",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Sierra%20Leone/sl-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "SG",
+      "name": "Singapore",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Singapore/sg-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "SX",
+      "name": "Sint Maarten (Dutch part)",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Sint%20Maarten%20(Dutch%20part)/sx-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "SK",
+      "name": "Slovakia",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Slovakia/sk-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "SI",
+      "name": "Slovenia",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Slovenia/si-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "SB",
+      "name": "Solomon Islands",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Solomon%20Islands/sb-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "SO",
+      "name": "Somalia",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Somalia/so-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "ZA",
+      "name": "South Africa",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/South%20Africa/za-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "GS",
+      "name": "South Georgia and the South Sandwich Islands",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/South%20Georgia%20and%20the%20South%20Sandwich%20Islands/gs-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "SS",
+      "name": "South Sudan",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/South%20Sudan/ss-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "ES",
+      "name": "Spain",
+      "focus": "An open research route for meetings, battles and Spanish-language community archives.",
+      "figuresLabel": "Research status",
+      "figures": "Open evidence queue",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Spain/es-timeline.md",
+      "status": "research-in-progress"
+    },
+    {
+      "code": "LK",
+      "name": "Sri Lanka",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Sri%20Lanka/lk-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "SD",
+      "name": "Sudan",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Sudan/sd-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "SR",
+      "name": "Suriname",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Suriname/sr-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "SJ",
+      "name": "Svalbard and Jan Mayen",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Svalbard%20and%20Jan%20Mayen/sj-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "SE",
+      "name": "Sweden",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Sweden/se-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "CH",
+      "name": "Switzerland",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Switzerland/ch-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "SY",
+      "name": "Syrian Arab Republic",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Syrian%20Arab%20Republic/sy-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "TW",
+      "name": "Taiwan, Province of China",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Taiwan%2C%20Province%20of%20China/tw-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "TJ",
+      "name": "Tajikistan",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Tajikistan/tj-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "TZ",
+      "name": "Tanzania, United Republic of",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Tanzania%2C%20United%20Republic%20of/tz-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "TH",
+      "name": "Thailand",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Thailand/th-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "TL",
+      "name": "Timor-Leste",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Timor-Leste/tl-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "TG",
+      "name": "Togo",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Togo/tg-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "TK",
+      "name": "Tokelau",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Tokelau/tk-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "TO",
+      "name": "Tonga",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Tonga/to-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "TT",
+      "name": "Trinidad and Tobago",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Trinidad%20and%20Tobago/tt-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "TN",
+      "name": "Tunisia",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Tunisia/tn-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "TR",
+      "name": "Türkiye",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/T%C3%BCrkiye/tr-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "TM",
+      "name": "Turkmenistan",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Turkmenistan/tm-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "TC",
+      "name": "Turks and Caicos Islands",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Turks%20and%20Caicos%20Islands/tc-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "TV",
+      "name": "Tuvalu",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Tuvalu/tv-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "UG",
+      "name": "Uganda",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Uganda/ug-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "UA",
+      "name": "Ukraine",
+      "focus": "Complexity, speed, organizers and a technically influential 2010s generation.",
+      "figures": "Woren, J*Air, Belir, Shkap",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Ukraine/ua-timeline.md",
+      "status": "research-in-progress"
+    },
+    {
+      "code": "AE",
+      "name": "United Arab Emirates",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/United%20Arab%20Emirates/ae-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "GB",
+      "name": "United Kingdom",
+      "focus": "Sourced national records synchronized from the complete Global Timeline.",
+      "figures": "Community record in progress.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/United%20Kingdom/gb-timeline.md",
+      "status": "research-in-progress"
+    },
+    {
+      "code": "US",
+      "name": "United States",
+      "focus": "Regional hard-dance communities, Los Angeles meetings and a later national online network.",
+      "figures": "Travsz, Zoe, Double-Hel!x",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/USA/us-timeline.md",
+      "status": "research-in-progress"
+    },
+    {
+      "code": "UM",
+      "name": "United States Minor Outlying Islands",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/United%20States%20Minor%20Outlying%20Islands/um-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "UY",
+      "name": "Uruguay",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Uruguay/uy-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "UZ",
+      "name": "Uzbekistan",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Uzbekistan/uz-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "VU",
+      "name": "Vanuatu",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Vanuatu/vu-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "VE",
+      "name": "Venezuela",
+      "focus": "An open national history for meeting videos, crews and the Latin American network.",
+      "figuresLabel": "Research status",
+      "figures": "Open evidence queue",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Venezuela/ve-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "VN",
+      "name": "Viet Nam",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Viet%20Nam/vn-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "VG",
+      "name": "Virgin Islands, British",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Virgin%20Islands%2C%20British/vg-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "VI",
+      "name": "Virgin Islands, U.S.",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Virgin%20Islands%2C%20U.S./vi-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "WF",
+      "name": "Wallis and Futuna",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Wallis%20and%20Futuna/wf-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "EH",
+      "name": "Western Sahara",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Western%20Sahara/eh-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "YE",
+      "name": "Yemen",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Yemen/ye-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "ZM",
+      "name": "Zambia",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Zambia/zm-timeline.md",
+      "status": "research-needed"
+    },
+    {
+      "code": "ZW",
+      "name": "Zimbabwe",
+      "focus": "National archive structure ready for sourced community research.",
+      "figures": "Research pending.",
+      "archive": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Zimbabwe/zw-timeline.md",
+      "status": "research-needed"
+    }
   ],
   "sourceTypes": [
-    { "type": "Official record", "label": "Jumper Records history", "locale": "Belgium", "url": "https://www.jumperrecords.com/" },
-    { "type": "Chart archive", "label": "Dutch Top 40, 2007", "locale": "Netherlands", "url": "https://www.top40.nl/pdf/top100/top100-2007.pdf" },
-    { "type": "Music press", "label": "VPRO 3voor12 Jumpstyle coverage", "locale": "Netherlands", "url": "https://3voor12.vpro.nl/artikelen/overzicht/2007/april/jump-adepten-snappen-niks-van-jumpstyle-verbod.html" },
-    { "type": "Newspaper", "label": "French electro and Belgian Jump", "locale": "France", "url": "https://www.lemonde.fr/vous/article/2008/01/08/les-agites-de-la-tecktonik_997006_3238.html" },
-    { "type": "Forum snapshot", "label": "JumpstylePolska.pl, April 2009", "locale": "Poland", "url": "https://web.archive.org/web/20090416222333/http://www.jumpstylepolska.pl/" },
-    { "type": "Forum snapshot", "label": "Jumpstylers.ru, February 2009", "locale": "Russia", "url": "https://web.archive.org/web/20090210025827/http://jumpstylers.ru/" },
-    { "type": "Community snapshot", "label": "Los Angeles Jump Meeting 2013", "locale": "United States", "url": "https://web.archive.org/web/20140214012333/http://jumpstyle.com.br/2014/02/6th-annual-los-angeles-jump-meeting-2013/" },
-    { "type": "Contemporary press", "label": "Yabujin and the 2020s revival", "locale": "Global", "url": "https://pitchfork.com/thepitch/chasing-yabujin-the-artist-who-secretly-shaped-the-underground-sound-of-the-2020s/" }
+    {
+      "type": "Official record",
+      "label": "Jumper Records history",
+      "locale": "Belgium",
+      "url": "https://www.jumperrecords.com/"
+    },
+    {
+      "type": "Chart archive",
+      "label": "Dutch Top 40, 2007",
+      "locale": "Netherlands",
+      "url": "https://www.top40.nl/pdf/top100/top100-2007.pdf"
+    },
+    {
+      "type": "Music press",
+      "label": "VPRO 3voor12 Jumpstyle coverage",
+      "locale": "Netherlands",
+      "url": "https://3voor12.vpro.nl/artikelen/overzicht/2007/april/jump-adepten-snappen-niks-van-jumpstyle-verbod.html"
+    },
+    {
+      "type": "Newspaper",
+      "label": "French electro and Belgian Jump",
+      "locale": "France",
+      "url": "https://www.lemonde.fr/vous/article/2008/01/08/les-agites-de-la-tecktonik_997006_3238.html"
+    },
+    {
+      "type": "Forum snapshot",
+      "label": "JumpstylePolska.pl, April 2009",
+      "locale": "Poland",
+      "url": "https://web.archive.org/web/20090416222333/http://www.jumpstylepolska.pl/"
+    },
+    {
+      "type": "Forum snapshot",
+      "label": "Jumpstylers.ru, February 2009",
+      "locale": "Russia",
+      "url": "https://web.archive.org/web/20090210025827/http://jumpstylers.ru/"
+    },
+    {
+      "type": "Community snapshot",
+      "label": "Los Angeles Jump Meeting 2013",
+      "locale": "United States",
+      "url": "https://web.archive.org/web/20140214012333/http://jumpstyle.com.br/2014/02/6th-annual-los-angeles-jump-meeting-2013/"
+    },
+    {
+      "type": "Contemporary press",
+      "label": "Yabujin and the 2020s revival",
+      "locale": "Global",
+      "url": "https://pitchfork.com/thepitch/chasing-yabujin-the-artist-who-secretly-shaped-the-underground-sound-of-the-2020s/"
+    },
+    {
+      "type": "Official chart / release",
+      "locale": "NL / BE",
+      "label": "Jeckyll & Hyde - Freefall chart record",
+      "url": "https://www.ultratop.be/nl/song/489d9/Jeckyll-%26-Hyde-Freefall"
+    },
+    {
+      "type": "Official competition record",
+      "locale": "DE",
+      "label": "First German Jumpstyle Championship",
+      "url": "https://taf.k5v.de/ceis/webShowCompetitionResultsListTaf.do?mandant=3&selYear=2008"
+    },
+    {
+      "type": "Community event archive",
+      "locale": "RU / MULTILINGUAL",
+      "label": "Jumpstylers.ru Event Movies index",
+      "url": "https://jumpstylers.ru/forum/23-Event-Movies.html"
+    },
+    {
+      "type": "Competition archive",
+      "locale": "RU / GLOBAL",
+      "label": "Jumpstyle league winners index",
+      "url": "https://jumpstylers.ru/jumpstyle-league-winners.html"
+    },
+    {
+      "type": "Municipal event record",
+      "locale": "PL",
+      "label": "Gliwice national meeting 2016",
+      "url": "https://gliwice.eu/wydarzenia/kulturalne/2016-08-27/i-ogolnopolski-zlot-jumpstyle-w-gliwicach"
+    },
+    {
+      "type": "Official cultural record",
+      "locale": "FR / EN",
+      "label": "(LA)HORDE - To Da Bone",
+      "url": "https://collectiflahorde.com/production/age-of-content"
+    },
+    {
+      "type": "Official event archive",
+      "locale": "BE / EN",
+      "label": "Bass Events - Flashback Festival",
+      "url": "https://www.bassevents.be/tags/flashback-festival"
+    },
+    {
+      "type": "Official club report",
+      "locale": "DE",
+      "label": "German Championship 2026 in Lehrte",
+      "url": "https://www.lehrtersv.de/tsa-aktuelles/1062-taf-deutsche-meisterschaft-jumpstyle-und-deutschland-cup-shuffle-lehrte-praesentiert-sich-als-top-ausrichter"
+    }
   ]
 }

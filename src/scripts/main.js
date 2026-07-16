@@ -20,11 +20,45 @@ siteNav?.addEventListener("click", (event) => {
   if (event.target instanceof HTMLAnchorElement) setMenu(false);
 });
 
+const junTranslate = document.querySelector("[data-jun-translate]");
+const junTranslateToggle = document.querySelector("[data-jun-translate-toggle]");
+const junTranslatePanel = document.querySelector("[data-jun-translate-panel]");
+const junTranslateLanguage = document.querySelector("[data-jun-translate-language]");
+
+function setJunTranslate(open) {
+  if (!junTranslateToggle || !junTranslatePanel) return;
+  junTranslateToggle.setAttribute("aria-expanded", String(open));
+  junTranslatePanel.hidden = !open;
+  if (open) junTranslateLanguage?.focus();
+}
+
+junTranslateToggle?.addEventListener("click", () => {
+  setJunTranslate(junTranslateToggle.getAttribute("aria-expanded") !== "true");
+});
+
+junTranslateLanguage?.addEventListener("change", () => {
+  if (!junTranslateLanguage.value) return;
+  const target = new URL("https://translate.google.com/translate");
+  target.searchParams.set("sl", "en");
+  target.searchParams.set("tl", junTranslateLanguage.value);
+  target.searchParams.set("u", window.location.href);
+  window.location.assign(target.href);
+});
+
+document.addEventListener("click", (event) => {
+  if (junTranslate && !junTranslate.contains(event.target)) setJunTranslate(false);
+});
+
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && body.classList.contains("nav-open")) {
-    setMenu(false);
-    menuButton?.focus();
+  if (event.key !== "Escape") return;
+  if (junTranslateToggle?.getAttribute("aria-expanded") === "true") {
+    setJunTranslate(false);
+    junTranslateToggle.focus();
+    return;
   }
+  if (!body.classList.contains("nav-open")) return;
+  setMenu(false);
+  menuButton?.focus();
 });
 
 document.querySelectorAll("[data-beat-stage]").forEach((stage) => {
@@ -199,6 +233,37 @@ function updateJunFullTimeline() {
 
 junFullSearch?.addEventListener("input", updateJunFullTimeline);
 if (location.hash === "#complete-archive") setJunView("complete");
+
+const junNations = [...document.querySelectorAll("[data-jun-nation]")];
+const junNationSearch = document.querySelector("[data-jun-nation-search]");
+let junNationFilter = "all";
+
+function updateJunNations() {
+  const query = junNationSearch?.value.trim().toLocaleLowerCase("en") || "";
+  let visible = 0;
+  junNations.forEach((nation) => {
+    const matchesStatus = junNationFilter === "all" || nation.dataset.junNationStatus === junNationFilter;
+    const matchesQuery = !query || (nation.dataset.junNationSearchable || "").includes(query);
+    nation.hidden = !(matchesStatus && matchesQuery);
+    if (!nation.hidden) visible += 1;
+  });
+  const count = document.querySelector("[data-jun-nation-count]");
+  if (count) count.textContent = `${visible} national and territorial ${visible === 1 ? "archive" : "archives"} on view`;
+  const empty = document.querySelector("[data-jun-nation-empty]");
+  if (empty) empty.hidden = visible !== 0;
+}
+
+document.querySelectorAll("[data-jun-nation-filter]").forEach((button) => {
+  button.addEventListener("click", () => {
+    junNationFilter = button.dataset.junNationFilter || "all";
+    document.querySelectorAll("[data-jun-nation-filter]").forEach((item) => {
+      item.setAttribute("aria-pressed", String(item === button));
+    });
+    updateJunNations();
+  });
+});
+
+junNationSearch?.addEventListener("input", updateJunNations);
 
 document.querySelectorAll("[data-faq-filter]").forEach((input) => {
   input.addEventListener("input", () => {

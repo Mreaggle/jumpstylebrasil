@@ -5,6 +5,7 @@ const root = process.cwd();
 const dist = path.join(root, "dist");
 const siteData = readJson("src/data/site-data.json");
 const junData = readJson("src/data/jun-data.json");
+const translationData = readJson("src/data/translation-languages.json");
 const globalTimelineMarkdown = fs.readFileSync(path.join(root, "src/data/global-timeline.md"), "utf8");
 const globalTimeline = parseGlobalTimeline(globalTimelineMarkdown);
 const originalContent = readJson("src/data/original-content.json");
@@ -194,6 +195,7 @@ function renderJunShell({ title, description, route, body }) {
       </button>
       <nav id="site-nav" class="site-nav jun-nav" aria-label="JUN sections" data-site-nav>
         <a href="#timeline">Timeline</a><a href="#nations">Nations</a><a href="#figures">Key figures</a><a href="#sources">Sources</a><a class="jun-back-link" href="${sitePath()}">Jumpstyle Brasil</a>
+        ${renderJunTranslation()}
       </nav>
     </div>
   </header>
@@ -406,6 +408,7 @@ function renderJunHero() {
 
 function renderJun() {
   const countryOptions = junData.countries.map((country) => `<option value="${country.code}">${escapeHtml(country.name)}</option>`).join("");
+  const documentedCountries = junData.countries.filter((country) => country.status === "research-in-progress").length;
   return `<section class="jun-section jun-timeline-section" id="timeline">
   <div class="section-inner">
     <p class="jun-section-code">01 // THE GLOBAL TIMELINE</p>
@@ -431,8 +434,14 @@ function renderJun() {
 <section class="jun-section jun-nations-section" id="nations">
   <div class="section-inner">
     <p class="jun-section-code">02 // NATIONAL MEMORY</p>
-    <div class="jun-section-heading"><h2>One history, many points of view</h2><p>The global record is built from national histories. These archives follow the countries represented by JUN contributors and the Key Figures Worldwide index.</p></div>
+    <div class="jun-section-heading"><h2>One history, many points of view</h2><p>The global record is built from national histories. The catalog now provides a research structure for every ISO 3166-1 country and territory, plus Kosovo under XK, while clearly separating sourced archives from open research queues.</p></div>
+    <div class="jun-nation-tools">
+      <label><span>Find a national archive</span><input type="search" data-jun-nation-search placeholder="Country, territory or code"></label>
+      <div class="jun-nation-filter" role="group" aria-label="Filter national archives"><button type="button" data-jun-nation-filter="all" aria-pressed="true">All <span>${junData.countries.length}</span></button><button type="button" data-jun-nation-filter="documented" aria-pressed="false">Documented <span>${documentedCountries}</span></button><button type="button" data-jun-nation-filter="pending" aria-pressed="false">Research queue <span>${junData.countries.length - documentedCountries}</span></button></div>
+      <p data-jun-nation-count>${junData.countries.length} national and territorial archives on view</p>
+    </div>
     <div class="jun-country-grid">${junData.countries.map(renderJunCountry).join("")}</div>
+    <p class="jun-empty" data-jun-nation-empty hidden>No national archives match this view.</p>
   </div>
 </section>
 <section class="jun-section jun-figures-section" id="figures">
@@ -578,7 +587,22 @@ function renderJunEvent(event) {
 }
 
 function renderJunCountry(country) {
-  return `<article class="jun-country"><div><span>${country.code}</span><small>National archive</small></div><h3>${escapeHtml(country.name)}</h3><p>${escapeHtml(country.focus)}</p><dl><dt>${escapeHtml(country.figuresLabel || "Key figures")}</dt><dd>${escapeHtml(country.figures)}</dd></dl><a href="${country.archive}" target="_blank" rel="noopener noreferrer">Open ${escapeHtml(country.name)} archive <span aria-hidden="true">↗</span></a></article>`;
+  const documented = country.status === "research-in-progress";
+  return `<article class="jun-country" data-jun-nation data-jun-nation-status="${documented ? "documented" : "pending"}" data-jun-nation-searchable="${escapeHtml(`${country.code} ${country.name}`.toLowerCase())}"><div><span>${country.code}</span><small>${documented ? "Sourced records" : "Research needed"}</small></div><h3>${escapeHtml(country.name)}</h3><p>${escapeHtml(country.focus)}</p><dl><dt>${escapeHtml(country.figuresLabel || "Key figures")}</dt><dd>${escapeHtml(country.figures)}</dd></dl><a href="${country.archive}" target="_blank" rel="noopener noreferrer">Open ${escapeHtml(country.name)} archive <span aria-hidden="true">↗</span></a></article>`;
+}
+
+function renderJunTranslation() {
+  const options = translationData.languages
+    .map((language) => `<option value="${escapeHtml(language.code)}">${escapeHtml(language.name)}</option>`)
+    .join("");
+  return `<div class="jun-translate" data-jun-translate>
+    <button type="button" class="jun-translate-button" aria-expanded="false" aria-controls="jun-translate-panel" data-jun-translate-toggle><span aria-hidden="true">A/文</span>Translate</button>
+    <div id="jun-translate-panel" class="jun-translate-panel" data-jun-translate-panel hidden>
+      <label for="jun-translate-language">Automatic translation</label>
+      <select id="jun-translate-language" data-jun-translate-language><option value="">Select a language</option>${options}</select>
+      <p>Opens this page through Google Translate.</p>
+    </div>
+  </div>`;
 }
 
 function renderJunFigure(figure, index) {

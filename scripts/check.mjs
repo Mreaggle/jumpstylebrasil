@@ -2,6 +2,7 @@ import fs from "node:fs";
 
 const siteData = readJson("src/data/site-data.json");
 const junData = readJson("src/data/jun-data.json");
+const translationData = readJson("src/data/translation-languages.json");
 const globalTimeline = fs.readFileSync("src/data/global-timeline.md", "utf8");
 const originalContent = readJson("src/data/original-content.json");
 const linksManifest = readJson("manifests/source-links.json");
@@ -23,11 +24,13 @@ if (!fs.existsSync("fbs.png")) errors.push("Brasao FBS ausente na raiz");
 if (!fs.existsSync("JUN LOGO.png")) errors.push("Logo JUN ausente na raiz");
 if (!fs.existsSync("src/assets/fonts/PixelOperator.woff") || !fs.existsSync("src/assets/fonts/PixelOperator-Bold.woff")) errors.push("Fonte Pixel Operator ausente");
 const globalEventCount = (globalTimeline.match(/^[ ]{2}-[ ]+/gm) || []).length;
-if (globalEventCount !== 122) errors.push(`Global Timeline integral deve conter 122 registros detalhados; encontrados: ${globalEventCount}`);
+if (globalEventCount !== 186) errors.push(`Global Timeline integral deve conter 186 registros detalhados; encontrados: ${globalEventCount}`);
 if ((globalTimeline.match(/^#### \d{4}/gm) || []).length < 30) errors.push("Global Timeline integral perdeu secoes anuais");
 
 if (junData.timeline.length < 25) errors.push("Timeline JUN deve conter pelo menos 25 marcos globais");
-if (junData.countries.length !== 20) errors.push("JUN deve mapear os 20 paises presentes nos arquivos e no Key Figures");
+if (junData.countries.length !== 250) errors.push("JUN deve expor os 249 registros ISO e Kosovo (XK)");
+if (translationData.languages.length !== 194) errors.push("Tradutor JUN deve expor os 194 idiomas suportados no catalogo oficial usado");
+if (translationData.languages.some((language, index, languages) => index > 0 && languages[index - 1].name.localeCompare(language.name, "en") > 0)) errors.push("Idiomas do tradutor JUN devem permanecer em ordem alfabetica");
 if (junData.figures.length < 18) errors.push("JUN deve exibir pelo menos 18 figuras historicas");
 for (const event of junData.timeline) {
   if (!event.year || !event.country || !event.title || !event.text || !event.url) errors.push(`Marco JUN incompleto: ${event.title || "sem titulo"}`);
