@@ -1244,6 +1244,35 @@ h3 { font-size: 2rem; }
 .jun-translate-panel select { width: 100%; min-height: 46px; padding: .65rem .7rem; border: 1px solid var(--jun-line); border-radius: 3px; background: var(--jun-panel); color: var(--jun-white); cursor: pointer; }
 .jun-translate-panel p { margin: 0; color: var(--jun-muted); font-size: .62rem; }
 
+@media (max-width: 979px) {
+  .jun-nav {
+    position: absolute;
+    inset: 70px 0 auto;
+    height: calc(100dvh - 70px);
+  }
+  .jun-translate {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    order: -1;
+    margin-bottom: .75rem;
+    padding: .45rem;
+    border: 1px solid rgba(105, 223, 67, .55);
+    background: #030712;
+  }
+  .jun-translate-button {
+    min-height: 52px;
+    padding: .65rem .75rem;
+    border: 1px solid var(--jun-green);
+    border-radius: 3px;
+    background: var(--jun-green);
+    color: #051008;
+    font-size: 1.15rem;
+  }
+  .jun-translate-button span { color: var(--jun-blue-dark); }
+  .jun-translate-panel { margin-top: .45rem; }
+}
+
 .jun-hero {
   position: relative;
   min-height: 760px;

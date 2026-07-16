@@ -7,7 +7,10 @@ function setMenu(open) {
   if (!menuButton || !siteNav) return;
   menuButton.setAttribute("aria-expanded", String(open));
   body.classList.toggle("nav-open", open);
-  if (open) siteNav.querySelector("a")?.focus();
+  if (open) {
+    const firstControl = siteNav.querySelector("[data-jun-translate-toggle]") || siteNav.querySelector("a");
+    firstControl?.focus();
+  }
 }
 
 menuButton?.addEventListener("click", () => {
