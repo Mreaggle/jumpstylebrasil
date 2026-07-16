@@ -4,6 +4,7 @@ import path from "node:path";
 const root = process.cwd();
 const dist = path.join(root, "dist");
 const siteData = readJson("src/data/site-data.json");
+const junData = readJson("src/data/jun-data.json");
 const originalContent = readJson("src/data/original-content.json");
 const originalByPage = new Map(originalContent.pages.map((page) => [page.page, page]));
 
@@ -13,6 +14,9 @@ copyFile("src/styles/site.css", "assets/site.css");
 copyFile("src/scripts/main.js", "assets/main.js");
 copyFile("width_200.png", "assets/jumper-logo.png");
 copyFile("fbs.png", "assets/fireborn-squad.png");
+copyFile("JUN LOGO.png", "assets/jun-logo.png");
+copyFile("src/assets/fonts/PixelOperator.woff", "assets/fonts/PixelOperator.woff");
+copyFile("src/assets/fonts/PixelOperator-Bold.woff", "assets/fonts/PixelOperator-Bold.woff");
 copyFile("width_200.png", "favicon.png");
 
 for (const page of siteData.pages) {
@@ -23,6 +27,8 @@ writeRoute("/404.html", render404());
 writeText("robots.txt", `User-agent: *\nAllow: /\n\nSitemap: ${siteData.site.url}sitemap.xml\n`);
 writeText("sitemap.xml", renderSitemap());
 writeText("favicon.svg", renderFavicon());
+writeText("llms.txt", renderLlmsIndex());
+writeText("JUN/llms.txt", renderJunLlms());
 
 function copyFile(from, to) {
   const target = path.join(dist, to);
@@ -43,17 +49,22 @@ function writeRoute(route, html) {
 }
 
 function writeText(file, text) {
-  fs.writeFileSync(path.join(dist, file), text);
+  const target = path.join(dist, file);
+  fs.mkdirSync(path.dirname(target), { recursive: true });
+  fs.writeFileSync(target, text);
 }
 
 function renderPage(page) {
   const isFbs = page.route === "/fireborn-squad/";
+  const isJun = page.route === "/JUN/";
   const body = isFbs
     ? [renderFbsHero(page), renderFbs()].join("\n")
-    : [renderHero(page), renderRouteContent(page)].join("\n");
+    : isJun
+      ? [renderJunHero(), renderJun()].join("\n")
+      : [renderHero(page), renderRouteContent(page)].join("\n");
 
   return renderShell({
-    title: page.route === "/" ? siteData.site.title : `${page.title} | Jumpstyle Brasil`,
+    title: isJun ? "JUN | The World's Largest Jumpstyle Museum" : page.route === "/" ? siteData.site.title : `${page.title} | Jumpstyle Brasil`,
     description: page.lead,
     route: page.route,
     body
@@ -61,6 +72,7 @@ function renderPage(page) {
 }
 
 function renderShell({ title, description, route, body }) {
+  if (route === "/JUN/") return renderJunShell({ title, description, route, body });
   const canonical = new URL(route === "/" ? "" : route.slice(1), siteData.site.url).href;
   const isFbs = route === "/fireborn-squad/";
   const socialImage = isFbs ? "assets/fireborn-squad.png" : "assets/jumper-logo.png";
@@ -128,6 +140,79 @@ function renderShell({ title, description, route, body }) {
 </html>`;
 }
 
+function renderJunShell({ title, description, route, body }) {
+  const canonical = new URL(route.slice(1), siteData.site.url).href;
+  const socialImage = new URL("assets/jun-logo.png", siteData.site.url).href;
+  const signal = ["JUMPSTYLE UNITED NATIONS", "GLOBAL TIMELINE", "DANCE ARCHIVE", "MEETINGS", "LEAGUES", "MUSIC", "KEY FIGURES", "OPEN KNOWLEDGE"];
+  const signalSequence = signal.map((item) => `<span>${item}</span>`).join("");
+  return `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>${escapeHtml(title)}</title>
+  <meta name="description" content="${escapeHtml(description)}">
+  <meta name="keywords" content="Jumpstyle history, Jumpstyle timeline, Jumpstyle museum, Jumpstyle dancers, Jumpstyle meetings, Hardjump, Ownstyle, Sidejump, Tekstyle, Patrick Jumpen">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="theme-color" content="#092da8">
+  <link rel="canonical" href="${canonical}">
+  <link rel="alternate" hreflang="en" href="${canonical}">
+  <link rel="alternate" hreflang="x-default" href="${canonical}">
+  <link rel="icon" href="${sitePath("assets/jun-logo.png")}" type="image/png">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Jumpstyle United Nations">
+  <meta property="og:title" content="${escapeHtml(title)}">
+  <meta property="og:description" content="${escapeHtml(description)}">
+  <meta property="og:url" content="${canonical}">
+  <meta property="og:image" content="${socialImage}">
+  <meta property="og:image:width" content="1080">
+  <meta property="og:image:height" content="1080">
+  <meta property="og:image:alt" content="Jumpstyle United Nations pixel-art emblem">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="${escapeHtml(title)}">
+  <meta name="twitter:description" content="${escapeHtml(description)}">
+  <meta name="twitter:image" content="${socialImage}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="${sitePath("assets/site.css")}">
+  <script type="application/ld+json">${JSON.stringify(jsonLd(route))}</script>
+</head>
+<body class="jun-page">
+  <div class="scroll-meter" data-scroll-meter aria-hidden="true"></div>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <div class="signal-bar jun-signal" aria-hidden="true"><div class="signal-track"><div class="signal-sequence">${signalSequence}</div><div class="signal-sequence">${signalSequence}</div></div></div>
+  <header class="site-header jun-header">
+    <div class="header-inner">
+      <a class="brand jun-brand" href="${sitePath("/JUN/")}" aria-label="Jumpstyle United Nations home"><span class="brand-mark"><img src="${sitePath("assets/jun-logo.png")}" alt="" width="1080" height="1080"></span><span class="brand-copy"><b>JUN</b><small>Jumpstyle United Nations</small></span></a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-button>
+        <span class="menu-icon" aria-hidden="true"></span><span class="sr-only">Open menu</span>
+      </button>
+      <nav id="site-nav" class="site-nav jun-nav" aria-label="JUN sections" data-site-nav>
+        <a href="#timeline">Timeline</a><a href="#nations">Nations</a><a href="#figures">Key figures</a><a href="#sources">Sources</a><a class="jun-back-link" href="${sitePath()}">Jumpstyle Brasil</a>
+      </nav>
+    </div>
+  </header>
+  <main id="content">${body}</main>
+  <nav class="social-rail jun-social-rail" aria-label="JUN links">
+    <a href="${junData.repositoryUrl}" target="_blank" rel="noopener noreferrer" aria-label="Open the JUN repository"><span aria-hidden="true">GH</span></a>
+    <a href="${junData.instagramUrl}" target="_blank" rel="noopener noreferrer" aria-label="Open JUN on Instagram"><span aria-hidden="true">IG</span></a>
+    <a href="${junData.timelineUrl}" target="_blank" rel="noopener noreferrer" aria-label="Open the full global timeline"><span aria-hidden="true">TL</span></a>
+  </nav>
+  <nav class="mobile-dock jun-mobile-dock" aria-label="JUN shortcuts"><a href="#timeline"><span aria-hidden="true"></span>Timeline</a><a href="#nations"><span aria-hidden="true"></span>Nations</a><a href="#figures"><span aria-hidden="true"></span>Figures</a><a href="#sources"><span aria-hidden="true"></span>Sources</a><button type="button" data-dock-menu aria-label="Open full menu"><span aria-hidden="true"></span>More</button></nav>
+  <footer class="site-footer jun-footer">
+    <div class="footer-inner">
+      <div class="footer-brand"><img src="${sitePath("assets/jun-logo.png")}" alt="" width="1080" height="1080"><strong>Jumpstyle United Nations</strong></div>
+      <p>An open global archive built to preserve the culture, credit its people and give future generations a reliable place to begin.</p>
+      <div class="link-grid"><a class="button secondary external" href="${junData.repositoryUrl}" target="_blank" rel="noopener noreferrer">Open repository</a><a class="button secondary external" href="${junData.timelineUrl}" target="_blank" rel="noopener noreferrer">Full timeline</a><a class="button secondary external" href="${junData.figuresUrl}" target="_blank" rel="noopener noreferrer">Key figures data</a><a class="button secondary" href="${sitePath()}">Jumpstyle Brasil</a></div>
+    </div>
+  </footer>
+  <script src="${sitePath("assets/main.js")}" defer></script>
+</body>
+</html>`;
+}
+
 function renderHero(page) {
   const primary = page.primaryCta ? `<a class="button" href="${sitePath(page.primaryCta.route)}">${escapeHtml(page.primaryCta.label)}<span aria-hidden="true">→</span></a>` : "";
   const secondary = page.secondaryCta ? `<a class="button secondary" href="${sitePath(page.secondaryCta.route)}">${escapeHtml(page.secondaryCta.label)}</a>` : "";
@@ -176,6 +261,8 @@ function renderRouteContent(page) {
       return renderCreators();
     case "/fireborn-squad/":
       return renderFbs();
+    case "/JUN/":
+      return renderJun();
     case "/faq/":
       return renderFaq();
     default:
@@ -191,7 +278,8 @@ function renderHome() {
     ["Músicas", "/musicas/", "BPMs, faixas marcantes e playlists para treinar."],
     ["Manifesto", "/manifesto/", "Valores, princípios e missão da comunidade."],
     ["Creators", "/criadores/", "Quem cria conteúdo e movimenta o Jumpstyle brasileiro."],
-    ["Fireborn Squad", "/fireborn-squad/", "A ordem, os graus e o registro do time nacional brasileiro."]
+    ["Fireborn Squad", "/fireborn-squad/", "A ordem, os graus e o registro do time nacional brasileiro."],
+    ["JUN", "/JUN/", "O museu global de história, encontros e figuras do Jumpstyle."]
   ];
   return `<section class="section">
   <div class="section-inner">
@@ -212,7 +300,7 @@ function renderHome() {
 </section>
 <section class="section">
   <div class="section-inner card-grid">
-    ${card("JUN", "Explore a memória da comunidade global de Jumpstyle.", externalLink("jun", "Abrir JUN"))}
+    ${card("JUN", "Explore a memória da comunidade global de Jumpstyle.", `<a class="button" href="${sitePath("/JUN/")}">Abrir museu global</a>`)}
     ${card("Timeline global", "Viaje pelos momentos que transformaram o Jumpstyle ao redor do mundo.", externalLink("junTimeline", "Ver timeline"))}
     ${card("Figuras históricas", "Conheça nomes que deixaram sua marca em diferentes gerações.", externalLink("junFigures", "Ver figuras"))}
   </div>
@@ -288,6 +376,88 @@ function renderCreators() {
     <div class="section-head"><h2>Creators brasileiros</h2><p>Quem transforma treino, técnica, história e vivência em conteúdo para fortalecer a comunidade brasileira de Jumpstyle.</p></div>
     <div class="creator-grid">${siteData.creators.map((name) => `<article class="creator-card"><strong>@${escapeHtml(name)}</strong><p>Creator da comunidade brasileira, compartilhando o movimento e inspirando novos jumpers.</p></article>`).join("")}</div>
   </div></section>`;
+}
+
+function renderJunHero() {
+  const startYear = junData.timeline[0].year;
+  const endYear = junData.timeline.at(-1).year;
+  return `<section class="jun-hero">
+  <div class="jun-world-lines" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="section-inner jun-hero-grid">
+    <div class="jun-hero-copy">
+      <p class="jun-kicker"><span>JUN // EST. 2024</span> Open global archive</p>
+      <h1><span>Jumpstyle</span> United Nations</h1>
+      <p class="jun-museum-title">${escapeHtml(junData.tagline)}</p>
+      <p class="lead">${escapeHtml(junData.lead)}</p>
+      <div class="jun-actions"><a class="jun-button" href="#timeline">Enter the timeline <span aria-hidden="true">↓</span></a><a class="jun-button jun-button-ghost" href="${junData.repositoryUrl}" target="_blank" rel="noopener noreferrer">Open the archive <span aria-hidden="true">↗</span></a></div>
+    </div>
+    <div class="jun-emblem" aria-label="Jumpstyle United Nations emblem">
+      <span class="jun-emblem-axis" aria-hidden="true"></span>
+      <img src="${sitePath("assets/jun-logo.png")}" alt="Pixel-art Jumpstyle United Nations emblem: a jumper over a blue and green globe framed by laurel branches" width="1080" height="1080">
+      <p><span>Archive coordinates</span> 50.8503 N / 4.3517 E</p>
+    </div>
+  </div>
+  <div class="jun-hero-stats" aria-label="Archive overview"><div><strong>${startYear}-${endYear}</strong><span>documented range</span></div><div><strong>${junData.timeline.length}</strong><span>featured milestones</span></div><div><strong>${junData.countries.length}</strong><span>national archives</span></div><div><strong>${junData.figures.length}</strong><span>key figures</span></div></div>
+</section>`;
+}
+
+function renderJun() {
+  const countryOptions = junData.countries.map((country) => `<option value="${country.code}">${escapeHtml(country.name)}</option>`).join("");
+  return `<section class="jun-section jun-timeline-section" id="timeline">
+  <div class="section-inner">
+    <p class="jun-section-code">01 // THE GLOBAL TIMELINE</p>
+    <div class="jun-section-heading"><h2>From club floors to a world network</h2><p>Every milestone links back to a record, publication, video or preserved community page. The full research timeline remains open for national perspectives and new evidence.</p></div>
+    <div class="jun-timeline-tools">
+      <div class="jun-era-filter" role="group" aria-label="Filter timeline by era"><button type="button" data-jun-era="all" aria-pressed="true">All eras</button>${junData.eras.map((era) => `<button type="button" data-jun-era="${era.id}" aria-pressed="false"><span>${escapeHtml(era.label)}</span><small>${era.years}</small></button>`).join("")}</div>
+      <div class="jun-search-row"><label><span>Search the archive</span><input type="search" data-jun-search placeholder="Name, event, country or year"></label><label><span>National view</span><select data-jun-country><option value="all">All countries</option>${countryOptions}</select></label></div>
+    </div>
+    <div class="jun-timeline-meta"><p data-jun-count>${junData.timeline.length} milestones on view</p><a href="${junData.timelineUrl}" target="_blank" rel="noopener noreferrer">Read the complete research timeline <span aria-hidden="true">↗</span></a></div>
+    <div class="jun-timeline" data-jun-timeline>${junData.timeline.map(renderJunEvent).join("")}</div>
+    <p class="jun-empty" data-jun-empty hidden>No milestones match this view.</p>
+  </div>
+</section>
+<section class="jun-section jun-nations-section" id="nations">
+  <div class="section-inner">
+    <p class="jun-section-code">02 // NATIONAL MEMORY</p>
+    <div class="jun-section-heading"><h2>One history, many points of view</h2><p>The global record is built from national histories. These archives follow the countries represented by JUN contributors and the Key Figures Worldwide index.</p></div>
+    <div class="jun-country-grid">${junData.countries.map(renderJunCountry).join("")}</div>
+  </div>
+</section>
+<section class="jun-section jun-figures-section" id="figures">
+  <div class="section-inner">
+    <p class="jun-section-code">03 // KEY FIGURES WORLDWIDE</p>
+    <div class="jun-section-heading"><h2>The jumpers who moved the language forward</h2><p>A community-curated hall of influence across eras and countries. It is an evolving historical index, not a final ranking.</p></div>
+    <div class="jun-figure-grid">${junData.figures.map(renderJunFigure).join("")}</div>
+    <a class="jun-inline-link" href="${junData.figuresUrl}" target="_blank" rel="noopener noreferrer">Explore the complete Key Figures Worldwide dataset <span aria-hidden="true">↗</span></a>
+  </div>
+</section>
+<section class="jun-section jun-sources-section" id="sources">
+  <div class="section-inner">
+    <p class="jun-section-code">04 // EVIDENCE NETWORK</p>
+    <div class="jun-section-heading"><h2>History with a source trail</h2><p>Official labels and charts establish public milestones. Contemporary press gives cultural context. Video titles, descriptions and upload dates locate meetings. Wayback snapshots recover forums, calendars and leagues that disappeared from the live web.</p></div>
+    <div class="jun-source-list">${junData.sourceTypes.map((source, index) => `<a href="${source.url}" target="_blank" rel="noopener noreferrer"><span>${String(index + 1).padStart(2, "0")}</span><div><small>${escapeHtml(source.type)} // ${escapeHtml(source.locale)}</small><strong>${escapeHtml(source.label)}</strong></div><b aria-hidden="true">↗</b></a>`).join("")}</div>
+    <div class="jun-method">
+      <div><span>01</span><strong>Event date</strong><p>Use the date stated in a title or description.</p></div><div><span>02</span><strong>Upload fallback</strong><p>If no event date survives, retain the upload date as an explicit approximation.</p></div><div><span>03</span><strong>Archive proof</strong><p>Preserve the original URL and the closest useful Wayback snapshot.</p></div><div><span>04</span><strong>Open review</strong><p>National contributors can add context and challenge uncertain claims.</p></div>
+    </div>
+  </div>
+</section>
+<section class="jun-final"><div class="section-inner"><img src="${sitePath("assets/jun-logo.png")}" alt="" width="1080" height="1080"><p>Jumpstyle United Nations</p><strong>Every country holds a piece.<br>The archive keeps them together.</strong><div><a class="jun-button" href="${junData.repositoryUrl}" target="_blank" rel="noopener noreferrer">Contribute on GitHub <span aria-hidden="true">↗</span></a><a class="jun-button jun-button-dark" href="#timeline">Return to timeline <span aria-hidden="true">↑</span></a></div></div></section>`;
+}
+
+function renderJunEvent(event) {
+  return `<article class="jun-event" data-jun-event data-jun-era="${event.era}" data-jun-country="${event.code}">
+    <time>${escapeHtml(event.year)}</time>
+    <div class="jun-event-copy"><p><span>${escapeHtml(event.country)}</span>${escapeHtml(event.date)}</p><h3>${escapeHtml(event.title)}</h3><p>${escapeHtml(event.text)}</p></div>
+    <a href="${event.url}" target="_blank" rel="noopener noreferrer"><span>${escapeHtml(event.source)}</span><b aria-hidden="true">↗</b></a>
+  </article>`;
+}
+
+function renderJunCountry(country) {
+  return `<article class="jun-country"><div><span>${country.code}</span><small>National archive</small></div><h3>${escapeHtml(country.name)}</h3><p>${escapeHtml(country.focus)}</p><dl><dt>${escapeHtml(country.figuresLabel || "Key figures")}</dt><dd>${escapeHtml(country.figures)}</dd></dl><a href="${country.archive}" target="_blank" rel="noopener noreferrer">Open ${escapeHtml(country.name)} archive <span aria-hidden="true">↗</span></a></article>`;
+}
+
+function renderJunFigure(figure, index) {
+  return `<article class="jun-figure"><span class="jun-figure-order">${String(index + 1).padStart(2, "0")}</span><div class="jun-figure-meta"><span>${figure.code}</span><small>${escapeHtml(figure.country)} // ${escapeHtml(figure.era)}</small></div><h3>${escapeHtml(figure.name)}</h3><p>${escapeHtml(figure.note)}</p><a href="${figure.url}" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">▶</span> Watch archive</a></article>`;
 }
 
 function renderFbsHero(page) {
@@ -384,7 +554,7 @@ function renderFbsMember(member) {
   return `<details class="fbs-member ${member.active ? "is-active" : "is-desertor"}" data-fbs-card data-fbs-tags="${filters}" role="listitem">
     <summary>
       <span class="fbs-order">${roman(member.order)}</span>
-      <span class="fbs-member-main"><span class="fbs-status" aria-hidden="true"></span><strong>${escapeHtml(member.name)}</strong><small>${member.active ? "Na formação" : "Desertor"}</small></span>
+      <span class="fbs-member-main"><span class="fbs-status ${member.active ? "is-online" : "is-out"}" aria-hidden="true"></span><strong>${escapeHtml(member.name)}</strong><small>${member.active ? "Na formação" : "Desertor"}</small></span>
       <span class="fbs-member-symbols" aria-label="${escapeHtml([grade.name, ...titles.map((title) => title.name)].join(", "))}">${grade.symbol}${titles.map((title) => title.symbol).join("")}</span>
     </summary>
     <div class="fbs-member-detail"><span>Grau ${grade.number}</span><strong>${escapeHtml(grade.name)}</strong>${titles.length ? `<p>${titles.map((title) => `${title.symbol} ${escapeHtml(title.name)}`).join(" · ")}</p>` : "<p>Sem título filosófico adicional.</p>"}</div>
@@ -457,7 +627,66 @@ function sitePath(value = "/") {
   return `${cleanBase}${String(value).replace(/^\//, "")}`;
 }
 
-function jsonLd() {
+function renderLlmsIndex() {
+  return `# Jumpstyle Brasil\n\nOfficial site: ${siteData.site.url}\n\n## Primary sections\n\n- Jumpstyle Brasil: ${siteData.site.url}\n- Fireborn Squad: ${new URL("fireborn-squad/", siteData.site.url).href}\n- Jumpstyle United Nations global museum: ${new URL("JUN/", siteData.site.url).href}\n- JUN machine-readable guide: ${new URL("JUN/llms.txt", siteData.site.url).href}\n`;
+}
+
+function renderJunLlms() {
+  const timeline = junData.timeline.map((event) => `- ${event.date} | ${event.country} | ${event.title}: ${event.text} Source: ${event.url}`).join("\n");
+  const figures = junData.figures.map((figure) => `- ${figure.name} (${figure.country}, ${figure.era}): ${figure.note} Archive: ${figure.url}`).join("\n");
+  const nations = junData.countries.map((country) => `- ${country.name}: ${country.focus} Key figures: ${country.figures}. National archive: ${country.archive}`).join("\n");
+  return `# Jumpstyle United Nations (JUN)\n\n> ${junData.tagline}\n\nJUN is an open, living archive of Jumpstyle history, dance, music, meetings, leagues and key figures. The public museum is available at ${new URL("JUN/", siteData.site.url).href}. The canonical collaborative repository is ${junData.repositoryUrl}.\n\n## Editorial policy\n\nEvents should use a date stated in a title or description. When neither survives, the upload date may be used as an explicitly identified approximation. Existing timeline records are preserved while new sourced material is added. National contributors review local perspectives.\n\n## Global timeline\n\n${timeline}\n\n## National archives\n\n${nations}\n\n## Key figures worldwide\n\n${figures}\n\n## Canonical research files\n\n- Global Timeline: ${junData.timelineUrl}\n- Key Figures Worldwide: ${junData.figuresUrl}\n- Repository: ${junData.repositoryUrl}\n`;
+}
+
+function jsonLd(route) {
+  if (route === "/JUN/") {
+    const url = new URL("JUN/", siteData.site.url).href;
+    return {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": `${url}#organization`,
+          name: "Jumpstyle United Nations",
+          alternateName: "JUN",
+          url,
+          logo: new URL("assets/jun-logo.png", siteData.site.url).href,
+          sameAs: [junData.repositoryUrl, junData.instagramUrl]
+        },
+        {
+          "@type": "CollectionPage",
+          "@id": `${url}#museum`,
+          url,
+          name: "Jumpstyle United Nations - The World's Largest Jumpstyle Museum",
+          description: junData.lead,
+          inLanguage: "en",
+          isPartOf: { "@type": "WebSite", name: "Jumpstyle Brasil", url: siteData.site.url },
+          about: ["Jumpstyle", "Hardjump", "Ownstyle", "Sidejump", "Tekstyle", "Jump dance history"],
+          mainEntity: { "@id": `${url}#timeline` },
+          publisher: { "@id": `${url}#organization` }
+        },
+        {
+          "@type": "ItemList",
+          "@id": `${url}#timeline`,
+          name: "Jumpstyle Global Timeline",
+          numberOfItems: junData.timeline.length,
+          itemListOrder: "https://schema.org/ItemListOrderAscending",
+          itemListElement: junData.timeline.map((event, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            item: {
+              "@type": "CreativeWork",
+              name: `${event.year}: ${event.title}`,
+              description: event.text,
+              spatialCoverage: event.country,
+              temporalCoverage: event.date,
+              citation: event.url
+            }
+          }))
+        }
+      ]
+    };
+  }
   return {
     "@context": "https://schema.org",
     "@type": "Organization",

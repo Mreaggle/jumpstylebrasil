@@ -1,6 +1,6 @@
 # Jumpstyle Brasil
 
-Site estático mobile-first da Jumpstyle Brasil, reconstruído a partir do pacote de migração local e publicado via GitHub Pages no domínio próprio. Inclui uma área temática independente para a Fireborn Squad, com ordem iniciática, roster filtrável e identidade visual própria.
+Site estático mobile-first da Jumpstyle Brasil, reconstruído a partir do pacote de migração local e publicado via GitHub Pages no domínio próprio. Inclui áreas independentes para a Fireborn Squad e para o museu internacional Jumpstyle United Nations.
 
 **Produção:** https://jumpstyle.com.br/
 
@@ -29,6 +29,7 @@ O build final fica em `dist/`.
 
 - `src/data/original-content.json`: texto original preservado por pagina.
 - `src/data/site-data.json`: navegacao, links, FAQ, roadmap e conteudo estruturado.
+- `src/data/jun-data.json`: timeline global, paises, figuras e fontes da pagina internacional `/JUN/`.
 - `src/styles/site.css`: tokens visuais e UI responsiva.
 - `src/scripts/main.js`: interacoes locais.
 - `scripts/`: build, smoke tests e auditorias.
@@ -41,3 +42,5 @@ Os textos de origem permanecem em `src/data/original-content.json` para rastreab
 ## Publicacao
 
 O workflow `.github/workflows/deploy-pages.yml` valida e publica `dist/` via GitHub Pages a cada push em `main`. O build usa `/` como base path para funcionar corretamente no domínio próprio `jumpstyle.com.br`.
+
+O build tambem gera `dist/JUN/index.html`, `dist/JUN/llms.txt` e o indice geral `dist/llms.txt`. Assim, `https://jumpstyle.com.br/JUN/` continua no mesmo Pages e dominio, mas usa shell, navegacao, idioma, metadados e identidade visual proprios.

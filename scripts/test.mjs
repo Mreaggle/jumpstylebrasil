@@ -3,6 +3,7 @@ import path from "node:path";
 import { execFileSync } from "node:child_process";
 
 const siteData = JSON.parse(fs.readFileSync("src/data/site-data.json", "utf8"));
+const junData = JSON.parse(fs.readFileSync("src/data/jun-data.json", "utf8"));
 
 execFileSync(process.execPath, ["scripts/build.mjs"], { stdio: "inherit" });
 
@@ -43,6 +44,24 @@ if (!fbs.includes("data-fbs-ignite") || !fbs.includes("data-fbs-filter")) errors
 if ((fbs.match(/data-fbs-card/g) || []).length !== 28) errors.push("Roster FBS incompleto no HTML");
 if (!fs.existsSync("dist/assets/fireborn-squad.png")) errors.push("Brasao FBS nao copiado para o build");
 if (!fbs.includes("A Fênix deixa rastro")) errors.push("Mascote Fenix ausente da narrativa FBS");
+if (!/fbs-member is-desertor[\s\S]*fbs-status is-out[\s\S]*<strong>Blackzin<\/strong><small>Desertor<\/small>/.test(fbs)) {
+  errors.push("Blackzin deve aparecer com status visual de desertor no registro FBS");
+}
+
+const jun = fs.readFileSync("dist/JUN/index.html", "utf8");
+if (!jun.includes('<html lang="en">') || !jun.includes('class="jun-page"')) errors.push("Tema exclusivo em ingles da JUN ausente");
+if (!jun.includes("THE WORLD&#39;S LARGEST JUMPSTYLE MUSEUM")) errors.push("Posicionamento principal da JUN ausente");
+if (!jun.includes('assets/jun-logo.png') || !fs.existsSync("dist/assets/jun-logo.png")) errors.push("Logo JUN nao copiada para o build");
+if (!fs.existsSync("dist/assets/fonts/PixelOperator.woff") || !fs.existsSync("dist/assets/fonts/PixelOperator-Bold.woff")) errors.push("Pixel Operator nao copiada para o build");
+if ((jun.match(/data-jun-event/g) || []).length !== junData.timeline.length) errors.push("Timeline JUN incompleta no HTML");
+if ((jun.match(/class="jun-country"/g) || []).length !== junData.countries.length) errors.push("Arquivos nacionais JUN incompletos no HTML");
+if ((jun.match(/class="jun-figure"/g) || []).length !== junData.figures.length) errors.push("Figuras historicas JUN incompletas no HTML");
+if (!jun.includes("data-jun-search") || !jun.includes("data-jun-country") || !jun.includes("data-jun-era")) errors.push("Filtros da timeline JUN ausentes");
+if (!jun.includes('"@type":"CollectionPage"') || !jun.includes('"@type":"ItemList"')) errors.push("Dados estruturados da JUN ausentes");
+if (!jun.includes('<link rel="canonical" href="https://jumpstyle.com.br/JUN/">')) errors.push("Canonical da JUN incorreto");
+if (!fs.existsSync("dist/JUN/llms.txt") || !fs.readFileSync("dist/JUN/llms.txt", "utf8").includes("## Global timeline")) errors.push("Guia legivel por agentes da JUN ausente");
+if (jun.includes("JUN-whatsapp-chat") || fs.existsSync("dist/JUN-whatsapp-chat.txt") || fs.existsSync("dist/JUN/JUN-whatsapp-chat.txt")) errors.push("Export privado da JUN exposto no build");
+if (!home.includes('href="/JUN/"')) errors.push("Home sem acesso local para a JUN");
 
 const creators = fs.readFileSync("dist/criadores/index.html", "utf8");
 if (!creators.includes("Creators brasileiros") || creators.includes("@nakpovs")) errors.push("Pagina Creators com titulo ou lista incorreta");

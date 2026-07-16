@@ -24,6 +24,25 @@ Arquivos prioritarios indicados no pacote:
 - https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Brazil/br-timeline.md
 - https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JUNToolkit/KeyFiguresWorldwide/Dance/README.md
 
+### JUN international museum
+
+The `/JUN/` collection combines the JUN repository with independently checked public records. Research notes and the country-by-country queue are maintained in `docs/JUN_RESEARCH_INDEX.md`.
+
+Primary and editorial anchors used in the current release:
+
+- https://www.jumperrecords.com/
+- https://www.top40.nl/nieuws-nieuws-back-to-the-zeros-wat-was-hot
+- https://3voor12.vpro.nl/lokaal/den-haag/artikelen/overzicht/2007/september/verslag-herfstpop-2007.html
+- https://www.lemonde.fr/vous/article/2008/01/08/les-agites-de-la-tecktonik_997006_3238.html
+- https://www.ultratop.be/nl/song/57404/Da-Boy-Tommy-Halloween
+- https://qmusic.be/nieuws/da-boy-tommyis-overleden-1-1
+- https://pitchfork.com/thepitch/chasing-yabujin-the-artist-who-secretly-shaped-the-underground-sound-of-the-2020s/
+- https://fortnite.gg/cosmetics?id=4008&type=emote
+- https://web.archive.org/web/20090416222333/http://www.jumpstylepolska.pl/
+- https://web.archive.org/web/20090210025827/http://jumpstylers.ru/
+
+The private WhatsApp export was used only as a discovery aid. It is not copied to `dist/`, linked, quoted or treated as an independently verifiable source.
+
 ### Fireborn Squad
 
 A página `/fireborn-squad/` usa o registro de membros, graus e títulos fornecido diretamente pela equipe em 2026-07-14. Fundação, missão, oito membros iniciais e marcos de 2024 foram conferidos na timeline global da JUN no commit `35812ad5e5e73194a765320a7c7f04bc06761d10`:

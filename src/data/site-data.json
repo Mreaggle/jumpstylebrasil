@@ -87,6 +87,7 @@
     { "label": "Músicas", "route": "/musicas/" },
     { "label": "Creators", "route": "/criadores/" },
     { "label": "FBS", "route": "/fireborn-squad/" },
+    { "label": "JUN", "route": "/JUN/" },
     { "label": "FAQ", "route": "/faq/" }
   ],
   "roadmap": [
@@ -289,6 +290,12 @@
       "title": "Fireborn Squad",
       "eyebrow": "Time nacional de Jumpstyle do Brasil",
       "lead": "Uma seleção forjada para reunir os melhores jumpers do país entre gerações e regiões. Aqui, legado não é passado: é responsabilidade."
+    },
+    {
+      "route": "/JUN/",
+      "title": "Jumpstyle United Nations",
+      "eyebrow": "The open global Jumpstyle archive",
+      "lead": "A living museum of Jumpstyle history, dance, music, meetings, leagues and the people who carried the culture across borders."
     },
     {
       "route": "/faq/",

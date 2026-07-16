@@ -90,6 +90,45 @@ fbsCards.forEach((card) => {
   });
 });
 
+const junEvents = [...document.querySelectorAll("[data-jun-event]")];
+const junSearch = document.querySelector("[data-jun-search]");
+const junCountry = document.querySelector("[data-jun-country]");
+let junEra = "all";
+
+function updateJunTimeline() {
+  const query = junSearch?.value.trim().toLocaleLowerCase("en") || "";
+  const country = junCountry?.value || "all";
+  let visible = 0;
+
+  junEvents.forEach((event) => {
+    const countries = (event.dataset.junCountry || "").split(" ");
+    const matchesEra = junEra === "all" || event.dataset.junEra === junEra;
+    const matchesCountry = country === "all" || countries.includes(country);
+    const matchesQuery = !query || event.textContent.toLocaleLowerCase("en").includes(query);
+    const matches = matchesEra && matchesCountry && matchesQuery;
+    event.hidden = !matches;
+    if (matches) visible += 1;
+  });
+
+  const count = document.querySelector("[data-jun-count]");
+  if (count) count.textContent = `${visible} ${visible === 1 ? "milestone" : "milestones"} on view`;
+  const empty = document.querySelector("[data-jun-empty]");
+  if (empty) empty.hidden = visible !== 0;
+}
+
+document.querySelectorAll("[data-jun-era]").forEach((button) => {
+  button.addEventListener("click", () => {
+    junEra = button.dataset.junEra || "all";
+    document.querySelectorAll("[data-jun-era]").forEach((item) => {
+      item.setAttribute("aria-pressed", String(item === button));
+    });
+    updateJunTimeline();
+  });
+});
+
+junSearch?.addEventListener("input", updateJunTimeline);
+junCountry?.addEventListener("change", updateJunTimeline);
+
 document.querySelectorAll("[data-faq-filter]").forEach((input) => {
   input.addEventListener("input", () => {
     const query = input.value.trim().toLocaleLowerCase("pt-BR");
