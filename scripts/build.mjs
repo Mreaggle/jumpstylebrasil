@@ -503,10 +503,13 @@ function renderJunFullYear(year, yearIndex, anchoredYears) {
 function renderTimelineInline(markdown) {
   let result = "";
   let cursor = 0;
-  const links = /\[([^\]]+)\]\((https?:\/\/[^)]+)\)/g;
+  const links = /\[([^\]]+)\]\(([^)]+)\)/g;
   for (const match of markdown.matchAll(links)) {
     result += renderTimelineText(markdown.slice(cursor, match.index));
-    result += `<a href="${escapeHtml(match[2])}" target="_blank" rel="noopener noreferrer">${renderTimelineText(match[1])}<span aria-hidden="true">↗</span></a>`;
+    const href = /^https?:\/\//.test(match[2])
+      ? match[2]
+      : `${junData.repositoryUrl}/blob/main/JumpstyleTimeline/Global/${match[2]}`;
+    result += `<a href="${escapeHtml(href)}" target="_blank" rel="noopener noreferrer">${renderTimelineText(match[1])}<span aria-hidden="true">↗</span></a>`;
     cursor = match.index + match[0].length;
   }
   return result + renderTimelineText(markdown.slice(cursor));
@@ -518,7 +521,7 @@ function renderTimelineText(text) {
 
 function timelinePlainText(markdown) {
   return String(markdown)
-    .replace(/\[([^\]]+)\]\(https?:\/\/[^)]+\)/g, "$1")
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, "$1")
     .replaceAll("`", "");
 }
 
