@@ -13,7 +13,7 @@
 ## Fonte documental externa
 
 - Repositorio: `Mreaggle/JumpstyleUnitedNations`
-- Commit verificado em 2026-07-14 via `git ls-remote`: `35812ad5e5e73194a765320a7c7f04bc06761d10`
+- Commit verificado em 2026-07-16 via `git ls-remote`: `d63ae1b7d040a5768834b9029b41243ffdbf10ab`
 - Arquivos prioritarios indicados no pacote:
   - `JumpstyleTimeline/Global/global-timeline.md`
   - `JumpstyleTimeline/Brazil/br-timeline.md`

@@ -1,3 +1,4 @@
+import crypto from "node:crypto";
 import fs from "node:fs";
 
 const siteData = readJson("src/data/site-data.json");
@@ -6,6 +7,7 @@ const translationData = readJson("src/data/translation-languages.json");
 const globalTimeline = fs.readFileSync("src/data/global-timeline.md", "utf8");
 const originalContent = readJson("src/data/original-content.json");
 const linksManifest = readJson("manifests/source-links.json");
+const junSourceManifest = readJson("manifests/jun-source-manifest.json");
 
 const errors = [];
 const routes = new Set(siteData.pages.map((page) => page.route));
@@ -24,7 +26,13 @@ if (!fs.existsSync("fbs.png")) errors.push("Brasao FBS ausente na raiz");
 if (!fs.existsSync("JUN LOGO.png")) errors.push("Logo JUN ausente na raiz");
 if (!fs.existsSync("src/assets/fonts/PixelOperator.woff") || !fs.existsSync("src/assets/fonts/PixelOperator-Bold.woff")) errors.push("Fonte Pixel Operator ausente");
 const globalEventCount = (globalTimeline.match(/^[ ]{2}-[ ]+/gm) || []).length;
-if (globalEventCount !== 186) errors.push(`Global Timeline integral deve conter 186 registros detalhados; encontrados: ${globalEventCount}`);
+if (globalEventCount < junData.timeline.length) errors.push(`Global Timeline integral nao pode ter menos registros que a selecao editorial; encontrados: ${globalEventCount}`);
+const globalSource = junSourceManifest.priority_sources.find((source) => source.path === "JumpstyleTimeline/Global/global-timeline.md");
+if (!globalSource) {
+  errors.push("Manifesto JUN nao declara a Global Timeline canonica");
+} else if (gitBlobSha(globalTimeline) !== globalSource.observed_blob_sha) {
+  errors.push("Global Timeline local diverge do blob canonico declarado no manifesto JUN");
+}
 if ((globalTimeline.match(/^#### \d{4}/gm) || []).length < 30) errors.push("Global Timeline integral perdeu secoes anuais");
 
 if (junData.timeline.length < 25) errors.push("Timeline JUN deve conter pelo menos 25 marcos globais");
@@ -63,4 +71,13 @@ console.log("check: ok");
 
 function readJson(file) {
   return JSON.parse(fs.readFileSync(file, "utf8"));
+}
+
+function gitBlobSha(content) {
+  const payload = Buffer.from(content);
+  return crypto
+    .createHash("sha1")
+    .update(`blob ${payload.length}\0`)
+    .update(payload)
+    .digest("hex");
 }

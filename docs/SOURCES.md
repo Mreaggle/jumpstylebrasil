@@ -13,7 +13,7 @@
 ## Jumpstyle United Nations
 
 - URL: https://github.com/Mreaggle/JumpstyleUnitedNations/
-- Commit verificado: `fd71444`
+- Commit verificado: `d63ae1b`
 - Data de acesso: 2026-07-16
 - Tipo de fonte: repositorio documental da comunidade
 - Status: commit HEAD confirmado via `git ls-remote`

@@ -1,11 +1,11 @@
 {
   "repository": "Mreaggle/JumpstyleUnitedNations",
   "default_branch": "main",
-  "snapshot_commit_observed": "fd714444325d42482bc756f0ce0e897ad53637df",
+  "snapshot_commit_observed": "d63ae1b7d040a5768834b9029b41243ffdbf10ab",
   "priority_sources": [
     {
       "path": "JumpstyleTimeline/Global/global-timeline.md",
-      "observed_blob_sha": "fdca059e26b7c90db28d0103e4eba8351468fe8d"
+      "observed_blob_sha": "8e9ec63cdb930d9b31716250c671f7ab9e3fde34"
     },
     {
       "path": "JumpstyleTimeline/Brazil/br-timeline.md",
