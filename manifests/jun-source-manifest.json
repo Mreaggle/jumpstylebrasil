@@ -5,7 +5,7 @@
   "priority_sources": [
     {
       "path": "JumpstyleTimeline/Global/global-timeline.md",
-      "observed_blob_sha": "8e9ec63cdb930d9b31716250c671f7ab9e3fde34"
+      "observed_blob_sha": "eacbc914cef4b4a1fa017bc931965d3c1a123fdc"
     },
     {
       "path": "JumpstyleTimeline/Brazil/br-timeline.md",
@@ -16,5 +16,10 @@
       "observed_blob_sha": "d7011afcc2cb9cbe92afebdd7e08862b5cfb8dfe"
     }
   ],
-  "ingestion_warning": "The repository contains templates, placeholder text, # links and incomplete entries. Do not publish placeholders such as '[Event or Contribution 1]' or '[Brief Overview of Contributions]'. Only ingest substantive, traceable material."
+  "ingestion_warning": "The repository contains templates, placeholder text, # links and incomplete entries. Do not publish placeholders such as '[Event or Contribution 1]' or '[Brief Overview of Contributions]'. Only ingest substantive, traceable material.",
+  "synchronization": {
+    "canonical_path": "JumpstyleTimeline/Global/global-timeline.md",
+    "generated_copy": "src/data/global-timeline.md",
+    "rule": "The deployed JUN page must be built from the canonical archive checkout; never update the displayed count independently."
+  }
 }

@@ -5,6 +5,8 @@
   "type": "module",
   "description": "Site estatico da comunidade Jumpstyle Brasil, reconstruido a partir do pacote de migracao.",
   "scripts": {
+    "sync:jun": "node scripts/sync-jun.mjs",
+    "check:jun-sync": "node scripts/sync-jun.mjs --check",
     "check": "node scripts/check.mjs",
     "build": "node scripts/build.mjs",
     "test": "node scripts/test.mjs",
