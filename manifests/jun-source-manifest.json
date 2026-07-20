@@ -20,6 +20,8 @@
   "synchronization": {
     "canonical_path": "JumpstyleTimeline/Global/global-timeline.md",
     "generated_copy": "src/data/global-timeline.md",
+    "key_figures_path": "JUNToolkit/KeyFiguresWorldwide/Dance/README.md",
+    "generated_key_figures": "src/data/jun-data.json#figures",
     "rule": "The deployed JUN page must be built from the canonical archive checkout; never update the displayed count independently."
   }
 }

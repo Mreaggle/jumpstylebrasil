@@ -1407,10 +1407,12 @@ h3 { font-size: 2rem; }
 .jun-event time { position: relative; z-index: 2; min-height: 88px; display: grid; place-items: center; border-right: 1px solid var(--jun-line); background: #050b17; color: var(--jun-cyan); font-size: 1.2rem; font-weight: 700; }
 .jun-event time::after { content: ""; position: absolute; right: -5px; top: 1rem; width: 9px; height: 9px; border: 2px solid var(--jun-black); background: var(--jun-green); }
 .jun-event-copy { min-width: 0; padding: 1rem; }
-.jun-event-copy > p:first-child { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .4rem; margin: 0 0 .65rem; color: var(--jun-muted); font-size: .58rem; font-weight: 700; text-transform: uppercase; }
-.jun-event-copy > p:first-child span { color: var(--jun-green); }
+.jun-event-meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .4rem; margin: 0 0 .65rem; color: var(--jun-muted); font-size: .58rem; font-weight: 700; text-transform: uppercase; }
+.jun-event-meta span { color: var(--jun-green); }
 .jun-event h3 { color: var(--jun-white); font-size: 1.45rem; line-height: 1; }
-.jun-event-copy > p:last-child { margin: .65rem 0 0; color: var(--jun-muted); font-size: .8rem; }
+.jun-event-description { margin: .65rem 0 0; color: var(--jun-muted); font-size: .8rem; }
+.jun-event-impact { margin: .75rem 0 0; padding: .65rem .7rem; border-left: 2px solid var(--jun-green); background: rgba(105, 223, 67, .06); color: #c2d1e8; font-size: .72rem; }
+.jun-event-impact strong { display: block; margin-bottom: .2rem; color: var(--jun-green); font-family: "Pixel Operator", monospace; font-size: .68rem; text-transform: uppercase; }
 .jun-event > a { grid-column: 2; display: flex; align-items: center; justify-content: space-between; gap: .5rem; padding: .75rem 1rem; border-top: 1px solid var(--jun-line); color: var(--jun-cyan); font-size: .68rem; font-weight: 700; text-decoration: none; }
 .jun-event > a b { color: var(--jun-green); font-size: 1rem; }
 .jun-empty { margin: 2rem 0 0; padding: 2rem; border: 1px solid var(--jun-line); color: var(--jun-muted); text-align: center; }

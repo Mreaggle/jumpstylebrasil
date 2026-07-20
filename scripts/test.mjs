@@ -62,6 +62,13 @@ if ((jun.match(/class="jun-country"/g) || []).length !== junData.countries.lengt
 if (!jun.includes("data-jun-translate-toggle") || !jun.includes("data-jun-translate-language")) errors.push("Tradutor automatico JUN ausente");
 if (!jun.includes("data-jun-nation-search") || !jun.includes("data-jun-nation-filter")) errors.push("Busca e filtros nacionais JUN ausentes");
 if ((jun.match(/class="jun-figure"/g) || []).length !== junData.figures.length) errors.push("Figuras historicas JUN incompletas no HTML");
+if (!jun.includes("Mr. Covin") || !jun.includes("🇫🇷 France")) errors.push("Mr. Covin e a bandeira francesa devem aparecer em Key Figures Worldwide");
+if (!jun.includes("<small>50 milestones</small>") || !jun.includes("<strong>50</strong><span>key figures</span>")) errors.push("Contadores editoriais JUN devem refletir 50 marcos e 50 figuras");
+if ((jun.match(/class="jun-event-impact"/g) || []).length !== junData.timeline.length) errors.push("Todo marco em destaque deve explicar seu impacto cultural");
+for (const country of junData.countries) {
+  const flag = flagEmoji(country.code);
+  if (flag && !htmlToText(jun).includes(`${flag} ${country.name}`)) errors.push(`Bandeira ausente para ${country.name}`);
+}
 if (!jun.includes("data-jun-search") || !jun.includes("data-jun-country") || !jun.includes("data-jun-era")) errors.push("Filtros da timeline JUN ausentes");
 if (!jun.includes('"@type":"CollectionPage"') || !jun.includes('"@type":"ItemList"')) errors.push("Dados estruturados da JUN ausentes");
 if (!jun.includes('<link rel="canonical" href="https://jumpstyle.com.br/JUN/">')) errors.push("Canonical da JUN incorreto");
@@ -114,5 +121,10 @@ function htmlToText(html) {
 }
 
 function normalizeTimelineText(text) {
-  return text.replace(/\s+/g, " ").replace(/\s+([,.;:!?])/g, "$1").trim();
+  return text.replace(/(?:\p{Regional_Indicator}{2}|[🌍🌎🌏])\s*/gu, "").replace(/\s+/g, " ").replace(/\s+([,.;:!?])/g, "$1").trim();
+}
+
+function flagEmoji(code) {
+  if (!/^[A-Z]{2}$/.test(code)) return "";
+  return [...code].map((letter) => String.fromCodePoint(127397 + letter.charCodeAt(0))).join("");
 }

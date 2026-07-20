@@ -35,13 +35,14 @@ if (!globalSource) {
 }
 if ((globalTimeline.match(/^#### \d{4}/gm) || []).length < 30) errors.push("Global Timeline integral perdeu secoes anuais");
 
-if (junData.timeline.length < 25) errors.push("Timeline JUN deve conter pelo menos 25 marcos globais");
+if (junData.timeline.length !== 50) errors.push("Selecao editorial JUN deve conter exatamente 50 marcos globais de alto impacto");
 if (junData.countries.length !== 250) errors.push("JUN deve expor os 249 registros ISO e Kosovo (XK)");
 if (translationData.languages.length !== 194) errors.push("Tradutor JUN deve expor os 194 idiomas suportados no catalogo oficial usado");
 if (translationData.languages.some((language, index, languages) => index > 0 && languages[index - 1].name.localeCompare(language.name, "en") > 0)) errors.push("Idiomas do tradutor JUN devem permanecer em ordem alfabetica");
-if (junData.figures.length < 18) errors.push("JUN deve exibir pelo menos 18 figuras historicas");
+if (junData.figures.length !== 50) errors.push("JUN deve exibir todas as 50 figuras historicas unicas do indice canonico");
+if (!junData.figures.some((figure) => figure.name === "Mr. Covin" && figure.code === "FR")) errors.push("Mr. Covin, da Franca, deve constar em Key Figures Worldwide");
 for (const event of junData.timeline) {
-  if (!event.year || !event.country || !event.title || !event.text || !event.url) errors.push(`Marco JUN incompleto: ${event.title || "sem titulo"}`);
+  if (!event.year || !event.country || !event.title || !event.text || !event.url || !event.impact) errors.push(`Marco JUN incompleto ou sem avaliacao de impacto: ${event.title || "sem titulo"}`);
 }
 
 for (const page of originalContent.pages) {

@@ -10,6 +10,12 @@ const globalTimelineMarkdown = fs.readFileSync(path.join(root, "src/data/global-
 const globalTimeline = parseGlobalTimeline(globalTimelineMarkdown);
 const originalContent = readJson("src/data/original-content.json");
 const originalByPage = new Map(originalContent.pages.map((page) => [page.page, page]));
+const countryByName = new Map(junData.countries.map((country) => [country.name.toLocaleLowerCase("en"), country.code]));
+const countryCodes = new Set(junData.countries.map((country) => country.code));
+const countryNamePattern = new RegExp(
+  `(^|[^\\p{L}])(${junData.countries.map((country) => escapeRegExp(country.name)).sort((a, b) => b.length - a.length).join("|")})(?=$|[^\\p{L}])`,
+  "giu"
+);
 
 fs.rmSync(dist, { recursive: true, force: true });
 fs.mkdirSync(dist, { recursive: true });
@@ -407,7 +413,7 @@ function renderJunHero() {
 }
 
 function renderJun() {
-  const countryOptions = junData.countries.map((country) => `<option value="${country.code}">${escapeHtml(country.name)}</option>`).join("");
+  const countryOptions = junData.countries.map((country) => `<option value="${country.code}">${flagEmoji(country.code)} ${escapeHtml(country.name)}</option>`).join("");
   const documentedCountries = junData.countries.filter((country) => country.status === "research-in-progress").length;
   return `<section class="jun-section jun-timeline-section" id="timeline">
   <div class="section-inner">
@@ -434,7 +440,7 @@ function renderJun() {
 <section class="jun-section jun-nations-section" id="nations">
   <div class="section-inner">
     <p class="jun-section-code">02 // NATIONAL MEMORY</p>
-    <div class="jun-section-heading"><h2>One history, many points of view</h2><p>The global record is built from national histories. The catalog now provides a research structure for every ISO 3166-1 country and territory, plus Kosovo under XK, while clearly separating sourced archives from open research queues.</p></div>
+    <div class="jun-section-heading"><h2>One history, many points of view</h2><p>The global record is built from national histories. The catalog now provides a research structure for every ISO 3166-1 country and territory, plus ${flagEmoji("XK")} Kosovo under XK, while clearly separating sourced archives from open research queues.</p></div>
     <div class="jun-nation-tools">
       <label><span>Find a national archive</span><input type="search" data-jun-nation-search placeholder="Country, territory or code"></label>
       <div class="jun-nation-filter" role="group" aria-label="Filter national archives"><button type="button" data-jun-nation-filter="all" aria-pressed="true">All <span>${junData.countries.length}</span></button><button type="button" data-jun-nation-filter="documented" aria-pressed="false">Documented <span>${documentedCountries}</span></button><button type="button" data-jun-nation-filter="pending" aria-pressed="false">Research queue <span>${junData.countries.length - documentedCountries}</span></button></div>
@@ -456,7 +462,7 @@ function renderJun() {
   <div class="section-inner">
     <p class="jun-section-code">04 // EVIDENCE NETWORK</p>
     <div class="jun-section-heading"><h2>History with a source trail</h2><p>Official labels and charts establish public milestones. Contemporary press gives cultural context. Video titles, descriptions and upload dates locate meetings. Wayback snapshots recover forums, calendars and leagues that disappeared from the live web.</p></div>
-    <div class="jun-source-list">${junData.sourceTypes.map((source, index) => `<a href="${source.url}" target="_blank" rel="noopener noreferrer"><span>${String(index + 1).padStart(2, "0")}</span><div><small>${escapeHtml(source.type)} // ${escapeHtml(source.locale)}</small><strong>${escapeHtml(source.label)}</strong></div><b aria-hidden="true">↗</b></a>`).join("")}</div>
+    <div class="jun-source-list">${junData.sourceTypes.map((source, index) => `<a href="${source.url}" target="_blank" rel="noopener noreferrer"><span>${String(index + 1).padStart(2, "0")}</span><div><small>${escapeHtml(source.type)} // ${renderLocale(source.locale)}</small><strong>${renderCountryText(source.label)}</strong></div><b aria-hidden="true">↗</b></a>`).join("")}</div>
     <div class="jun-method">
       <div><span>01</span><strong>Event date</strong><p>Use the date stated in a title or description.</p></div><div><span>02</span><strong>Upload fallback</strong><p>If no event date survives, retain the upload date as an explicit approximation.</p></div><div><span>03</span><strong>Archive proof</strong><p>Preserve the original URL and the closest useful Wayback snapshot.</p></div><div><span>04</span><strong>Open review</strong><p>National contributors can add context and challenge uncertain claims.</p></div>
     </div>
@@ -516,7 +522,7 @@ function renderTimelineInline(markdown) {
 }
 
 function renderTimelineText(text) {
-  return escapeHtml(text).replace(/`([^`]+)`/g, "<code>$1</code>");
+  return renderCountryText(text).replace(/`([^`]+)`/g, "<code>$1</code>");
 }
 
 function timelinePlainText(markdown) {
@@ -584,14 +590,15 @@ function parseGlobalTimeline(markdown) {
 function renderJunEvent(event) {
   return `<article class="jun-event" data-jun-event data-jun-era="${event.era}" data-jun-country="${event.code}">
     <time>${escapeHtml(event.year)}</time>
-    <div class="jun-event-copy"><p><span>${escapeHtml(event.country)}</span>${escapeHtml(event.date)}</p><h3>${escapeHtml(event.title)}</h3><p>${escapeHtml(event.text)}</p></div>
+    <div class="jun-event-copy"><p class="jun-event-meta"><span>${flagsForCodes(event.code)} ${escapeHtml(event.country)}</span>${escapeHtml(event.date)}</p><h3>${renderCountryText(event.title)}</h3><p class="jun-event-description">${renderCountryText(event.text)}</p><p class="jun-event-impact"><strong>Why it matters</strong>${renderCountryText(event.impact)}</p></div>
     <a href="${event.url}" target="_blank" rel="noopener noreferrer"><span>${escapeHtml(event.source)}</span><b aria-hidden="true">↗</b></a>
   </article>`;
 }
 
 function renderJunCountry(country) {
   const documented = country.status === "research-in-progress";
-  return `<article class="jun-country" data-jun-nation data-jun-nation-status="${documented ? "documented" : "pending"}" data-jun-nation-searchable="${escapeHtml(`${country.code} ${country.name}`.toLowerCase())}"><div><span>${country.code}</span><small>${documented ? "Sourced records" : "Research needed"}</small></div><h3>${escapeHtml(country.name)}</h3><p>${escapeHtml(country.focus)}</p><dl><dt>${escapeHtml(country.figuresLabel || "Key figures")}</dt><dd>${escapeHtml(country.figures)}</dd></dl><a href="${country.archive}" target="_blank" rel="noopener noreferrer">Open ${escapeHtml(country.name)} archive <span aria-hidden="true">↗</span></a></article>`;
+  const flag = flagEmoji(country.code);
+  return `<article class="jun-country" data-jun-nation data-jun-nation-status="${documented ? "documented" : "pending"}" data-jun-nation-searchable="${escapeHtml(`${country.code} ${country.name}`.toLowerCase())}"><div><span>${flag} ${country.code}</span><small>${documented ? "Sourced records" : "Research needed"}</small></div><h3>${flag} ${escapeHtml(country.name)}</h3><p>${renderCountryText(country.focus)}</p><dl><dt>${escapeHtml(country.figuresLabel || "Key figures")}</dt><dd>${renderCountryText(country.figures)}</dd></dl><a href="${country.archive}" target="_blank" rel="noopener noreferrer">Open ${flag} ${escapeHtml(country.name)} archive <span aria-hidden="true">↗</span></a></article>`;
 }
 
 function renderJunTranslation() {
@@ -609,7 +616,35 @@ function renderJunTranslation() {
 }
 
 function renderJunFigure(figure, index) {
-  return `<article class="jun-figure"><span class="jun-figure-order">${String(index + 1).padStart(2, "0")}</span><div class="jun-figure-meta"><span>${figure.code}</span><small>${escapeHtml(figure.country)} // ${escapeHtml(figure.era)}</small></div><h3>${escapeHtml(figure.name)}</h3><p>${escapeHtml(figure.note)}</p><a href="${figure.url}" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">▶</span> Watch archive</a></article>`;
+  const flags = flagsForCodes(figure.code);
+  return `<article class="jun-figure"><span class="jun-figure-order">${String(index + 1).padStart(2, "0")}</span><div class="jun-figure-meta"><span>${flags} ${figure.code}</span><small>${flags} ${escapeHtml(figure.country)} // ${escapeHtml(figure.era)}</small></div><h3>${escapeHtml(figure.name)}</h3><p>${renderCountryText(figure.note)}</p><a href="${figure.url}" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">▶</span> Watch archive</a></article>`;
+}
+
+function flagEmoji(code) {
+  if (code === "GLOBAL") return "🌍";
+  if (!/^[A-Z]{2}$/.test(code)) return "";
+  return [...code].map((letter) => String.fromCodePoint(127397 + letter.charCodeAt(0))).join("");
+}
+
+function flagsForCodes(codes) {
+  return String(codes).split(/[^A-Z]+/).filter(Boolean).map(flagEmoji).filter(Boolean).join(" ");
+}
+
+function renderCountryText(value) {
+  const decorated = String(value).replace(countryNamePattern, (match, prefix, name) => {
+    const code = countryByName.get(name.toLocaleLowerCase("en"));
+    return `${prefix}${flagEmoji(code)} ${name}`;
+  });
+  return escapeHtml(decorated);
+}
+
+function renderLocale(locale) {
+  const decorated = String(locale).replace(/\b[A-Z]{2}\b/g, (code) => countryCodes.has(code) ? `${flagEmoji(code)} ${code}` : code);
+  return escapeHtml(decorated);
+}
+
+function escapeRegExp(value) {
+  return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 function renderFbsHero(page) {
