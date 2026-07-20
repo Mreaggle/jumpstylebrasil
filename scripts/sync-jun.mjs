@@ -142,16 +142,15 @@ function parseKeyFigures(markdown, data) {
     const previous = figures.get(key);
     const enriched = existing.get(key);
     const country = countriesByCode.get(itemCountryCode);
-    const url = parsed.url && parsed.url !== "#"
-      ? parsed.url
-      : `${data.figuresUrl}#${slug(country.name)}`;
+    const canonicalUrl = parsed.url && parsed.url !== "#" ? parsed.url : "";
+    const fallbackUrl = `${data.figuresUrl}#${slug(country.name)}`;
     const figure = {
       name: parsed.name,
       country: country.name,
       code: itemCountryCode,
-      era: enriched?.era || parsed.era || era,
-      note: enriched?.note || `Community-indexed figure whose work contributed to the ${country.name} scene and to Jumpstyle's international development.`,
-      url: enriched?.url || url
+      era: parsed.era || enriched?.era || era,
+      note: enriched?.note || `The canonical community index records ${parsed.name} in the ${country.name} scene; a more detailed public achievement source is still being researched.`,
+      url: canonicalUrl || enriched?.url || fallbackUrl
     };
 
     if (!previous || (previous.url.includes("#") && !figure.url.includes("#"))) figures.set(key, figure);

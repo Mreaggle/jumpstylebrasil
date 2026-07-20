@@ -63,6 +63,7 @@ if (!jun.includes("data-jun-translate-toggle") || !jun.includes("data-jun-transl
 if (!jun.includes("data-jun-nation-search") || !jun.includes("data-jun-nation-filter")) errors.push("Busca e filtros nacionais JUN ausentes");
 if ((jun.match(/class="jun-figure"/g) || []).length !== junData.figures.length) errors.push("Figuras historicas JUN incompletas no HTML");
 if (!jun.includes("Mr. Covin") || !jun.includes("🇫🇷 France")) errors.push("Mr. Covin e a bandeira francesa devem aparecer em Key Figures Worldwide");
+if (jun.includes("Community-indexed figure whose work contributed")) errors.push("Frontend JUN ainda contem comentarios genericos em Key Figures");
 if (!jun.includes("<small>50 milestones</small>") || !jun.includes("<strong>50</strong><span>key figures</span>")) errors.push("Contadores editoriais JUN devem refletir 50 marcos e 50 figuras");
 if ((jun.match(/class="jun-event-impact"/g) || []).length !== junData.timeline.length) errors.push("Todo marco em destaque deve explicar seu impacto cultural");
 for (const country of junData.countries) {
