@@ -114,5 +114,5 @@ function htmlToText(html) {
 }
 
 function normalizeTimelineText(text) {
-  return text.replace(/\s+/g, " ").trim();
+  return text.replace(/\s+/g, " ").replace(/\s+([,.;:!?])/g, "$1").trim();
 }
