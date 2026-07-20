@@ -41,6 +41,7 @@ if (translationData.languages.length !== 194) errors.push("Tradutor JUN deve exp
 if (translationData.languages.some((language, index, languages) => index > 0 && languages[index - 1].name.localeCompare(language.name, "en") > 0)) errors.push("Idiomas do tradutor JUN devem permanecer em ordem alfabetica");
 if (junData.figures.length !== 50) errors.push("JUN deve exibir todas as 50 figuras historicas unicas do indice canonico");
 if (!junData.figures.some((figure) => figure.name === "Mr. Covin" && figure.code === "FR")) errors.push("Mr. Covin, da Franca, deve constar em Key Figures Worldwide");
+if (junData.figures.some((figure) => figure.note.startsWith("Community-indexed figure"))) errors.push("Key Figures nao pode exibir comentarios genericos no frontend");
 for (const event of junData.timeline) {
   if (!event.year || !event.country || !event.title || !event.text || !event.url || !event.impact) errors.push(`Marco JUN incompleto ou sem avaliacao de impacto: ${event.title || "sem titulo"}`);
 }

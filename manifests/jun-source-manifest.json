@@ -13,7 +13,7 @@
     },
     {
       "path": "JUNToolkit/KeyFiguresWorldwide/Dance/README.md",
-      "observed_blob_sha": "d7011afcc2cb9cbe92afebdd7e08862b5cfb8dfe"
+      "observed_blob_sha": "cfa2ca6f1acb6ead97f0da7257e0d6987bd5e43f"
     }
   ],
   "ingestion_warning": "The repository contains templates, placeholder text, # links and incomplete entries. Do not publish placeholders such as '[Event or Contribution 1]' or '[Brief Overview of Contributions]'. Only ingest substantive, traceable material.",
