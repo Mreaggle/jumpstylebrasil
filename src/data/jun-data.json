@@ -42,7 +42,20 @@
       "title": "The sound begins to take shape",
       "text": "A slower, bouncier alternative develops between Belgian club culture and Dutch hardcore. Speedy J's Pull Over becomes one of the era's defining records.",
       "source": "Speedy J / Bandcamp",
-      "url": "https://speedyj.bandcamp.com/album/pull-over"
+      "url": "https://speedyj.bandcamp.com/album/pull-over",
+      "impact": "It establishes the musical foundation from which Belgian and Dutch Jump would develop into a distinct scene."
+    },
+    {
+      "year": "1992",
+      "date": "11 July 1992",
+      "era": "roots",
+      "country": "Netherlands",
+      "code": "NL",
+      "title": "Poing turns a raw club sound into a national hit",
+      "text": "Rotterdam Termination Source reaches number two in the Dutch Top 40 and stays there for four weeks, proving that uncompromising harder dance music could cross into national pop culture.",
+      "source": "Dutch Top 40",
+      "url": "https://www.top40.nl/top40-artiesten/rotterdam-termination-source",
+      "impact": "Its chart breakthrough proved that the emerging sound could travel from underground clubs into mass culture."
     },
     {
       "year": "1993",
@@ -53,7 +66,20 @@
       "title": "Belgian labels and clubs build a home",
       "text": "Bonzai Jumps separates the emerging sound from hardcore while venues such as Complexe Cap'tain anchor the scene in Belgium and northern France.",
       "source": "Bonzai Jumps archive",
-      "url": "https://www.discogs.com/label/1369-Bonzai-Jumps"
+      "url": "https://www.discogs.com/label/1369-Bonzai-Jumps",
+      "impact": "A stable ecosystem of venues and record labels gave the sound the infrastructure needed to survive, circulate and evolve."
+    },
+    {
+      "year": "1995",
+      "date": "1995",
+      "era": "roots",
+      "country": "Netherlands",
+      "code": "NL",
+      "title": "Hakken establishes the movement vocabulary around hardcore",
+      "text": "A surviving Dutch documentary preserves hakken as the dominant physical language of gabber culture, the scene against which Jump's slower stamping identity would develop.",
+      "source": "1995 documentary archive",
+      "url": "https://www.nowness.com/story/1995-gabber-documentary",
+      "impact": "Hakken supplied a recognizable footwork vocabulary that later Jumpstyle dancers could adapt, contrast with and build upon."
     },
     {
       "year": "1997",
@@ -64,7 +90,20 @@
       "title": "Jumper Records names a movement",
       "text": "Da Rick, Da Boy Tommy and their circle combine retro sounds with harder kicks. Jumper Records launches as a dedicated home for the new Belgian sound called Jump.",
       "source": "Jumper Records",
-      "url": "https://www.jumperrecords.com/"
+      "url": "https://www.jumperrecords.com/",
+      "impact": "The label helped consolidate 'Jump' as a public identity and created a durable institution linking artists, records and audiences."
+    },
+    {
+      "year": "1997",
+      "date": "1997",
+      "era": "roots",
+      "country": "Belgium",
+      "code": "BE",
+      "title": "Skïen gives Jump music its own dance",
+      "text": "The ski-like dragging and jumping base associated with Cherry Moon becomes the common ancestor from which Oldschool, Hardjump and Tekstyle distinctions later emerge.",
+      "source": "Skïen video history",
+      "url": "https://www.youtube.com/watch?v=N9RD2dlP5KQ",
+      "impact": "This club-born dance separated Jumpstyle's movement language from adjacent rave practices and made participation central to the culture."
     },
     {
       "year": "1999",
@@ -75,7 +114,20 @@
       "title": "Halloween becomes a Belgian hit",
       "text": "Da Boy Tommy's Halloween enters the official Ultratop and sells more than 45,000 copies in Flanders, carrying Jump into the charts.",
       "source": "Ultratop Belgium",
-      "url": "https://www.ultratop.be/nl/song/57404/Da-Boy-Tommy-Halloween"
+      "url": "https://www.ultratop.be/nl/song/57404/Da-Boy-Tommy-Halloween",
+      "impact": "The hit widened public recognition of the sound and confirmed that Belgian Jump could sustain mainstream attention."
+    },
+    {
+      "year": "2000",
+      "date": "2000-2002",
+      "era": "roots",
+      "country": "France / Belgium / Netherlands",
+      "code": "FR BE NL",
+      "title": "Paris club nights create a cross-border laboratory",
+      "text": "Tecktonik Killer nights program Belgian Jump and Dutch Hardstyle together near Paris, accelerating the exchange that later supports French Tekstyle and electro culture.",
+      "source": "Le Temps",
+      "url": "https://www.letemps.ch/societe/tecktonik-continent-adolescent",
+      "impact": "Regular exchange between French dancers and Belgian music culture made Jumpstyle cross-border before online video accelerated its spread."
     },
     {
       "year": "2005",
@@ -86,7 +138,8 @@
       "title": "Schoolyard footage preserves the club-to-web bridge",
       "text": "Early footage from the Lokeren and Sint-Niklaas orbit captures dancers outside a school, close to clubs such as Cherry Moon, The Stars and Complex.",
       "source": "Community video archive",
-      "url": "https://youtu.be/om-6c0aOShY"
+      "url": "https://youtu.be/om-6c0aOShY",
+      "impact": "The footage captures the decisive transition from local imitation to shareable online practice, making the dance reproducible beyond clubs."
     },
     {
       "year": "2006",
@@ -97,7 +150,56 @@
       "title": "Tutorials turn viewers into jumpers",
       "text": "Dion Teurlings' early public videos and JumpingJob's tutorials show how Google Video and YouTube transformed a local dance into something anyone could learn.",
       "source": "Dion Teurlings video archive",
-      "url": "https://youtu.be/8c_NRKdf3Kk"
+      "url": "https://youtu.be/8c_NRKdf3Kk",
+      "impact": "Tutorials converted passive viewers into practitioners and made technique transferable without geographic access to an established scene."
+    },
+    {
+      "year": "2006",
+      "date": "March 2006",
+      "era": "web",
+      "country": "Belgium",
+      "code": "BE",
+      "title": "My own jumpstyle signals individual style online",
+      "text": "MarjinV's upload preserves an early use of Own and Jumpstyle together, anticipating the language of personal technique and identity that would define the competitive era.",
+      "source": "MarjinV video archive",
+      "url": "https://www.youtube.com/watch?v=C1wkZEwV18E",
+      "impact": "The phrase documents an early shift from copying a shared basic to treating personal variation as a legitimate creative value."
+    },
+    {
+      "year": "2006",
+      "date": "2006",
+      "era": "web",
+      "country": "Belgium / Global",
+      "code": "BE GLOBAL",
+      "title": "Dirty Workz builds a platform for the next hard-dance generation",
+      "text": "The Belgian label gives Coone and later harder-dance artists an international platform closely connected to the music used by Jumpstyle's web generation.",
+      "source": "Dirty Workz",
+      "url": "https://shop.dirtyworkz.com/service/about/",
+      "impact": "The label created long-term infrastructure for music that fueled Jumpstyle training, videos and crossover with the wider hard-dance ecosystem."
+    },
+    {
+      "year": "2006",
+      "date": "July-November 2006",
+      "era": "web",
+      "country": "Netherlands / Global",
+      "code": "NL GLOBAL",
+      "title": "Jump Is The Style becomes an early learning hub",
+      "text": "Demonstration videos and a dedicated tutorial-and-forum site turn isolated uploads into repeatable knowledge that newcomers around the world can learn and discuss.",
+      "source": "Know Your Meme archive",
+      "url": "https://knowyourmeme.com/memes/jumpstyle",
+      "impact": "A centralized learning resource helped standardize vocabulary and lower the entry barrier for the first internet-native generation."
+    },
+    {
+      "year": "2006",
+      "date": "circa 2006",
+      "era": "web",
+      "country": "Global",
+      "code": "GLOBAL",
+      "title": "Jumping Is Not a Crime becomes a community identity",
+      "text": "The slogan moves from skate culture into Jumpstyle videos and later commercial compilations, giving a decentralized youth scene a shared declaration.",
+      "source": "Community video archive",
+      "url": "https://www.youtube.com/watch?v=Xp8Z-A-LQXs",
+      "impact": "The slogan transformed a dance preference into a visible collective identity that participants could repeat across borders."
     },
     {
       "year": "2007",
@@ -108,7 +210,8 @@
       "title": "Jumpstyle reaches the top of Dutch pop culture",
       "text": "Jeckyll & Hyde's Freefall reaches number one in the Dutch Top 40, while Patrick Jumpen's Holiday peaks at number five.",
       "source": "Dutch Top 40",
-      "url": "https://www.top40.nl/nieuws-nieuws-back-to-the-zeros-wat-was-hot"
+      "url": "https://www.top40.nl/nieuws-nieuws-back-to-the-zeros-wat-was-hot",
+      "impact": "Chart success made dancers, music and visual codes legible to a national mass audience at the height of the first wave."
     },
     {
       "year": "2007",
@@ -119,7 +222,8 @@
       "title": "14,000 people attend a Dutch jump festival",
       "text": "Patrick Jumpen opens Herfstpop in Rijswijk with a jump contest and Jeckyll & Hyde also perform, documenting the scale of the youth phenomenon.",
       "source": "VPRO 3voor12",
-      "url": "https://3voor12.vpro.nl/lokaal/den-haag/artikelen/overzicht/2007/september/verslag-herfstpop-2007.html"
+      "url": "https://3voor12.vpro.nl/lokaal/den-haag/artikelen/overzicht/2007/september/verslag-herfstpop-2007.html",
+      "impact": "The scale demonstrated that Jumpstyle was not only an online trend but a mass participatory culture capable of sustaining major live events."
     },
     {
       "year": "2007",
@@ -130,7 +234,20 @@
       "title": "Berlin meetings make the multijump monumental",
       "text": "Large German gatherings place synchronized multijumps at the center of the public meeting culture and help the dance travel through YouTube.",
       "source": "JUN Global Timeline",
-      "url": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Global/global-timeline.md#2007--"
+      "url": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JumpstyleTimeline/Global/global-timeline.md#2007--",
+      "impact": "Large synchronized meetings established the multijump as a defining community ritual and a powerful format for online circulation."
+    },
+    {
+      "year": "2007",
+      "date": "30 November 2007",
+      "era": "web",
+      "country": "Germany / Global",
+      "code": "DE GLOBAL",
+      "title": "Scooter gives Jumpstyle a global pop vehicle",
+      "text": "Jumping All Over the World pairs harder-dance music with Jumpstyle-oriented choreography and carries the movement far beyond its continental club origins.",
+      "source": "Apple Music",
+      "url": "https://music.apple.com/us/album/jumping-all-over-the-world/1692324761",
+      "impact": "An internationally established act carried Jumpstyle references into markets far beyond its Belgian-Dutch core."
     },
     {
       "year": "2008",
@@ -141,7 +258,8 @@
       "title": "The First Russian Jumpstyle League is online",
       "text": "A surviving league preview and an archived Jumpstylers.ru front page preserve freestyle brackets, semifinals and a division for new jumpers.",
       "source": "Jumpstylers.ru / YouTube",
-      "url": "https://www.youtube.com/watch?v=bEzrZSwCEnM"
+      "url": "https://www.youtube.com/watch?v=bEzrZSwCEnM",
+      "impact": "The league showed that competition could organize a distant national scene online and helped make Russia a major center of technical development."
     },
     {
       "year": "2008",
@@ -152,7 +270,8 @@
       "title": "Poland gathers at national scale",
       "text": "A major Krakow meeting records the strength of Poland's meeting culture as new tricks, spins and the Ownstyle identity take shape.",
       "source": "Polish meeting archive",
-      "url": "https://youtu.be/5EAadhCfrLs"
+      "url": "https://youtu.be/5EAadhCfrLs",
+      "impact": "National-scale meetings connected city scenes, strengthened a shared Polish identity and created one of Jumpstyle's most durable communities."
     },
     {
       "year": "2008",
@@ -163,7 +282,44 @@
       "title": "French electro meets Belgian Jump",
       "text": "Le Monde documents French club nights mixing Belgian Jumpstyle, Dutch Hardstyle, minimal electro and Tekhouse, a key cross-border exchange in the French scene.",
       "source": "Le Monde",
-      "url": "https://www.lemonde.fr/vous/article/2008/01/08/les-agites-de-la-tecktonik_997006_3238.html"
+      "url": "https://www.lemonde.fr/vous/article/2008/01/08/les-agites-de-la-tecktonik_997006_3238.html",
+      "impact": "The crossover expanded the dance's musical possibilities and connected Jumpstyle with the broader late-2000s electro movement."
+    },
+    {
+      "year": "2008",
+      "date": "9 February 2008",
+      "era": "league",
+      "country": "Germany",
+      "code": "DE",
+      "title": "Germany institutionalizes Jumpstyle competition",
+      "text": "The first TAF national championship gathers more than 160 participants across solo, duo and group divisions, moving the dance into a formal national competition system.",
+      "source": "TAF competition archive",
+      "url": "https://taf.k5v.de/ceis/webShowCompetitionResultsListTaf.do?mandant=3&selYear=2008",
+      "impact": "A national championship moved competition from informal exchanges toward repeatable rules, public recognition and institutional scale."
+    },
+    {
+      "year": "2008",
+      "date": "17 May 2008",
+      "era": "web",
+      "country": "Germany / United Kingdom",
+      "code": "DE GB",
+      "title": "A Jumpstyle album reaches number one in the United Kingdom",
+      "text": "Scooter's album spends seven weeks in the UK top ten and 21 weeks in the top 100, the clearest Jumpstyle-linked album crossover outside continental Europe.",
+      "source": "Official Charts",
+      "url": "https://www.officialcharts.com/albums/scooter-jumping-all-over-the-world/",
+      "impact": "Reaching the top of a major market demonstrated Jumpstyle's international commercial reach beyond continental club culture."
+    },
+    {
+      "year": "2008",
+      "date": "20 July 2008 upload",
+      "era": "league",
+      "country": "Poland",
+      "code": "PL",
+      "title": "Poland records an official nationwide meeting",
+      "text": "The Poznań film explicitly presents the gathering as Poland's first official national meeting, consolidating the collective structure behind Ownstyle's rise.",
+      "source": "Poznań meeting video",
+      "url": "https://youtu.be/YwKwPgXWYRo",
+      "impact": "The event formalized coordination between regional scenes and left a shared national reference for later generations."
     },
     {
       "year": "2009",
@@ -174,7 +330,8 @@
       "title": "JumpstylePolska connects meetings and leagues",
       "text": "A Wayback snapshot preserves dedicated forum sections for Zloty and Liga Jumpstyle Polska, evidence of the infrastructure behind Poland's national scene.",
       "source": "Wayback Machine",
-      "url": "https://web.archive.org/web/20090416222333/http://www.jumpstylepolska.pl/"
+      "url": "https://web.archive.org/web/20090416222333/http://www.jumpstylepolska.pl/",
+      "impact": "The platform linked information, competition and gatherings, giving the Polish scene durable connective infrastructure."
     },
     {
       "year": "2009",
@@ -185,7 +342,44 @@
       "title": "A footwear campaign backs a national meeting",
       "text": "Olympikus works with the Orkut-era Jumpstyle Brasil community on a major national meeting, showing an early bridge between an online dance community and a Brazilian brand.",
       "source": "JUN Global Timeline",
-      "url": "https://www.youtube.com/watch?v=B4FP-ACzWks"
+      "url": "https://www.youtube.com/watch?v=B4FP-ACzWks",
+      "impact": "Commercial sponsorship documented Jumpstyle's visibility outside its own channels and enabled a community gathering at national scale."
+    },
+    {
+      "year": "2009",
+      "date": "28 March 2009",
+      "era": "league",
+      "country": "Germany",
+      "code": "DE",
+      "title": "Berlin connects a national meeting network",
+      "text": "Roughly 200 dancers from several German cities combine a mass jump and crew competition at the central station and Lustgarten during the sixth Berlin meeting.",
+      "source": "Die Tageszeitung",
+      "url": "https://taz.de/Die-wollen-nur-spielen/%21689502/",
+      "impact": "The sixth meeting demonstrates continuity: repeat gatherings turned isolated viral moments into an enduring German network."
+    },
+    {
+      "year": "2009",
+      "date": "13 September 2009",
+      "era": "league",
+      "country": "Germany",
+      "code": "DE",
+      "title": "1,067 dancers set a Jumpstyle world record",
+      "text": "Bielefeld's thirteen-minute mass dance receives Guinness recognition and creates one of the clearest public measurements of Jumpstyle's peak participation.",
+      "source": "Guinness World Records",
+      "url": "https://guinnessworldrecords.de/world-records/largest-jumpen-jumpstyle-dance",
+      "impact": "The record made mass participation globally newsworthy and remains one of the clearest numerical demonstrations of the dance's peak reach."
+    },
+    {
+      "year": "2009",
+      "date": "25 September 2009",
+      "era": "web",
+      "country": "Germany / Global",
+      "code": "DE GLOBAL",
+      "title": "Stamp on the Ground becomes a lasting crossover anthem",
+      "text": "ItaloBrothers turn stamping language and choreography into an internationally durable pop reference that continues introducing new audiences to Jumpstyle-adjacent movement.",
+      "source": "Apple Music",
+      "url": "https://music.apple.com/ch/album/stamp-on-the-ground/328826869",
+      "impact": "Its video and refrain became a durable entry point whose association with Jumpstyle continued long after the first mainstream wave."
     },
     {
       "year": "2010",
@@ -196,7 +390,8 @@
       "title": "A French competitive generation develops",
       "text": "Spiady and Rey'Steal become international references for French style, spins and technical interpretation during the league era.",
       "source": "Spiady video archive",
-      "url": "https://youtu.be/1uTKW-AYsr4"
+      "url": "https://youtu.be/1uTKW-AYsr4",
+      "impact": "French leagues advanced technical exchange and helped establish France as a source of influential competitive dancers rather than only an adopter."
     },
     {
       "year": "2011",
@@ -207,7 +402,20 @@
       "title": "An iconic Russian multijump crosses borders",
       "text": "Russian jumpers gather in a dance studio to Noisecontrollers' Confucius. The recording becomes one of the scene's enduring collective videos.",
       "source": "Russian video archive",
-      "url": "https://www.youtube.com/watch?v=xQIGg9rXsb0"
+      "url": "https://www.youtube.com/watch?v=xQIGg9rXsb0",
+      "impact": "The video made Russia's scale and technical identity visible internationally, inspiring imitation and strengthening East-West exchange."
+    },
+    {
+      "year": "2011",
+      "date": "25 September 2011-24 March 2012",
+      "era": "league",
+      "country": "Russia / Global",
+      "code": "RU GLOBAL",
+      "title": "A Women's World Jumpstyle League creates a dedicated division",
+      "text": "The international competition ends with Alinka as champion, preserving a rare formal space centered on women inside the league-driven culture.",
+      "source": "Jumpstylers.ru winners archive",
+      "url": "https://jumpstylers.ru/jumpstyle-league-winners.html",
+      "impact": "A dedicated women's league created visibility and competitive space in a scene whose most circulated rankings were overwhelmingly male."
     },
     {
       "year": "2012",
@@ -218,7 +426,8 @@
       "title": "Generations meet in Poznan",
       "text": "Patrick Jumpen and Dion Teurlings visit a Polish meeting, connecting the Dutch web-explosion generation with Poland's competitive community.",
       "source": "Poznan meeting archive",
-      "url": "https://youtu.be/4OLRJ27VU4g"
+      "url": "https://youtu.be/4OLRJ27VU4g",
+      "impact": "The gathering preserved intergenerational transmission, allowing experience, style vocabulary and community memory to move between waves."
     },
     {
       "year": "2012",
@@ -229,7 +438,8 @@
       "title": "Ukraine's complexity generation emerges",
       "text": "Woren, later known as Anointed, is followed by J*Air, Belir and organizer Shkap as Ukrainian jumpers gain international recognition.",
       "source": "JUN Key Figures Worldwide",
-      "url": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JUNToolkit/KeyFiguresWorldwide/Dance/README.md#-ukraine-"
+      "url": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JUNToolkit/KeyFiguresWorldwide/Dance/README.md#-ukraine-",
+      "impact": "Ukrainian dancers pushed complexity and control forward, broadening the international standard of what advanced Jumpstyle could look like."
     },
     {
       "year": "2012",
@@ -240,7 +450,8 @@
       "title": "Dany carries Italy into the international canon",
       "text": "Dany becomes one of the names associated with originality and innovation in the modern competitive era.",
       "source": "Dany video archive",
-      "url": "https://youtu.be/RVzg5YvG6k0"
+      "url": "https://youtu.be/RVzg5YvG6k0",
+      "impact": "Dany's visibility connected the Italian scene to international competition and gave local dancers a widely recognized reference."
     },
     {
       "year": "2012",
@@ -251,7 +462,8 @@
       "title": "Walle becomes a Mexican reference",
       "text": "Walle's powerful style makes Mexico visible in the international competitive community and inspires a later national generation.",
       "source": "Walle video archive",
-      "url": "https://youtu.be/yiLAYlTyR4g"
+      "url": "https://youtu.be/yiLAYlTyR4g",
+      "impact": "Walle's recognition made Latin American technical contribution visible within a history often narrated mainly through Europe and Russia."
     },
     {
       "year": "2012",
@@ -262,7 +474,8 @@
       "title": "Lauth defines a Chilean presence",
       "text": "Lauth becomes one of South America's internationally recognized jumpers and a bridge between Chile and other national communities.",
       "source": "Lauth video archive",
-      "url": "https://youtu.be/1_Z3f4ZFfxQ"
+      "url": "https://youtu.be/1_Z3f4ZFfxQ",
+      "impact": "Lauth gave Chile a durable point of identification in the international network and widened the map of recognized Jumpstyle practice."
     },
     {
       "year": "2012",
@@ -273,7 +486,20 @@
       "title": "Cosmic represents Indonesia's technical wave",
       "text": "Cosmic becomes a key international reference from an Indonesian community known for rhythm, speed and technical ambition.",
       "source": "Cosmic video archive",
-      "url": "https://youtu.be/dR5fJsl9dXw"
+      "url": "https://youtu.be/dR5fJsl9dXw",
+      "impact": "Cosmic's visibility showed that high-level Jumpstyle had become established in Southeast Asia, not merely consumed there."
+    },
+    {
+      "year": "2012",
+      "date": "20 January-20 July 2012",
+      "era": "league",
+      "country": "Russia / Global",
+      "code": "RU GLOBAL",
+      "title": "The HEB league expands competitive formats",
+      "text": "Six months of solo, duo, Hardjump, women's and team divisions show how online leagues had matured into specialized international competition ecosystems.",
+      "source": "Jumpstylers.ru winners archive",
+      "url": "https://jumpstylers.ru/jumpstyle-league-winners.html",
+      "impact": "Its diversified format tested new ways to compare style and technique, keeping online competition creatively productive after the first boom."
     },
     {
       "year": "2013",
@@ -284,7 +510,8 @@
       "title": "Los Angeles holds its sixth annual meeting",
       "text": "The title and archived page preserve a sixth annual Los Angeles Jump Meeting and the Southern California crews that participated.",
       "source": "Jumpstyle Brasil / Wayback",
-      "url": "https://web.archive.org/web/20140214012333/http://jumpstyle.com.br/2014/02/6th-annual-los-angeles-jump-meeting-2013/"
+      "url": "https://web.archive.org/web/20140214012333/http://jumpstyle.com.br/2014/02/6th-annual-los-angeles-jump-meeting-2013/",
+      "impact": "Six consecutive editions demonstrate sustained community organization in North America despite distance from Jumpstyle's European center."
     },
     {
       "year": "2013",
@@ -295,7 +522,20 @@
       "title": "Belgium loses pioneer Da Boy Tommy",
       "text": "Tommy Debie dies at 36 after a road accident. His catalogue remains a foundation of Jump's first commercial era.",
       "source": "Qmusic Belgium",
-      "url": "https://qmusic.be/nieuws/da-boy-tommyis-overleden-1-1"
+      "url": "https://qmusic.be/nieuws/da-boy-tommyis-overleden-1-1",
+      "impact": "The community response consolidated historical memory around a foundational producer and underscored the need to preserve Jumpstyle's first generation."
+    },
+    {
+      "year": "2013",
+      "date": "26 June 2013",
+      "era": "league",
+      "country": "Indonesia",
+      "code": "ID",
+      "title": "Indonesia demonstrates a coordinated national scene",
+      "text": "A national meeting at Gelora Bung Karno in Jakarta documents sustained collective organization beyond Jumpstyle's European and Latin American centers.",
+      "source": "Indonesia meeting archive",
+      "url": "https://youtu.be/BKZxUQXs8WQ",
+      "impact": "A national meeting converted dispersed online participation into visible local infrastructure and collective identity."
     },
     {
       "year": "2017",
@@ -306,7 +546,20 @@
       "title": "Fireborn Squad connects Brazilian generations",
       "text": "The national team is formed to unite leading jumpers from different regions and eras and represent Brazil in international leagues.",
       "source": "Fireborn Squad archive",
-      "url": "https://jumpstyle.com.br/fireborn-squad/"
+      "url": "https://jumpstyle.com.br/fireborn-squad/",
+      "impact": "The crew maintained training, identity and mentorship across different Brazilian waves, creating continuity beyond isolated viral moments."
+    },
+    {
+      "year": "2017",
+      "date": "2017",
+      "era": "network",
+      "country": "France / Belgium / Global",
+      "code": "FR BE GLOBAL",
+      "title": "To Da Bone carries internet Jumpstyle onto the contemporary stage",
+      "text": "(LA)HORDE premieres a work with eleven jumpers recruited across Europe, translating an online-native dance community into major international contemporary-dance institutions.",
+      "source": "(LA)HORDE",
+      "url": "https://collectiflahorde.com/production/age-of-content",
+      "impact": "The work reframed internet-born Jumpstyle as contemporary performance art and brought its community history to international theatre audiences."
     },
     {
       "year": "2020",
@@ -317,7 +570,8 @@
       "title": "Jumpstyle-derived movement enters Fortnite",
       "text": "The Springy emote, internally identified as EID_JumpStyleDance, carries the movement vocabulary into one of the world's largest games.",
       "source": "Fortnite cosmetic database",
-      "url": "https://fortnite.gg/cosmetics?id=4008&type=emote"
+      "url": "https://fortnite.gg/cosmetics?id=4008&type=emote",
+      "impact": "Inclusion in a globally distributed game exposed Jumpstyle-derived movement to millions, even as attribution and cultural context became contested."
     },
     {
       "year": "2020",
@@ -328,7 +582,8 @@
       "title": "Yabujin opens an unexpected path back to Jumpstyle",
       "text": "Yabujin and the DJ GYROTTA ZAO alias combine jumpstyle music with a distinct internet mythology, leading a new audience toward the dance through TikTok edits.",
       "source": "Pitchfork",
-      "url": "https://pitchfork.com/thepitch/chasing-yabujin-the-artist-who-secretly-shaped-the-underground-sound-of-the-2020s/"
+      "url": "https://pitchfork.com/thepitch/chasing-yabujin-the-artist-who-secretly-shaped-the-underground-sound-of-the-2020s/",
+      "impact": "The artist's internet mythology introduced Jumpstyle sounds and imagery to a younger underground audience, helping seed the current revival."
     },
     {
       "year": "2024",
@@ -339,7 +594,8 @@
       "title": "Jumpstyle United Nations is founded",
       "text": "Jumpers, organizers, DJs and archivists from multiple generations and nations begin an open repository for timelines, knowledge, community mapping and preservation.",
       "source": "JUN repository",
-      "url": "https://github.com/Mreaggle/JumpstyleUnitedNations"
+      "url": "https://github.com/Mreaggle/JumpstyleUnitedNations",
+      "impact": "A shared open archive turns fragmented national memory into maintainable public infrastructure and makes historical correction a collaborative process."
     },
     {
       "year": "2025",
@@ -350,7 +606,8 @@
       "title": "Warsaw records a new-generation multijump",
       "text": "A large meeting in Warsaw brings Polish jumpers together again, preserving the country's collective tradition for a new audience.",
       "source": "Warsaw meeting video",
-      "url": "https://www.instagram.com/reel/DFBo14VIRtm/"
+      "url": "https://www.instagram.com/reel/DFBo14VIRtm/",
+      "impact": "The meeting demonstrates living intergenerational continuity in one of the culture's strongest national scenes, not only nostalgia for its peak."
     },
     {
       "year": "2026",
@@ -361,7 +618,20 @@
       "title": "Jumper Records returns",
       "text": "Da Rick revives the Belgian label with new releases, events and an active catalogue, reconnecting the 1997 name with today's global audience.",
       "source": "Jumper Records",
-      "url": "https://www.jumperrecords.com/"
+      "url": "https://www.jumperrecords.com/",
+      "impact": "Reviving a foundational label reconnects today's releases and events to the institution that helped name and distribute the culture in the 1990s."
+    },
+    {
+      "year": "2026",
+      "date": "1 May 2026-ongoing",
+      "era": "revival",
+      "country": "Russia / Global",
+      "code": "RU GLOBAL",
+      "title": "TOPJUMPERZ returns as a worldwide distributed league",
+      "text": "Badsz, a Russian jumper and founder of Russian Village Boys, reconnects his historic TOPJUMPERZ project with a global competition based on country representation, participant uploads under a shared title pattern, structured judging and a €2,000 prize pool.",
+      "source": "TOPJUMPERZ League",
+      "url": "https://www.youtube.com/watch?v=StgqZdyAu9Q",
+      "impact": "Its common title format lets entrants publish from their own channels while country representation, judging and prizes reconnect decentralized creators to a shared global event; its long-term impact is still emerging."
     }
   ],
   "figures": [
@@ -372,6 +642,14 @@
       "era": "2006-2008",
       "note": "The project that brought tutorials, performances and Jumpstyle videos to a global mass audience.",
       "url": "https://youtu.be/VFVM0Y0X9Hg"
+    },
+    {
+      "name": "Jeckyll & Hyde (Maarten Vorwerk)",
+      "country": "Netherlands",
+      "code": "NL",
+      "era": "2007-2008",
+      "note": "Community-indexed figure whose work contributed to the Netherlands scene and to Jumpstyle's international development.",
+      "url": "https://www.youtube.com/watch?v=tfIZKRdXKks&pp=ygUXamVja3lsbCAmIGh5ZGUgZnJlZWZhbGw%3D"
     },
     {
       "name": "DannieL",
@@ -390,12 +668,36 @@
       "url": "https://youtu.be/-wouLYwkyUs"
     },
     {
-      "name": "Rumun / Freakaz",
+      "name": "Rumun",
       "country": "Poland",
       "code": "PL",
-      "era": "2008-2010",
-      "note": "A major early Polish jumper who also produced music for the community.",
-      "url": "https://youtu.be/F3NNfmnCw0c"
+      "era": "2008-2009",
+      "note": "Community-indexed figure whose work contributed to the Poland scene and to Jumpstyle's international development.",
+      "url": "https://youtu.be/F3NNfmnCw0c?si=V0nsExWpml0qisPJ"
+    },
+    {
+      "name": "Yarche",
+      "country": "Russia",
+      "code": "RU",
+      "era": "2008-2009",
+      "note": "Community-indexed figure whose work contributed to the Russia scene and to Jumpstyle's international development.",
+      "url": "https://youtu.be/-G0j2TGk26I?si=DwTdkXG0VwaCwb9y"
+    },
+    {
+      "name": "Cebul",
+      "country": "Poland",
+      "code": "PL",
+      "era": "2008-2009",
+      "note": "Community-indexed figure whose work contributed to the Poland scene and to Jumpstyle's international development.",
+      "url": "https://youtu.be/hbvcx-1Nw84?si=t-Y_9EaA1Rldgzav"
+    },
+    {
+      "name": "Chruściel",
+      "country": "Poland",
+      "code": "PL",
+      "era": "2008-2009",
+      "note": "Community-indexed figure whose work contributed to the Poland scene and to Jumpstyle's international development.",
+      "url": "https://www.youtube.com/watch?v=eh2xUl1FKWI"
     },
     {
       "name": "Xardas",
@@ -404,6 +706,14 @@
       "era": "2010-2012",
       "note": "A leading figure in the high-complexity Polish evolution era.",
       "url": "https://youtu.be/rAQPVHzSkp4"
+    },
+    {
+      "name": "Spiady",
+      "country": "France",
+      "code": "FR",
+      "era": "2010-2012",
+      "note": "A key French figure associated with style, technical structure and HSA.",
+      "url": "https://youtu.be/1uTKW-AYsr4"
     },
     {
       "name": "Badsz",
@@ -422,15 +732,7 @@
       "url": "https://youtu.be/smAqN_S9-4g"
     },
     {
-      "name": "Spiady",
-      "country": "France",
-      "code": "FR",
-      "era": "2010-2012",
-      "note": "A key French figure associated with style, technical structure and HSA.",
-      "url": "https://youtu.be/1uTKW-AYsr4"
-    },
-    {
-      "name": "Rey'Steal",
+      "name": "Rey’Steal",
       "country": "France",
       "code": "FR",
       "era": "2010-2012",
@@ -444,6 +746,30 @@
       "era": "2010-2012",
       "note": "A prominent Russian jumper in the international complexity era.",
       "url": "https://youtu.be/Pbg5TSDb54o"
+    },
+    {
+      "name": "Groszek",
+      "country": "Poland",
+      "code": "PL",
+      "era": "2010-2012",
+      "note": "Community-indexed figure whose work contributed to the Poland scene and to Jumpstyle's international development.",
+      "url": "https://youtu.be/m5h_tx9I4og?si=tRaGBXjNKHW1fsMt"
+    },
+    {
+      "name": "DudQ",
+      "country": "Poland",
+      "code": "PL",
+      "era": "2010-2012",
+      "note": "Community-indexed figure whose work contributed to the Poland scene and to Jumpstyle's international development.",
+      "url": "https://youtu.be/3YB3h11hVPM?si=NxnrIfG6FQSTahmB"
+    },
+    {
+      "name": "Cost",
+      "country": "Russia",
+      "code": "RU",
+      "era": "2010-2012",
+      "note": "Community-indexed figure whose work contributed to the Russia scene and to Jumpstyle's international development.",
+      "url": "https://youtu.be/Eb_X7_I4Ra4?si=4t_u75CEZggvDvMq"
     },
     {
       "name": "Dany",
@@ -502,12 +828,212 @@
       "url": "https://youtu.be/oxFx6b94NpY"
     },
     {
+      "name": "Gigi",
+      "country": "Poland",
+      "code": "PL",
+      "era": "2012-now",
+      "note": "Community-indexed figure whose work contributed to the Poland scene and to Jumpstyle's international development.",
+      "url": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JUNToolkit/KeyFiguresWorldwide/Dance/README.md#poland"
+    },
+    {
+      "name": "Hyper-X",
+      "country": "Poland",
+      "code": "PL",
+      "era": "2012-now",
+      "note": "Community-indexed figure whose work contributed to the Poland scene and to Jumpstyle's international development.",
+      "url": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JUNToolkit/KeyFiguresWorldwide/Dance/README.md#poland"
+    },
+    {
+      "name": "Styl3dd",
+      "country": "Poland",
+      "code": "PL",
+      "era": "2012-now",
+      "note": "Community-indexed figure whose work contributed to the Poland scene and to Jumpstyle's international development.",
+      "url": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JUNToolkit/KeyFiguresWorldwide/Dance/README.md#poland"
+    },
+    {
+      "name": "Kamilkadze",
+      "country": "Poland",
+      "code": "PL",
+      "era": "2012-now",
+      "note": "Community-indexed figure whose work contributed to the Poland scene and to Jumpstyle's international development.",
+      "url": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JUNToolkit/KeyFiguresWorldwide/Dance/README.md#poland"
+    },
+    {
+      "name": "Wiewior",
+      "country": "Poland",
+      "code": "PL",
+      "era": "2012",
+      "note": "Community-indexed figure whose work contributed to the Poland scene and to Jumpstyle's international development.",
+      "url": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JUNToolkit/KeyFiguresWorldwide/Dance/README.md#poland"
+    },
+    {
+      "name": "Philip",
+      "country": "Poland",
+      "code": "PL",
+      "era": "2012-now",
+      "note": "Community-indexed figure whose work contributed to the Poland scene and to Jumpstyle's international development.",
+      "url": "https://youtu.be/oxFx6b94NpY?si=sRgUAEM89fNFl_Og"
+    },
+    {
+      "name": "Jelle",
+      "country": "Netherlands",
+      "code": "NL",
+      "era": "2012-now",
+      "note": "Community-indexed figure whose work contributed to the Netherlands scene and to Jumpstyle's international development.",
+      "url": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JUNToolkit/KeyFiguresWorldwide/Dance/README.md#netherlands"
+    },
+    {
+      "name": "Brik",
+      "country": "Russia",
+      "code": "RU",
+      "era": "2012-now",
+      "note": "Community-indexed figure whose work contributed to the Russia scene and to Jumpstyle's international development.",
+      "url": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JUNToolkit/KeyFiguresWorldwide/Dance/README.md#russia"
+    },
+    {
+      "name": "Scot",
+      "country": "Russia",
+      "code": "RU",
+      "era": "2012-now",
+      "note": "Community-indexed figure whose work contributed to the Russia scene and to Jumpstyle's international development.",
+      "url": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JUNToolkit/KeyFiguresWorldwide/Dance/README.md#russia"
+    },
+    {
+      "name": "Woren (now Anointed)",
+      "country": "Ukraine",
+      "code": "UA",
+      "era": "2010",
+      "note": "Community-indexed figure whose work contributed to the Ukraine scene and to Jumpstyle's international development.",
+      "url": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JUNToolkit/KeyFiguresWorldwide/Dance/README.md#ukraine"
+    },
+    {
+      "name": "J*Air",
+      "country": "Ukraine",
+      "code": "UA",
+      "era": "2012",
+      "note": "Community-indexed figure whose work contributed to the Ukraine scene and to Jumpstyle's international development.",
+      "url": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JUNToolkit/KeyFiguresWorldwide/Dance/README.md#ukraine"
+    },
+    {
+      "name": "Belir",
+      "country": "Ukraine",
+      "code": "UA",
+      "era": "2012",
+      "note": "Community-indexed figure whose work contributed to the Ukraine scene and to Jumpstyle's international development.",
+      "url": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JUNToolkit/KeyFiguresWorldwide/Dance/README.md#ukraine"
+    },
+    {
+      "name": "Shkap",
+      "country": "Ukraine",
+      "code": "UA",
+      "era": "2012",
+      "note": "Community-indexed figure whose work contributed to the Ukraine scene and to Jumpstyle's international development.",
+      "url": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JUNToolkit/KeyFiguresWorldwide/Dance/README.md#ukraine"
+    },
+    {
+      "name": "Mr. Covin",
+      "country": "France",
+      "code": "FR",
+      "era": "2012",
+      "note": "Community-indexed figure whose work contributed to the France scene and to Jumpstyle's international development.",
+      "url": "https://github.com/Mreaggle/JumpstyleUnitedNations/blob/main/JUNToolkit/KeyFiguresWorldwide/Dance/README.md#france"
+    },
+    {
+      "name": "RafaJumpen",
+      "country": "Brazil",
+      "code": "BR",
+      "era": "2012-now",
+      "note": "Community-indexed figure whose work contributed to the Brazil scene and to Jumpstyle's international development.",
+      "url": "https://youtu.be/8E3IbeAobaU"
+    },
+    {
+      "name": "Matrix",
+      "country": "Brazil",
+      "code": "BR",
+      "era": "2012-now",
+      "note": "Community-indexed figure whose work contributed to the Brazil scene and to Jumpstyle's international development.",
+      "url": "https://www.youtube.com/watch?v=UEsnPlV6BK0&t=85s"
+    },
+    {
+      "name": "Cursebird",
+      "country": "Brazil",
+      "code": "BR",
+      "era": "2012-now",
+      "note": "Community-indexed figure whose work contributed to the Brazil scene and to Jumpstyle's international development.",
+      "url": "https://www.youtube.com/watch?v=RKx9TwpFb20"
+    },
+    {
       "name": "Mreaggle",
       "country": "Brazil",
       "code": "BR",
       "era": "2016-now",
       "note": "Organizer, jumper and founder of JUN, focused on reconnecting generations and preserving global history.",
       "url": "https://www.youtube.com/watch?v=Me1ai6JBvmo"
+    },
+    {
+      "name": "LuFe",
+      "country": "Brazil",
+      "code": "BR",
+      "era": "2012-now",
+      "note": "Community-indexed figure whose work contributed to the Brazil scene and to Jumpstyle's international development.",
+      "url": "https://www.youtube.com/watch?v=bzs3qnLRcd4"
+    },
+    {
+      "name": "SonnyJumpen",
+      "country": "Germany",
+      "code": "DE",
+      "era": "2012-now",
+      "note": "Community-indexed figure whose work contributed to the Germany scene and to Jumpstyle's international development.",
+      "url": "https://www.youtube.com/watch?v=UEsnPlV6BK0"
+    },
+    {
+      "name": "Rebel-S",
+      "country": "Germany",
+      "code": "DE",
+      "era": "2012-now",
+      "note": "Community-indexed figure whose work contributed to the Germany scene and to Jumpstyle's international development.",
+      "url": "https://www.youtube.com/watch?v=5L2tp7EGAI0"
+    },
+    {
+      "name": "Owen",
+      "country": "Germany",
+      "code": "DE",
+      "era": "2012-now",
+      "note": "Community-indexed figure whose work contributed to the Germany scene and to Jumpstyle's international development.",
+      "url": "https://www.youtube.com/watch?v=SR1QVHvYLa0"
+    },
+    {
+      "name": "Linda",
+      "country": "Germany",
+      "code": "DE",
+      "era": "2012-now",
+      "note": "Community-indexed figure whose work contributed to the Germany scene and to Jumpstyle's international development.",
+      "url": "https://www.youtube.com/watch?v=EAIjVJjkneQ"
+    },
+    {
+      "name": "Ducci",
+      "country": "Germany",
+      "code": "DE",
+      "era": "2012-now",
+      "note": "Community-indexed figure whose work contributed to the Germany scene and to Jumpstyle's international development.",
+      "url": "https://www.youtube.com/watch?v=QSXwGWTI1lM"
+    },
+    {
+      "name": "Marshall",
+      "country": "Mexico",
+      "code": "MX",
+      "era": "2012-now",
+      "note": "Community-indexed figure whose work contributed to the Mexico scene and to Jumpstyle's international development.",
+      "url": "https://youtu.be/C73Mb5Zh2HM"
+    },
+    {
+      "name": "Kada",
+      "country": "Chile",
+      "code": "CL",
+      "era": "2012-now",
+      "note": "Community-indexed figure whose work contributed to the Chile scene and to Jumpstyle's international development.",
+      "url": "https://www.youtube.com/watch?v=1_Z3f4ZFfxQ"
     }
   ],
   "countries": [
