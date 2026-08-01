@@ -95,6 +95,7 @@ function renderShell({ title, description, route, body }) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  ${renderGoogleTag()}
   <title>${escapeHtml(title)}</title>
   <meta name="description" content="${escapeHtml(description)}">
   <link rel="canonical" href="${canonical}">
@@ -160,6 +161,7 @@ function renderJunShell({ title, description, route, body }) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  ${renderGoogleTag()}
   <title>${escapeHtml(title)}</title>
   <meta name="description" content="${escapeHtml(description)}">
   <meta name="keywords" content="Jumpstyle history, Jumpstyle timeline, Jumpstyle museum, Jumpstyle dancers, Jumpstyle meetings, Hardjump, Ownstyle, Sidejump, Tekstyle, Patrick Jumpen">
@@ -222,6 +224,18 @@ function renderJunShell({ title, description, route, body }) {
   <script src="${sitePath("assets/main.js")}" defer></script>
 </body>
 </html>`;
+}
+
+function renderGoogleTag() {
+  return `<!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-930BMPYP28"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-930BMPYP28');
+  </script>`;
 }
 
 function renderHero(page) {
