@@ -85,6 +85,15 @@ for (const match of globalTimeline.matchAll(/\[[^\]]+\]\((https?:\/\/[^)]+)\)/g)
 }
 if (jun.includes("JUN-whatsapp-chat") || fs.existsSync("dist/JUN-whatsapp-chat.txt") || fs.existsSync("dist/JUN/JUN-whatsapp-chat.txt")) errors.push("Export privado da JUN exposto no build");
 if (!home.includes('href="/JUN/"')) errors.push("Home sem acesso local para a JUN");
+if (!home.includes('href="/STL/"')) errors.push("Home sem acesso local para a STL");
+
+const stl = fs.existsSync("dist/STL/index.html") ? fs.readFileSync("dist/STL/index.html", "utf8") : "";
+if (!stl) errors.push("STL nao foi montada no build publico");
+if (stl && !stl.includes('<link rel="canonical" href="https://jumpstyle.com.br/STL/">')) errors.push("Canonical da STL incorreto");
+if (stl && !stl.includes('href="assets/site.css"')) errors.push("STL deve usar CSS relativo para funcionar no dominio e no preview");
+if (stl && stl.includes('href="/STL/assets/site.css"')) errors.push("STL ainda referencia CSS absoluto quebravel no preview");
+if (stl && !stl.includes("G-930BMPYP28")) errors.push("Google tag ausente na STL montada");
+if (!fs.existsSync("dist/STL/assets/site.css") || !fs.existsSync("dist/STL/assets/shuffle_logo.png")) errors.push("Assets publicos da STL ausentes");
 
 const creators = fs.readFileSync("dist/criadores/index.html", "utf8");
 if (!creators.includes("Creators brasileiros") || creators.includes("@nakpovs")) errors.push("Pagina Creators com titulo ou lista incorreta");

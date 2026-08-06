@@ -39,11 +39,20 @@ writeText("favicon.svg", renderFavicon());
 writeText("llms.txt", renderLlmsIndex());
 writeText("JUN/llms.txt", renderJunLlms());
 writeText("JUN/global-timeline.md", globalTimelineMarkdown);
+copyDir("static/STL", "STL");
 
 function copyFile(from, to) {
   const target = path.join(dist, to);
   fs.mkdirSync(path.dirname(target), { recursive: true });
   fs.copyFileSync(path.join(root, from), target);
+}
+
+function copyDir(from, to) {
+  const source = path.join(root, from);
+  if (!fs.existsSync(source)) return;
+  const target = path.join(dist, to);
+  fs.mkdirSync(path.dirname(target), { recursive: true });
+  fs.cpSync(source, target, { recursive: true });
 }
 
 function readJson(file) {
