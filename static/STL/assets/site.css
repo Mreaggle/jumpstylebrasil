@@ -164,6 +164,53 @@ button, input { font: inherit; }
   text-transform: uppercase;
 }
 
+.translate { position: relative; min-width: 0; }
+.translate-button {
+  width: 100%;
+  min-height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .6rem;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid rgba(255,255,255,.1);
+  background: transparent;
+  color: var(--lime);
+  font-family: "Pixel Operator", monospace;
+  font-size: 1.55rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.translate-button span { color: var(--magenta); font-size: .72em; }
+.translate-panel {
+  display: grid;
+  gap: .55rem;
+  padding: .85rem;
+  border: 1px solid var(--line);
+  background: #050505;
+}
+.translate-panel[hidden] { display: none !important; }
+.translate-panel label {
+  color: var(--lime);
+  font-family: "Pixel Operator", monospace;
+  font-size: .72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.translate-panel select {
+  width: 100%;
+  min-height: 46px;
+  padding: .65rem .7rem;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--panel);
+  color: var(--paper);
+  cursor: pointer;
+}
+.translate-panel p { margin: 0; color: var(--muted); font-size: .72rem; }
+
 .hero, .section, .site-footer {
   width: min(calc(100% - 32px), var(--content));
   margin-inline: auto;
@@ -401,6 +448,27 @@ summary { color: var(--magenta); cursor: pointer; font-family: "Pixel Operator",
   .method-grid { grid-template-columns: 1fr 1fr; }
   .event-card { grid-template-columns: 1fr; }
   .event-index { place-items: center start; padding: .75rem 1rem; }
+  .translate {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    order: -1;
+    margin-bottom: .75rem;
+    padding: .45rem;
+    border: 1px solid rgba(201, 255, 0, .55);
+    background: #050505;
+  }
+  .translate-button {
+    min-height: 52px;
+    padding: .65rem .75rem;
+    border: 1px solid var(--lime);
+    border-radius: 3px;
+    background: var(--lime);
+    color: #051008;
+    font-size: 1.15rem;
+  }
+  .translate-button span { color: var(--magenta); }
+  .translate-panel { margin-top: .45rem; }
 }
 
 @media (max-width: 560px) {

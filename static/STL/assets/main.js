@@ -5,6 +5,10 @@ const nav = document.querySelector("[data-site-nav]");
 function setMenu(open) {
   menuButton?.setAttribute("aria-expanded", String(open));
   body.classList.toggle("nav-open", open);
+  if (open) {
+    const firstControl = nav?.querySelector("[data-translate-toggle]") || nav?.querySelector("a");
+    firstControl?.focus();
+  }
 }
 
 menuButton?.addEventListener("click", () => {
@@ -16,7 +20,42 @@ nav?.addEventListener("click", (event) => {
 });
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") setMenu(false);
+  if (event.key !== "Escape") return;
+  if (translateToggle?.getAttribute("aria-expanded") === "true") {
+    setTranslate(false);
+    translateToggle.focus();
+    return;
+  }
+  setMenu(false);
+});
+
+const translate = document.querySelector("[data-translate]");
+const translateToggle = document.querySelector("[data-translate-toggle]");
+const translatePanel = document.querySelector("[data-translate-panel]");
+const translateLanguage = document.querySelector("[data-translate-language]");
+
+function setTranslate(open) {
+  if (!translateToggle || !translatePanel) return;
+  translateToggle.setAttribute("aria-expanded", String(open));
+  translatePanel.hidden = !open;
+  if (open) translateLanguage?.focus();
+}
+
+translateToggle?.addEventListener("click", () => {
+  setTranslate(translateToggle.getAttribute("aria-expanded") !== "true");
+});
+
+translateLanguage?.addEventListener("change", () => {
+  if (!translateLanguage.value) return;
+  const target = new URL("https://translate.google.com/translate");
+  target.searchParams.set("sl", "en");
+  target.searchParams.set("tl", translateLanguage.value);
+  target.searchParams.set("u", window.location.href);
+  window.location.assign(target.href);
+});
+
+document.addEventListener("click", (event) => {
+  if (translate && !translate.contains(event.target)) setTranslate(false);
 });
 
 const cards = [...document.querySelectorAll("[data-event]")];
