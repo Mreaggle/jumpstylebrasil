@@ -93,7 +93,9 @@ if (stl && !stl.includes('<link rel="canonical" href="https://jumpstyle.com.br/S
 if (stl && !stl.includes('href="assets/site.css"')) errors.push("STL deve usar CSS relativo para funcionar no dominio e no preview");
 if (stl && stl.includes('href="/STL/assets/site.css"')) errors.push("STL ainda referencia CSS absoluto quebravel no preview");
 if (stl && !stl.includes("G-930BMPYP28")) errors.push("Google tag ausente na STL montada");
+if (stl && !stl.includes("97 dated records in 14 chapters")) errors.push("STL montada ainda nao usa registros datados individualmente");
 if (!fs.existsSync("dist/STL/assets/site.css") || !fs.existsSync("dist/STL/assets/shuffle_logo.png")) errors.push("Assets publicos da STL ausentes");
+if (!fs.existsSync("dist/STL/assets/source/shuffle-timeline-8k.jpg")) errors.push("Arte visual canonica da STL ausente");
 
 const creators = fs.readFileSync("dist/criadores/index.html", "utf8");
 if (!creators.includes("Creators brasileiros") || creators.includes("@nakpovs")) errors.push("Pagina Creators com titulo ou lista incorreta");

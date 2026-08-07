@@ -64,18 +64,24 @@ let activeEra = "all";
 
 function update() {
   const query = search?.value.trim().toLocaleLowerCase("en") || "";
-  let visible = 0;
+  let visibleChapters = 0;
+  let visibleRecords = 0;
   for (const card of cards) {
     const eraMatches = activeEra === "all" || card.dataset.era === activeEra;
     const queryMatches = !query || card.textContent.toLocaleLowerCase("en").includes(query);
     const show = eraMatches && queryMatches;
     card.hidden = !show;
-    if (show) visible += 1;
+    if (show) {
+      visibleChapters += 1;
+      visibleRecords += Number(card.dataset.recordCount || 0);
+    }
   }
   const count = document.querySelector("[data-count]");
-  if (count) count.textContent = `${visible} ${visible === 1 ? "timeline block" : "timeline blocks"} on view`;
+  if (count) {
+    count.textContent = `${visibleRecords} ${visibleRecords === 1 ? "record" : "records"} in ${visibleChapters} ${visibleChapters === 1 ? "chapter" : "chapters"}`;
+  }
   const empty = document.querySelector("[data-empty]");
-  if (empty) empty.hidden = visible !== 0;
+  if (empty) empty.hidden = visibleChapters !== 0;
 }
 
 document.querySelectorAll("[data-era]").forEach((button) => {

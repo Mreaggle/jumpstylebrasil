@@ -411,10 +411,38 @@ h1 span { display: block; color: var(--lime); }
   line-height: .95;
   text-transform: uppercase;
 }
-.event-card li { margin: .6rem 0; color: var(--paper); }
-.source-chip, .source-list a {
+.event-records {
+  padding: 0;
+  margin: 1.25rem 0 0;
+  list-style: none;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+.timeline-record {
+  display: grid;
+  grid-template-columns: minmax(7rem, 10rem) minmax(0, 1fr);
+  gap: 1rem;
+  padding: 1rem 0;
+  border-top: 1px solid rgba(255,255,255,.12);
+  color: var(--paper);
+}
+.timeline-record time {
+  color: var(--magenta);
+  font-family: "Pixel Operator", monospace;
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+.record-copy { min-width: 0; }
+.record-copy > p { margin: 0; }
+.record-sources {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .4rem;
+  margin-top: .6rem;
+}
+.source-chip {
   display: inline-flex;
-  margin-left: .25rem;
   padding: .15rem .45rem;
   border: 1px solid rgba(201,255,0,.35);
   border-radius: 999px;
@@ -424,18 +452,24 @@ h1 span { display: block; color: var(--lime); }
   font-weight: 800;
   text-decoration: none;
 }
+.source-status, .review-status {
+  font-family: "Pixel Operator", monospace;
+  font-size: .72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.source-status { color: var(--muted); }
+.review-status { color: #ffcf4a; }
+.record-note {
+  margin-top: .55rem !important;
+  color: var(--muted);
+  font-size: .85rem;
+}
 details {
   margin-top: 1rem;
   color: var(--muted);
 }
 summary { color: var(--magenta); cursor: pointer; font-family: "Pixel Operator", monospace; font-weight: 700; }
-.source-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .45rem;
-  margin-top: 1rem;
-}
-.source-list a { margin-left: 0; }
 
 .artwork-link {
   display: block;
@@ -464,4 +498,5 @@ summary { color: var(--magenta); cursor: pointer; font-family: "Pixel Operator",
   .method-grid { grid-template-columns: 1fr; }
   .brand img { width: 44px; height: 44px; }
   .site-header { padding-inline: 1rem; }
+  .timeline-record { grid-template-columns: 1fr; gap: .45rem; }
 }
