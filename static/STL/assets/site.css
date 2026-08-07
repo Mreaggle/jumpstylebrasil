@@ -156,6 +156,7 @@ button, input { font: inherit; }
   padding: 1rem;
   border-bottom: 1px solid rgba(255,255,255,.1);
   color: var(--paper);
+  font-family: "Pixel Operator", monospace;
   font-size: 1.25rem;
   font-weight: 800;
   text-decoration: none;
@@ -184,6 +185,7 @@ button, input { font: inherit; }
 h1, h2, h3, p { margin-top: 0; }
 h1 {
   margin-bottom: 1rem;
+  font-family: "Pixel Operator", monospace;
   font-size: clamp(4rem, 12vw, 9rem);
   line-height: .78;
   text-transform: uppercase;
@@ -212,6 +214,7 @@ h1 span { display: block; color: var(--lime); }
   border-radius: 999px;
   background: var(--lime);
   color: var(--ink);
+  font-family: "Pixel Operator", monospace;
   font-weight: 900;
   text-decoration: none;
 }
@@ -224,6 +227,7 @@ h1 span { display: block; color: var(--lime); }
 }
 .section-head h2 {
   margin-bottom: .5rem;
+  font-family: "Pixel Operator", monospace;
   font-size: clamp(2.3rem, 7vw, 5rem);
   line-height: .9;
   text-transform: uppercase;
@@ -274,6 +278,7 @@ h1 span { display: block; color: var(--lime); }
   background: var(--panel);
   color: var(--paper);
   cursor: pointer;
+  font-family: "Pixel Operator", monospace;
 }
 .era-filter button[aria-pressed="true"] {
   border-color: var(--lime);
@@ -303,6 +308,7 @@ h1 span { display: block; color: var(--lime); }
   padding-top: 1.2rem;
   background: linear-gradient(var(--magenta), var(--lime));
   color: var(--ink);
+  font-family: "Pixel Operator", monospace;
   font-size: 2rem;
   font-weight: 1000;
 }
@@ -315,6 +321,31 @@ h1 span { display: block; color: var(--lime); }
   font-size: .78rem;
 }
 .event-meta span { padding: .25rem .45rem; border: 1px solid rgba(255,255,255,.12); border-radius: 999px; }
+.country-flags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+  margin: -.25rem 0 .85rem;
+}
+.country-flags span {
+  display: inline-flex;
+  align-items: center;
+  gap: .28rem;
+  min-height: 28px;
+  padding: .2rem .45rem;
+  border: 1px solid rgba(255, 28, 230, .28);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .035);
+  color: var(--paper);
+  font-family: "Pixel Operator", monospace;
+  font-size: 1rem;
+  line-height: 1;
+}
+.country-flags small {
+  color: var(--muted);
+  font-size: .68rem;
+  font-weight: 700;
+}
 .event-card h3 {
   color: var(--lime);
   font-family: "Pixel Operator", monospace;
@@ -330,6 +361,7 @@ h1 span { display: block; color: var(--lime); }
   border: 1px solid rgba(201,255,0,.35);
   border-radius: 999px;
   color: var(--lime);
+  font-family: "Pixel Operator", monospace;
   font-size: .78rem;
   font-weight: 800;
   text-decoration: none;
@@ -375,11 +407,3 @@ summary { color: var(--magenta); cursor: pointer; font-family: "Pixel Operator",
   .brand img { width: 44px; height: 44px; }
   .site-header { padding-inline: 1rem; }
 }
-  font-family: "Pixel Operator", monospace;
-  font-family: "Pixel Operator", monospace;
-  font-family: "Pixel Operator", monospace;
-  font-family: "Pixel Operator", monospace;
-  font-family: "Pixel Operator", monospace;
-  font-family: "Pixel Operator", monospace;
-  font-family: "Pixel Operator", monospace;
-  font-family: "Pixel Operator", monospace;
