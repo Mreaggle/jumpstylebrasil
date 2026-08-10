@@ -17,6 +17,10 @@ for (const page of siteData.pages) {
   if (!html.includes('name="viewport"')) errors.push(`Viewport ausente: ${page.route}`);
   if (!html.includes("data-menu-button")) errors.push(`Menu mobile ausente: ${page.route}`);
   if (html.includes("Texto original preservado") || html.includes("Registro original")) errors.push(`Texto de bastidor exposto: ${page.route}`);
+  const expectedCredit = page.route === "/JUN/" ? "Developed &amp; Powered-By" : "Desenvolvido e sustentado por";
+  const expectedHandle = page.route === "/JUN/" ? "@Mreaggle" : "@Mreggle";
+  if (!html.includes(expectedCredit) || !html.includes(`>${expectedHandle}</a>`) || !html.includes('href="https://instagram.com/mreaggle"')) errors.push(`Credito de desenvolvimento ausente ou incorreto: ${page.route}`);
+  if (html.indexOf('class="site-credit"') < html.lastIndexOf("</footer>")) errors.push(`Credito deve ficar abaixo do rodape: ${page.route}`);
 }
 
 const css = fs.readFileSync("dist/assets/site.css", "utf8");
@@ -25,6 +29,7 @@ if (!css.includes("prefers-reduced-motion")) errors.push("CSS sem prefers-reduce
 if (!css.includes("overflow-x: hidden")) errors.push("CSS sem protecao contra overflow horizontal");
 if (!css.includes('font-family: "Handjet"')) errors.push("CSS sem tipografia de identidade");
 if (!jsbCss.includes("Brasil 2026") || !jsbCss.includes("#FFDF00") || !jsbCss.includes("#009C3B") || !jsbCss.includes("#002776")) errors.push("Camada visual brasileira isolada ausente");
+if (!fs.existsSync("dist/assets/credit.css")) errors.push("CSS isolado do credito de desenvolvimento ausente");
 
 const home = fs.readFileSync("dist/index.html", "utf8");
 if (!home.includes('/assets/site.css')) errors.push("Build sem base path de dominio customizado");
@@ -102,6 +107,8 @@ if (stl && stl.includes('href="/STL/assets/site.css"')) errors.push("STL ainda r
 if (stl && !stl.includes("G-930BMPYP28")) errors.push("Google tag ausente na STL montada");
 if (stl && !stl.includes("97 dated records in 14 chapters")) errors.push("STL montada ainda nao usa registros datados individualmente");
 if (!fs.existsSync("dist/STL/assets/site.css") || !fs.existsSync("dist/STL/assets/shuffle_logo.png")) errors.push("Assets publicos da STL ausentes");
+if (!fs.existsSync("dist/STL/assets/credit.css") || !stl.includes("Developed &amp; Powered-By") || !stl.includes(">@Mreaggle</a>") || !stl.includes('href="https://instagram.com/mreaggle"')) errors.push("Credito de desenvolvimento em ingles ausente da STL");
+if (stl.indexOf('class="site-credit"') < stl.lastIndexOf("</footer>")) errors.push("Credito da STL deve ficar abaixo do rodape existente");
 if (!fs.existsSync("dist/STL/assets/source/shuffle-timeline-8k.jpg")) errors.push("Arte visual canonica da STL ausente");
 
 const creators = fs.readFileSync("dist/criadores/index.html", "utf8");
@@ -121,6 +128,8 @@ if (!roadmap.includes("data-roadmap-save") || !roadmap.includes("data-roadmap-sh
 if (!mainJs.includes("createRoadmapImage") || !mainJs.includes('meu-roadmap-jumpstyle-brasil.png') || !mainJs.includes("navigator.share")) errors.push("Roadmap sem geracao PNG e compartilhamento nativo");
 
 if (!fs.existsSync("dist/404.html")) errors.push("404.html ausente");
+const notFound = fs.existsSync("dist/404.html") ? fs.readFileSync("dist/404.html", "utf8") : "";
+if (!notFound.includes("Desenvolvido e sustentado por") || !notFound.includes(">@Mreggle</a>") || notFound.indexOf('class="site-credit"') < notFound.lastIndexOf("</footer>")) errors.push("Credito de desenvolvimento ausente ou fora do lugar na pagina 404");
 if (fs.existsSync("dist/reference-renders")) errors.push("Evidencias internas copiadas para o site publico");
 
 if (errors.length) {
