@@ -26,6 +26,7 @@ if (!css.includes('font-family: "Handjet"')) errors.push("CSS sem tipografia de 
 
 const home = fs.readFileSync("dist/index.html", "utf8");
 if (!home.includes('/assets/site.css')) errors.push("Build sem base path de dominio customizado");
+if (!/\/assets\/site\.css\?v=[a-f0-9]{12}/.test(home) || !/\/assets\/main\.js\?v=[a-f0-9]{12}/.test(home)) errors.push("Assets principais sem cache busting por conteudo");
 if (home.includes('/jumpstylebrasil/')) errors.push("Build ainda referencia o antigo project path /jumpstylebrasil/");
 if (!home.includes('data-beat-stage') || !home.includes('data-bpm="180"')) errors.push("Hero sem controle reativo de BPM");
 if (!home.includes("data-bpm-readout") || (home.match(/<i>[1-4]<\/i>/g) || []).length !== 4) errors.push("Hero sem contador de compasso 4/4");
@@ -85,6 +86,7 @@ for (const match of globalTimeline.matchAll(/\[[^\]]+\]\((https?:\/\/[^)]+)\)/g)
 }
 if (jun.includes("JUN-whatsapp-chat") || fs.existsSync("dist/JUN-whatsapp-chat.txt") || fs.existsSync("dist/JUN/JUN-whatsapp-chat.txt")) errors.push("Export privado da JUN exposto no build");
 if (!home.includes('href="/JUN/"')) errors.push("Home sem acesso local para a JUN");
+if (siteData.externalLinks.jun.url !== "https://jumpstyle.com.br/JUN/" || !home.includes('href="https://jumpstyle.com.br/JUN/"')) errors.push("Botao Museu global JUN nao aponta para a rota oficial");
 if (!home.includes('href="/STL/"')) errors.push("Home sem acesso local para a STL");
 
 const stl = fs.existsSync("dist/STL/index.html") ? fs.readFileSync("dist/STL/index.html", "utf8") : "";

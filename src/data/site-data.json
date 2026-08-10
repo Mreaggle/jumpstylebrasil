@@ -22,6 +22,10 @@
     },
     "jun": {
       "label": "Museu global JUN",
+      "url": "https://jumpstyle.com.br/JUN/"
+    },
+    "junRepository": {
+      "label": "Repositório Jumpstyle United Nations",
       "url": "https://github.com/Mreaggle/JumpstyleUnitedNations/"
     },
     "junTimeline": {
