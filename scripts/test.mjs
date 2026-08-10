@@ -20,13 +20,16 @@ for (const page of siteData.pages) {
 }
 
 const css = fs.readFileSync("dist/assets/site.css", "utf8");
+const jsbCss = fs.readFileSync("dist/assets/jsb.css", "utf8");
 if (!css.includes("prefers-reduced-motion")) errors.push("CSS sem prefers-reduced-motion");
 if (!css.includes("overflow-x: hidden")) errors.push("CSS sem protecao contra overflow horizontal");
 if (!css.includes('font-family: "Handjet"')) errors.push("CSS sem tipografia de identidade");
+if (!jsbCss.includes("Brasil 2026") || !jsbCss.includes("#FFDF00") || !jsbCss.includes("#009C3B") || !jsbCss.includes("#002776")) errors.push("Camada visual brasileira isolada ausente");
 
 const home = fs.readFileSync("dist/index.html", "utf8");
 if (!home.includes('/assets/site.css')) errors.push("Build sem base path de dominio customizado");
 if (!/\/assets\/site\.css\?v=[a-f0-9]{12}/.test(home) || !/\/assets\/main\.js\?v=[a-f0-9]{12}/.test(home)) errors.push("Assets principais sem cache busting por conteudo");
+if (!/\/assets\/jsb\.css\?v=[a-f0-9]{12}/.test(home)) errors.push("Home sem camada visual brasileira versionada");
 if (home.includes('/jumpstylebrasil/')) errors.push("Build ainda referencia o antigo project path /jumpstylebrasil/");
 if (!home.includes('data-beat-stage') || !home.includes('data-bpm="180"')) errors.push("Hero sem controle reativo de BPM");
 if (!home.includes("data-bpm-readout") || (home.match(/<i>[1-4]<\/i>/g) || []).length !== 4) errors.push("Hero sem contador de compasso 4/4");
@@ -43,6 +46,7 @@ if (!css.includes("logo-kick-beat var(--beat-speed)") || css.includes("logo-kick
 
 const fbs = fs.readFileSync("dist/fireborn-squad/index.html", "utf8");
 if (!fbs.includes('class="fbs-page"')) errors.push("Tema exclusivo FBS ausente");
+if (fbs.includes("assets/jsb.css") || fbs.includes('class="ui-icon"') || fbs.includes("brand-diamond")) errors.push("Refatoracao visual JSB vazou para a FBS");
 if (!fbs.includes("data-fbs-ignite") || !fbs.includes("data-fbs-filter")) errors.push("Interacoes FBS ausentes");
 if ((fbs.match(/data-fbs-card/g) || []).length !== 28) errors.push("Roster FBS incompleto no HTML");
 if (!fs.existsSync("dist/assets/fireborn-squad.png")) errors.push("Brasao FBS nao copiado para o build");
@@ -53,6 +57,7 @@ if (!/fbs-member is-desertor[\s\S]*fbs-status is-out[\s\S]*<strong>Blackzin<\/st
 
 const jun = fs.readFileSync("dist/JUN/index.html", "utf8");
 if (!jun.includes('<html lang="en">') || !jun.includes('class="jun-page"')) errors.push("Tema exclusivo em ingles da JUN ausente");
+if (jun.includes("assets/jsb.css") || jun.includes("assets/site.css?v=") || jun.includes("assets/main.js?v=") || !jun.includes('<meta name="theme-color" content="#092da8">')) errors.push("Refatoracao visual JSB vazou para a JUN");
 if (!jun.includes("THE WORLD&#39;S LARGEST JUMPSTYLE MUSEUM")) errors.push("Posicionamento principal da JUN ausente");
 if (!jun.includes('assets/jun-logo.png') || !fs.existsSync("dist/assets/jun-logo.png")) errors.push("Logo JUN nao copiada para o build");
 if (!fs.existsSync("dist/assets/fonts/PixelOperator.woff") || !fs.existsSync("dist/assets/fonts/PixelOperator-Bold.woff")) errors.push("Pixel Operator nao copiada para o build");

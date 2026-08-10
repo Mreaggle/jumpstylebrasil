@@ -12,6 +12,7 @@ const globalTimeline = parseGlobalTimeline(globalTimelineMarkdown);
 const originalContent = readJson("src/data/original-content.json");
 const assetVersion = crypto.createHash("sha256")
   .update(fs.readFileSync(path.join(root, "src/styles/site.css")))
+  .update(fs.readFileSync(path.join(root, "src/styles/jsb.css")))
   .update(fs.readFileSync(path.join(root, "src/scripts/main.js")))
   .digest("hex")
   .slice(0, 12);
@@ -26,6 +27,7 @@ const countryNamePattern = new RegExp(
 fs.rmSync(dist, { recursive: true, force: true });
 fs.mkdirSync(dist, { recursive: true });
 copyFile("src/styles/site.css", "assets/site.css");
+copyFile("src/styles/jsb.css", "assets/jsb.css");
 copyFile("src/scripts/main.js", "assets/main.js");
 copyFile("width_200.png", "assets/jumper-logo.png");
 copyFile("fbs.png", "assets/fireborn-squad.png");
@@ -113,7 +115,7 @@ function renderShell({ title, description, route, body }) {
   ${renderGoogleTag()}
   <title>${escapeHtml(title)}</title>
   <meta name="description" content="${escapeHtml(description)}">
-  <meta name="theme-color" content="#002776">
+  ${isFbs ? "" : '<meta name="theme-color" content="#002776">'}
   <link rel="canonical" href="${canonical}">
   <link rel="icon" href="${sitePath("favicon.png")}" type="image/png">
   <meta property="og:type" content="website">
@@ -126,7 +128,8 @@ function renderShell({ title, description, route, body }) {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="${sitePath("assets/site.css")}?v=${assetVersion}">
+  <link rel="stylesheet" href="${sitePath("assets/site.css")}${isFbs ? "" : `?v=${assetVersion}`}">
+  ${isFbs ? "" : `<link rel="stylesheet" href="${sitePath("assets/jsb.css")}?v=${assetVersion}">`}
   <script type="application/ld+json">${JSON.stringify(jsonLd())}</script>
 </head>
 <body class="${isFbs ? "fbs-page" : ""}">
@@ -135,34 +138,34 @@ function renderShell({ title, description, route, body }) {
   <div class="signal-bar" aria-hidden="true"><div class="signal-track"><div class="signal-sequence">${signalSequence}</div><div class="signal-sequence">${signalSequence}</div></div></div>
   <header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="${isFbs ? sitePath("/fireborn-squad/") : sitePath()}" aria-label="${isFbs ? "Fireborn Squad" : "Jumpstyle Brasil - Início"}"><span class="brand-mark"><span class="brand-diamond" aria-hidden="true"></span><img src="${sitePath(isFbs ? "assets/fireborn-squad.png" : "assets/jumper-logo.png")}" alt="" width="199" height="181"></span><span class="brand-copy"><b>${isFbs ? "Fireborn" : "Jumpstyle"}</b><small>${isFbs ? "Squad // Brasil" : "Brasil"}</small></span></a>
+      <a class="brand" href="${isFbs ? sitePath("/fireborn-squad/") : sitePath()}" aria-label="${isFbs ? "Fireborn Squad" : "Jumpstyle Brasil - Início"}"><span class="brand-mark">${isFbs ? "" : '<span class="brand-diamond" aria-hidden="true"></span>'}<img src="${sitePath(isFbs ? "assets/fireborn-squad.png" : "assets/jumper-logo.png")}" alt="" width="199" height="181"></span><span class="brand-copy"><b>${isFbs ? "Fireborn" : "Jumpstyle"}</b><small>${isFbs ? "Squad // Brasil" : "Brasil"}</small></span></a>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-button>
         <span class="menu-icon" aria-hidden="true"></span>
         <span class="sr-only">Abrir menu</span>
       </button>
       <nav id="site-nav" class="site-nav" aria-label="Principal" data-site-nav>
-        ${siteData.nav.map((item) => `<a href="${sitePath(item.route)}"${item.route === route ? ' aria-current="page"' : ""}>${icon(navIcon(item.route))}<span>${escapeHtml(item.label)}</span></a>`).join("")}
+        ${siteData.nav.map((item) => `<a href="${sitePath(item.route)}"${item.route === route ? ' aria-current="page"' : ""}>${isFbs ? escapeHtml(item.label) : `${icon(navIcon(item.route))}<span>${escapeHtml(item.label)}</span>`}</a>`).join("")}
       </nav>
     </div>
   </header>
   <main id="conteudo">
     ${body}
   </main>
-  ${renderSocialRail()}
+  ${renderSocialRail(isFbs)}
   ${renderMobileDock(route)}
   <footer class="site-footer">
     <div class="footer-inner">
       <div class="footer-brand"><img src="${sitePath("assets/jumper-logo.png")}" alt="" width="199" height="181"><strong>Jumpstyle Brasil</strong></div>
       <p>Movimento, memória e comunidade. A cultura Jumpstyle brasileira conectando gerações.</p>
       <div class="link-grid">
-        ${externalLink("instagram", "Instagram oficial")}
-        ${externalLink("whatsapp", "Grupo WhatsApp")}
-        ${externalLink("discord", "Servidor Discord")}
-        <a class="button secondary" href="${siteData.externalLinks.jun.url}">${icon("globe")}Museu global JUN</a>
+        ${externalLink("instagram", "Instagram oficial", !isFbs)}
+        ${externalLink("whatsapp", "Grupo WhatsApp", !isFbs)}
+        ${externalLink("discord", "Servidor Discord", !isFbs)}
+        <a class="button secondary" href="${siteData.externalLinks.jun.url}">${isFbs ? "" : icon("globe")}Museu global JUN</a>
       </div>
     </div>
   </footer>
-  <script src="${sitePath("assets/main.js")}?v=${assetVersion}" defer></script>
+  <script src="${sitePath("assets/main.js")}${isFbs ? "" : `?v=${assetVersion}` }" defer></script>
 </body>
 </html>`;
 }
@@ -182,7 +185,7 @@ function renderJunShell({ title, description, route, body }) {
   <meta name="description" content="${escapeHtml(description)}">
   <meta name="keywords" content="Jumpstyle history, Jumpstyle timeline, Jumpstyle museum, Jumpstyle dancers, Jumpstyle meetings, Hardjump, Ownstyle, Sidejump, Tekstyle, Patrick Jumpen">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <meta name="theme-color" content="#002776">
+  <meta name="theme-color" content="#092da8">
   <link rel="canonical" href="${canonical}">
   <link rel="alternate" hreflang="en" href="${canonical}">
   <link rel="alternate" hreflang="x-default" href="${canonical}">
@@ -204,7 +207,7 @@ function renderJunShell({ title, description, route, body }) {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="${sitePath("assets/site.css")}?v=${assetVersion}">
+  <link rel="stylesheet" href="${sitePath("assets/site.css")}">
   <script type="application/ld+json">${JSON.stringify(jsonLd(route))}</script>
 </head>
 <body class="jun-page">
@@ -237,7 +240,7 @@ function renderJunShell({ title, description, route, body }) {
       <div class="link-grid"><a class="button secondary external" href="${junData.repositoryUrl}" target="_blank" rel="noopener noreferrer">Open repository</a><a class="button secondary external" href="${junData.timelineUrl}" target="_blank" rel="noopener noreferrer">Full timeline</a><a class="button secondary external" href="${junData.figuresUrl}" target="_blank" rel="noopener noreferrer">Key figures data</a><a class="button secondary" href="${sitePath()}">Jumpstyle Brasil</a></div>
     </div>
   </footer>
-  <script src="${sitePath("assets/main.js")}?v=${assetVersion}" defer></script>
+  <script src="${sitePath("assets/main.js")}" defer></script>
 </body>
 </html>`;
 }
@@ -815,12 +818,23 @@ function card(title, text, extra = "") {
   return `<article class="card"><span class="card-icon" aria-hidden="true">${icon(cardIcon(title))}</span><strong>${escapeHtml(title)}</strong><p>${escapeHtml(text)}</p>${extra}</article>`;
 }
 
-function externalLink(key, label = undefined) {
+function externalLink(key, label = undefined, withIcon = true) {
   const link = siteData.externalLinks[key];
-  return `<a class="button secondary external" href="${link.url}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(label || link.label)} - abre site externo">${icon(linkIcon(key))}${escapeHtml(label || link.label)}</a>`;
+  return `<a class="button secondary external" href="${link.url}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(label || link.label)} - abre site externo">${withIcon ? icon(linkIcon(key)) : ""}${escapeHtml(label || link.label)}</a>`;
 }
 
-function renderSocialRail() {
+function renderSocialRail(legacy = false) {
+  if (legacy) {
+    const items = [
+      ["whatsapp", "WA", "Entrar no grupo do WhatsApp"],
+      ["instagram", "IG", "Abrir o Instagram da comunidade"],
+      ["discord", "DC", "Entrar no servidor do Discord"]
+    ];
+    return `<nav class="social-rail" aria-label="Comunidade nas redes">${items.map(([key, mark, label]) => {
+      const link = siteData.externalLinks[key];
+      return `<a class="social-${key}" href="${link.url}" target="_blank" rel="noopener noreferrer" aria-label="${label}" data-label="${label}"><span aria-hidden="true">${mark}</span></a>`;
+    }).join("")}</nav>`;
+  }
   const items = [
     ["whatsapp", "whatsapp", "Entrar no grupo do WhatsApp"],
     ["instagram", "instagram", "Abrir o Instagram da comunidade"],
@@ -834,7 +848,7 @@ function renderSocialRail() {
 
 function renderMobileDock(route) {
   if (route === "/fireborn-squad/") {
-    return `<nav class="mobile-dock fbs-mobile-dock" aria-label="Atalhos Fireborn Squad"><a href="${sitePath()}" class="fbs-dock-back">${icon("home")}JSB</a><a href="#ordem">${icon("flame")}Ordem</a><a href="#registro">${icon("users")}Registro</a><a href="#legado">${icon("timeline")}Legado</a><button type="button" data-dock-menu aria-label="Abrir menu completo">${icon("menu")}Mais</button></nav>`;
+    return `<nav class="mobile-dock fbs-mobile-dock" aria-label="Atalhos Fireborn Squad"><a href="${sitePath()}" class="fbs-dock-back"><span aria-hidden="true"></span>JSB</a><a href="#ordem"><span aria-hidden="true"></span>Ordem</a><a href="#registro"><span aria-hidden="true"></span>Registro</a><a href="#legado"><span aria-hidden="true"></span>Legado</a><button type="button" data-dock-menu aria-label="Abrir menu completo"><span aria-hidden="true"></span>Mais</button></nav>`;
   }
   const items = [
     ["Início", "/"],
