@@ -13,6 +13,7 @@ const originalContent = readJson("src/data/original-content.json");
 const assetVersion = crypto.createHash("sha256")
   .update(fs.readFileSync(path.join(root, "src/styles/site.css")))
   .update(fs.readFileSync(path.join(root, "src/styles/jsb.css")))
+  .update(fs.readFileSync(path.join(root, "src/styles/credit.css")))
   .update(fs.readFileSync(path.join(root, "src/scripts/main.js")))
   .digest("hex")
   .slice(0, 12);
@@ -28,6 +29,7 @@ fs.rmSync(dist, { recursive: true, force: true });
 fs.mkdirSync(dist, { recursive: true });
 copyFile("src/styles/site.css", "assets/site.css");
 copyFile("src/styles/jsb.css", "assets/jsb.css");
+copyFile("src/styles/credit.css", "assets/credit.css");
 copyFile("src/scripts/main.js", "assets/main.js");
 copyFile("width_200.png", "assets/jumper-logo.png");
 copyFile("fbs.png", "assets/fireborn-squad.png");
@@ -130,6 +132,7 @@ function renderShell({ title, description, route, body }) {
   <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="${sitePath("assets/site.css")}${isFbs ? "" : `?v=${assetVersion}`}">
   ${isFbs ? "" : `<link rel="stylesheet" href="${sitePath("assets/jsb.css")}?v=${assetVersion}">`}
+  <link rel="stylesheet" href="${sitePath("assets/credit.css")}?v=${assetVersion}">
   <script type="application/ld+json">${JSON.stringify(jsonLd())}</script>
 </head>
 <body class="${isFbs ? "fbs-page" : ""}">
@@ -165,6 +168,7 @@ function renderShell({ title, description, route, body }) {
       </div>
     </div>
   </footer>
+  ${renderCredit("pt-BR")}
   <script src="${sitePath("assets/main.js")}${isFbs ? "" : `?v=${assetVersion}` }" defer></script>
 </body>
 </html>`;
@@ -208,6 +212,7 @@ function renderJunShell({ title, description, route, body }) {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="${sitePath("assets/site.css")}">
+  <link rel="stylesheet" href="${sitePath("assets/credit.css")}?v=${assetVersion}">
   <script type="application/ld+json">${JSON.stringify(jsonLd(route))}</script>
 </head>
 <body class="jun-page">
@@ -240,6 +245,7 @@ function renderJunShell({ title, description, route, body }) {
       <div class="link-grid"><a class="button secondary external" href="${junData.repositoryUrl}" target="_blank" rel="noopener noreferrer">Open repository</a><a class="button secondary external" href="${junData.timelineUrl}" target="_blank" rel="noopener noreferrer">Full timeline</a><a class="button secondary external" href="${junData.figuresUrl}" target="_blank" rel="noopener noreferrer">Key figures data</a><a class="button secondary" href="${sitePath()}">Jumpstyle Brasil</a></div>
     </div>
   </footer>
+  ${renderCredit("en")}
   <script src="${sitePath("assets/main.js")}" defer></script>
 </body>
 </html>`;
@@ -255,6 +261,12 @@ function renderGoogleTag() {
 
     gtag('config', 'G-930BMPYP28');
   </script>`;
+}
+
+function renderCredit(language) {
+  const label = language === "en" ? "Developed &amp; Powered-By" : "Desenvolvido e sustentado por";
+  const handle = language === "en" ? "@Mreaggle" : "@Mreggle";
+  return `<div class="site-credit"><p>${label} <a href="https://instagram.com/mreaggle" target="_blank" rel="noopener noreferrer">${handle}</a></p></div>`;
 }
 
 function renderHero(page) {

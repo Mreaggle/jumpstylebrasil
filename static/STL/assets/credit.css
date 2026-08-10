@@ -1,0 +1,14 @@
+.site-credit {
+  min-height: 52px;
+  display: grid;
+  place-items: center;
+  padding: .85rem 1rem calc(.85rem + env(safe-area-inset-bottom));
+  border-top: 1px solid var(--line);
+  background: var(--ink);
+  color: var(--muted);
+  font-size: .75rem;
+  text-align: center;
+}
+
+.site-credit p { margin: 0; }
+.site-credit a { color: var(--lime); font-weight: 800; text-underline-offset: 3px; }
