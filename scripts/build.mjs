@@ -107,6 +107,7 @@ function renderShell({ title, description, route, body }) {
   ${renderGoogleTag()}
   <title>${escapeHtml(title)}</title>
   <meta name="description" content="${escapeHtml(description)}">
+  <meta name="theme-color" content="#002776">
   <link rel="canonical" href="${canonical}">
   <link rel="icon" href="${sitePath("favicon.png")}" type="image/png">
   <meta property="og:type" content="website">
@@ -128,13 +129,13 @@ function renderShell({ title, description, route, body }) {
   <div class="signal-bar" aria-hidden="true"><div class="signal-track"><div class="signal-sequence">${signalSequence}</div><div class="signal-sequence">${signalSequence}</div></div></div>
   <header class="site-header">
     <div class="header-inner">
-      <a class="brand" href="${isFbs ? sitePath("/fireborn-squad/") : sitePath()}" aria-label="${isFbs ? "Fireborn Squad" : "Jumpstyle Brasil - Início"}"><span class="brand-mark"><img src="${sitePath(isFbs ? "assets/fireborn-squad.png" : "assets/jumper-logo.png")}" alt="" width="199" height="181"></span><span class="brand-copy"><b>${isFbs ? "Fireborn" : "Jumpstyle"}</b><small>${isFbs ? "Squad // Brasil" : "Brasil"}</small></span></a>
+      <a class="brand" href="${isFbs ? sitePath("/fireborn-squad/") : sitePath()}" aria-label="${isFbs ? "Fireborn Squad" : "Jumpstyle Brasil - Início"}"><span class="brand-mark"><span class="brand-diamond" aria-hidden="true"></span><img src="${sitePath(isFbs ? "assets/fireborn-squad.png" : "assets/jumper-logo.png")}" alt="" width="199" height="181"></span><span class="brand-copy"><b>${isFbs ? "Fireborn" : "Jumpstyle"}</b><small>${isFbs ? "Squad // Brasil" : "Brasil"}</small></span></a>
       <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-button>
         <span class="menu-icon" aria-hidden="true"></span>
         <span class="sr-only">Abrir menu</span>
       </button>
       <nav id="site-nav" class="site-nav" aria-label="Principal" data-site-nav>
-        ${siteData.nav.map((item) => `<a href="${sitePath(item.route)}"${item.route === route ? ' aria-current="page"' : ""}>${escapeHtml(item.label)}</a>`).join("")}
+        ${siteData.nav.map((item) => `<a href="${sitePath(item.route)}"${item.route === route ? ' aria-current="page"' : ""}>${icon(navIcon(item.route))}<span>${escapeHtml(item.label)}</span></a>`).join("")}
       </nav>
     </div>
   </header>
@@ -175,7 +176,7 @@ function renderJunShell({ title, description, route, body }) {
   <meta name="description" content="${escapeHtml(description)}">
   <meta name="keywords" content="Jumpstyle history, Jumpstyle timeline, Jumpstyle museum, Jumpstyle dancers, Jumpstyle meetings, Hardjump, Ownstyle, Sidejump, Tekstyle, Patrick Jumpen">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-  <meta name="theme-color" content="#092da8">
+  <meta name="theme-color" content="#002776">
   <link rel="canonical" href="${canonical}">
   <link rel="alternate" hreflang="en" href="${canonical}">
   <link rel="alternate" hreflang="x-default" href="${canonical}">
@@ -248,8 +249,8 @@ function renderGoogleTag() {
 }
 
 function renderHero(page) {
-  const primary = page.primaryCta ? `<a class="button" href="${sitePath(page.primaryCta.route)}">${escapeHtml(page.primaryCta.label)}<span aria-hidden="true">→</span></a>` : "";
-  const secondary = page.secondaryCta ? `<a class="button secondary" href="${sitePath(page.secondaryCta.route)}">${escapeHtml(page.secondaryCta.label)}</a>` : "";
+  const primary = page.primaryCta ? `<a class="button" href="${sitePath(page.primaryCta.route)}">${icon("arrow-right")}${escapeHtml(page.primaryCta.label)}<span aria-hidden="true">→</span></a>` : "";
+  const secondary = page.secondaryCta ? `<a class="button secondary" href="${sitePath(page.secondaryCta.route)}">${icon(navIcon(page.secondaryCta.route))}${escapeHtml(page.secondaryCta.label)}</a>` : "";
   return `<section class="hero">
   <div class="section-inner hero-grid">
     <div class="hero-copy">
@@ -259,6 +260,7 @@ function renderHero(page) {
       ${primary || secondary ? `<div class="actions">${primary}${secondary}</div>` : ""}
     </div>
     <aside class="hero-visual" aria-label="Seletor visual de batidas por minuto" data-beat-stage>
+      <span class="flag-shape" aria-hidden="true"><i></i></span>
       <div class="logo-stage"><span class="orbit orbit-one"></span><span class="orbit orbit-two"></span><img src="${sitePath("assets/jumper-logo.png")}" alt="Silhueta de um jumper executando um chute" width="199" height="181"></div>
       <div class="beat-bars" aria-hidden="true">${Array.from({ length: 12 }, (_, index) => `<i style="--i:${index}"></i>`).join("")}</div>
       <div class="measure-status">
@@ -306,19 +308,19 @@ function renderRouteContent(page) {
 
 function renderHome() {
   const quick = [
-    ["Como dançar", "/como-dancar/", "Fundamentos, movimentos avançados e playlists para começar."],
-    ["All-Star", "/all-star/", "Área Jumper, votação e resultados da competição."],
-    ["História", "/historia/", "Da origem do Jumpstyle à comunidade global de hoje."],
-    ["Músicas", "/musicas/", "BPMs, faixas marcantes e playlists para treinar."],
-    ["Manifesto", "/manifesto/", "Valores, princípios e missão da comunidade."],
-    ["Creators", "/criadores/", "Quem cria conteúdo e movimenta o Jumpstyle brasileiro."],
-    ["Fireborn Squad", "/fireborn-squad/", "A ordem, os graus e o registro do time nacional brasileiro."],
-    ["JUN", "/JUN/", "O museu global de história, encontros e figuras do Jumpstyle."]
+    ["Como dançar", "/como-dancar/", "Fundamentos, movimentos avançados e playlists para começar.", "shoe"],
+    ["All-Star", "/all-star/", "Área Jumper, votação e resultados da competição.", "trophy"],
+    ["História", "/historia/", "Da origem do Jumpstyle à comunidade global de hoje.", "timeline"],
+    ["Músicas", "/musicas/", "BPMs, faixas marcantes e playlists para treinar.", "music"],
+    ["Manifesto", "/manifesto/", "Valores, princípios e missão da comunidade.", "bolt"],
+    ["Creators", "/criadores/", "Quem cria conteúdo e movimenta o Jumpstyle brasileiro.", "video"],
+    ["Fireborn Squad", "/fireborn-squad/", "A ordem, os graus e o registro do time nacional brasileiro.", "flame"],
+    ["JUN", "/JUN/", "O museu global de história, encontros e figuras do Jumpstyle.", "globe"]
   ];
   return `<section class="section">
   <div class="section-inner">
     <div class="section-head"><h2>Entre no passo</h2><p>Escolha seu caminho e mergulhe na cultura Jumpstyle brasileira.</p></div>
-    <div class="quick-grid">${quick.map(([title, href, text], index) => `<article class="route-card" data-reveal><span class="route-number">0${index + 1}</span><div><strong>${escapeHtml(title)}</strong><p>${escapeHtml(text)}</p></div><a href="${sitePath(href)}" aria-label="Abrir ${escapeHtml(title)}"><span>Abrir área</span><b aria-hidden="true">↗</b></a></article>`).join("")}</div>
+    <div class="quick-grid">${quick.map(([title, href, text, iconName], index) => `<article class="route-card" data-reveal><div class="route-meta"><span class="route-number">0${index + 1}</span><span class="route-icon" aria-hidden="true">${icon(iconName)}</span></div><div><strong>${escapeHtml(title)}</strong><p>${escapeHtml(text)}</p></div><a href="${sitePath(href)}" aria-label="Abrir ${escapeHtml(title)}"><span>Abrir área</span><b aria-hidden="true">↗</b></a></article>`).join("")}</div>
   </div>
 </section>
 <section class="section">
@@ -378,10 +380,17 @@ function renderHowTo() {
 function renderRoadmap() {
   return `<section class="section"><div class="section-inner">
     <div class="section-head"><h2>Sua evolução</h2><p>Marque o que você já domina e acompanhe seu progresso em cada nível.</p></div>
-    <div class="roadmap">${siteData.roadmap.map((level) => `<article class="roadmap-level" data-roadmap-level>
+    <div class="roadmap-overview">
+      <div class="roadmap-ring" data-roadmap-ring style="--progress:0%"><strong data-roadmap-percent>0%</strong><span>Seu progresso</span></div>
+      <div class="roadmap-overview-copy"><span class="route-icon" aria-hidden="true">${icon("flag")}</span><h3>Roadmap Jumpstyle Brasil</h3><p>Marque o que você já domina e acompanhe seu progresso em cada nível.</p></div>
+      <div class="roadmap-share-actions"><button class="button" type="button" data-roadmap-save>${icon("download")}Salvar imagem</button><button class="button secondary" type="button" data-roadmap-share>${icon("share")}Compartilhar</button></div>
+      <p class="roadmap-export-status" data-roadmap-export-status role="status" aria-live="polite"></p>
+    </div>
+    <div class="roadmap">${siteData.roadmap.map((level, levelIndex) => `<article class="roadmap-level" data-roadmap-level data-roadmap-name="${escapeHtml(level.level)}">
+      <div class="roadmap-step" aria-hidden="true"><span>0${levelIndex + 1}</span>${icon(levelIndex === 0 ? "shoe" : levelIndex === 1 ? "bolt" : "trophy")}</div>
       <div class="roadmap-top"><h3>${escapeHtml(level.level)}</h3><strong data-roadmap-count>0/${level.items.length}</strong></div>
       <div class="meter" data-roadmap-meter aria-hidden="true"></div>
-      <div class="check-list">${level.items.map((item) => `<label><input data-roadmap-check type="checkbox" value="${slug(level.level)}:${slug(item)}"> ${escapeHtml(item)}</label>`).join("")}</div>
+      <div class="check-list">${level.items.map((item) => `<label><input data-roadmap-check type="checkbox" value="${slug(level.level)}:${slug(item)}"><span class="roadmap-checkmark" aria-hidden="true">${icon("check")}</span><span>${escapeHtml(item)}</span></label>`).join("")}</div>
     </article>`).join("")}</div>
   </div></section>`;
 }
@@ -793,33 +802,33 @@ function renderSitemap() {
 }
 
 function renderFavicon() {
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="8" fill="#070b12"/><path d="M10 42h14V14h10v28c0 8-5 12-13 12-4 0-8-1-11-3l4-9c2 1 4 2 6 2 3 0 4-1 4-5V24H10V14h24v40H10V42Zm30 1c3 2 7 3 10 3 3 0 5-1 5-3 0-6-18-2-18-17 0-8 7-13 16-13 5 0 10 1 14 4l-5 9c-3-2-6-3-9-3s-5 1-5 3c0 6 18 2 18 17 0 8-7 13-17 13-6 0-12-2-16-5l7-8Z" fill="#00f0c8"/></svg>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="12" fill="#009C3B"/><path d="M32 7 58 32 32 57 6 32Z" fill="#FFDF00"/><circle cx="32" cy="32" r="13" fill="#002776"/><path d="M20 30c8-3 17-2 25 3" fill="none" stroke="#FFFFFF" stroke-width="3"/><path d="M25 38h14V22h5v21H25Z" fill="#FFFFFF"/></svg>`;
 }
 
 function card(title, text, extra = "") {
-  return `<article class="card"><strong>${escapeHtml(title)}</strong><p>${escapeHtml(text)}</p>${extra}</article>`;
+  return `<article class="card"><span class="card-icon" aria-hidden="true">${icon(cardIcon(title))}</span><strong>${escapeHtml(title)}</strong><p>${escapeHtml(text)}</p>${extra}</article>`;
 }
 
 function externalLink(key, label = undefined) {
   const link = siteData.externalLinks[key];
-  return `<a class="button secondary external" href="${link.url}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(label || link.label)} - abre site externo">${escapeHtml(label || link.label)}</a>`;
+  return `<a class="button secondary external" href="${link.url}" target="_blank" rel="noopener noreferrer" aria-label="${escapeHtml(label || link.label)} - abre site externo">${icon(linkIcon(key))}${escapeHtml(label || link.label)}</a>`;
 }
 
 function renderSocialRail() {
   const items = [
-    ["whatsapp", "WA", "Entrar no grupo do WhatsApp"],
-    ["instagram", "IG", "Abrir o Instagram da comunidade"],
-    ["discord", "DC", "Entrar no servidor do Discord"]
+    ["whatsapp", "whatsapp", "Entrar no grupo do WhatsApp"],
+    ["instagram", "instagram", "Abrir o Instagram da comunidade"],
+    ["discord", "discord", "Entrar no servidor do Discord"]
   ];
-  return `<nav class="social-rail" aria-label="Comunidade nas redes">${items.map(([key, mark, label]) => {
+  return `<nav class="social-rail" aria-label="Comunidade nas redes">${items.map(([key, iconName, label]) => {
     const link = siteData.externalLinks[key];
-    return `<a class="social-${key}" href="${link.url}" target="_blank" rel="noopener noreferrer" aria-label="${label}" data-label="${label}"><span aria-hidden="true">${mark}</span></a>`;
+    return `<a class="social-${key}" href="${link.url}" target="_blank" rel="noopener noreferrer" aria-label="${label}" data-label="${label}"><span aria-hidden="true">${icon(iconName)}</span></a>`;
   }).join("")}</nav>`;
 }
 
 function renderMobileDock(route) {
   if (route === "/fireborn-squad/") {
-    return `<nav class="mobile-dock fbs-mobile-dock" aria-label="Atalhos Fireborn Squad"><a href="${sitePath()}" class="fbs-dock-back"><span aria-hidden="true"></span>JSB</a><a href="#ordem"><span aria-hidden="true"></span>Ordem</a><a href="#registro"><span aria-hidden="true"></span>Registro</a><a href="#legado"><span aria-hidden="true"></span>Legado</a><button type="button" data-dock-menu aria-label="Abrir menu completo"><span aria-hidden="true"></span>Mais</button></nav>`;
+    return `<nav class="mobile-dock fbs-mobile-dock" aria-label="Atalhos Fireborn Squad"><a href="${sitePath()}" class="fbs-dock-back">${icon("home")}JSB</a><a href="#ordem">${icon("flame")}Ordem</a><a href="#registro">${icon("users")}Registro</a><a href="#legado">${icon("timeline")}Legado</a><button type="button" data-dock-menu aria-label="Abrir menu completo">${icon("menu")}Mais</button></nav>`;
   }
   const items = [
     ["Início", "/"],
@@ -827,7 +836,61 @@ function renderMobileDock(route) {
     ["FBS", "/fireborn-squad/"],
     ["Roadmap", "/roadmap/"]
   ];
-  return `<nav class="mobile-dock" aria-label="Atalhos mobile">${items.map(([label, href]) => `<a href="${sitePath(href)}"${route === href ? ' aria-current="page"' : ""}><span aria-hidden="true"></span>${label}</a>`).join("")}<button type="button" data-dock-menu aria-label="Abrir menu completo"><span aria-hidden="true"></span>Mais</button></nav>`;
+  return `<nav class="mobile-dock" aria-label="Atalhos mobile">${items.map(([label, href]) => `<a href="${sitePath(href)}"${route === href ? ' aria-current="page"' : ""}>${icon(navIcon(href))}${label}</a>`).join("")}<button type="button" data-dock-menu aria-label="Abrir menu completo">${icon("menu")}Mais</button></nav>`;
+}
+
+function navIcon(route) {
+  return ({ "/": "home", "/all-star/": "trophy", "/historia/": "timeline", "/como-dancar/": "shoe", "/roadmap/": "flag", "/manifesto/": "bolt", "/musicas/": "music", "/criadores/": "video", "/fireborn-squad/": "flame", "/JUN/": "globe", "/STL/": "archive", "/faq/": "help" })[route] || "arrow-right";
+}
+
+function cardIcon(title) {
+  const value = String(title).toLocaleLowerCase("pt-BR");
+  if (value.includes("roadmap") || value.includes("timeline")) return "flag";
+  if (value.includes("música") || value.includes("bpm") || value.includes("playlist")) return "music";
+  if (value.includes("tutorial") || value.includes("danç")) return "shoe";
+  if (value.includes("all-star") || value.includes("votar") || value.includes("resultado")) return "trophy";
+  if (value.includes("jumper")) return "users";
+  if (value.includes("jun") || value.includes("global")) return "globe";
+  return "bolt";
+}
+
+function linkIcon(key) {
+  if (key === "whatsapp") return "whatsapp";
+  if (key === "instagram") return "instagram";
+  if (key === "discord") return "discord";
+  if (key.toLocaleLowerCase().includes("youtube")) return "play";
+  if (key.toLocaleLowerCase().includes("tiktok")) return "video";
+  if (key.toLocaleLowerCase().includes("vote") || key.toLocaleLowerCase().includes("result")) return "trophy";
+  return "arrow-up-right";
+}
+
+function icon(name) {
+  const paths = {
+    home: '<path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10.5V20h13v-9.5M9.5 20v-6h5v6"/>',
+    trophy: '<path d="M8 4h8v4c0 4-1.8 6-4 6s-4-2-4-6V4Z"/><path d="M8 6H4v2c0 2.2 1.8 4 4 4m8-6h4v2c0 2.2-1.8 4-4 4m-4 2v4m-4 2h8"/>',
+    timeline: '<path d="M5 5h14M5 12h14M5 19h14"/><circle cx="8" cy="5" r="2"/><circle cx="15" cy="12" r="2"/><circle cx="10" cy="19" r="2"/>',
+    shoe: '<path d="M4 5v8l5 2 3-2 3 3 5 1v3H9l-5-3v-4"/><path d="m12 13 2-4"/>',
+    flag: '<path d="M5 21V4m0 1h11l-2 4 2 4H5"/>',
+    bolt: '<path d="m13 2-8 12h7l-1 8 8-12h-7l1-8Z"/>',
+    music: '<path d="M9 18V5l10-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/>',
+    video: '<rect x="3" y="5" width="14" height="14" rx="2"/><path d="m17 10 4-2v8l-4-2"/>',
+    flame: '<path d="M12 22c4 0 7-3 7-7 0-5-4-7-3-12-4 2-3 6-6 7-2-2-1-4-1-5-3 2-5 6-4 10 0 4 3 7 7 7Z"/><path d="M12 21c-2 0-3-2-3-4 0-2 2-3 2-5 3 2 4 4 3 6 0 2-1 3-2 3Z"/>',
+    globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/>',
+    archive: '<path d="M4 7h16v14H4zM3 3h18v4H3z"/><path d="M9 11h6"/>',
+    help: '<circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.7 2.7 0 1 1 4.2 2.2c-1 .7-1.7 1.1-1.7 2.8m0 3h.01"/>',
+    users: '<path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M17 11a4 4 0 0 0 0-8m5 18v-2a4 4 0 0 0-3-3.9"/>',
+    menu: '<path d="M4 6h16M4 12h16M4 18h16"/>',
+    check: '<path d="m5 12 4 4L19 6"/>',
+    download: '<path d="M12 3v12m-5-5 5 5 5-5M5 21h14"/>',
+    share: '<circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.7 10.7 6.6-4.4m-6.6 7 6.6 4.4"/>',
+    play: '<circle cx="12" cy="12" r="9"/><path d="m10 8 6 4-6 4V8Z"/>',
+    instagram: '<rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/>',
+    whatsapp: '<path d="M20 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-4.2A8.5 8.5 0 1 1 20 11.5Z"/><path d="M8 7.5c.5 4.1 2.4 6 6.5 6.5"/>',
+    discord: '<path d="M7 7c3-1 7-1 10 0 2 3 3 6 3 9-2 2-3 2-5 3l-1-2m3-10-1-2m-9 2 1-2m-1 2c-2 3-3 6-3 9 2 2 3 2 5 3l1-2"/><circle cx="9" cy="13" r="1"/><circle cx="15" cy="13" r="1"/>',
+    "arrow-right": '<path d="M5 12h14m-5-5 5 5-5 5"/>',
+    "arrow-up-right": '<path d="M7 17 17 7M8 7h9v9"/>'
+  };
+  return `<svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${paths[name] || paths["arrow-right"]}</svg>`;
 }
 
 function sitePath(value = "/") {

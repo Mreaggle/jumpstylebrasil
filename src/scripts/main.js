@@ -292,6 +292,10 @@ document.querySelectorAll("[data-roadmap-check]").forEach((checkbox) => {
 });
 
 function updateRoadmapProgress() {
+  const allChecks = [...document.querySelectorAll("[data-roadmap-check]")];
+  const totalDone = allChecks.filter((check) => check.checked).length;
+  const overallProgress = allChecks.length ? Math.round((totalDone / allChecks.length) * 100) : 0;
+
   document.querySelectorAll("[data-roadmap-level]").forEach((level) => {
     const checks = [...level.querySelectorAll("[data-roadmap-check]")];
     const done = checks.filter((check) => check.checked).length;
@@ -301,7 +305,197 @@ function updateRoadmapProgress() {
     if (label) label.textContent = `${done}/${checks.length}`;
     level.classList.toggle("is-complete", done === checks.length);
   });
+
+  const ring = document.querySelector("[data-roadmap-ring]");
+  const percent = document.querySelector("[data-roadmap-percent]");
+  if (ring) ring.style.setProperty("--progress", `${overallProgress}%`);
+  if (percent) percent.textContent = `${overallProgress}%`;
 }
+
+const roadmapSaveButton = document.querySelector("[data-roadmap-save]");
+const roadmapShareButton = document.querySelector("[data-roadmap-share]");
+const roadmapExportStatus = document.querySelector("[data-roadmap-export-status]");
+
+function setRoadmapExportStatus(message) {
+  if (roadmapExportStatus) roadmapExportStatus.textContent = message;
+}
+
+function wrapCanvasText(context, text, maxWidth) {
+  const words = text.split(/\s+/);
+  const lines = [];
+  let line = "";
+  words.forEach((word) => {
+    const next = line ? `${line} ${word}` : word;
+    if (context.measureText(next).width > maxWidth && line) {
+      lines.push(line);
+      line = word;
+    } else {
+      line = next;
+    }
+  });
+  if (line) lines.push(line);
+  return lines;
+}
+
+async function createRoadmapImage() {
+  if (document.fonts?.ready) await document.fonts.ready;
+  const canvas = document.createElement("canvas");
+  canvas.width = 1080;
+  canvas.height = 1350;
+  const context = canvas.getContext("2d");
+  if (!context) throw new Error("Canvas indisponível");
+
+  const colors = { blue: "#002776", green: "#009C3B", yellow: "#FFDF00", white: "#FFFFFF" };
+  const levels = [...document.querySelectorAll("[data-roadmap-level]")];
+  const allChecks = [...document.querySelectorAll("[data-roadmap-check]")];
+  const done = allChecks.filter((check) => check.checked).length;
+  const percent = allChecks.length ? Math.round((done / allChecks.length) * 100) : 0;
+
+  context.fillStyle = colors.blue;
+  context.fillRect(0, 0, canvas.width, canvas.height);
+  context.fillStyle = colors.green;
+  context.fillRect(0, 0, canvas.width, 24);
+  context.fillRect(0, canvas.height - 24, canvas.width, 24);
+
+  context.save();
+  context.translate(900, 155);
+  context.rotate(Math.PI / 4);
+  context.fillStyle = colors.yellow;
+  context.fillRect(-112, -112, 224, 224);
+  context.restore();
+  context.beginPath();
+  context.arc(900, 155, 72, 0, Math.PI * 2);
+  context.fillStyle = colors.blue;
+  context.fill();
+  context.strokeStyle = colors.white;
+  context.lineWidth = 7;
+  context.beginPath();
+  context.arc(900, 155, 48, .25, 2.9);
+  context.stroke();
+
+  context.fillStyle = colors.yellow;
+  context.font = '700 34px "Space Grotesk", sans-serif';
+  context.fillText("JUMPSTYLE BRASIL", 74, 92);
+  context.fillStyle = colors.white;
+  context.font = '800 92px "Handjet", "Space Grotesk", sans-serif';
+  context.fillText("MEU ROADMAP", 70, 185);
+  context.font = '600 31px "Space Grotesk", sans-serif';
+  context.fillText(`${done} DE ${allChecks.length} HABILIDADES DOMINADAS`, 74, 238);
+
+  context.fillStyle = colors.white;
+  context.fillRect(74, 280, 932, 12);
+  context.fillStyle = colors.green;
+  context.fillRect(74, 280, 932 * (percent / 100), 12);
+  context.fillStyle = colors.yellow;
+  context.font = '800 58px "Handjet", "Space Grotesk", sans-serif';
+  context.textAlign = "right";
+  context.fillText(`${percent}%`, 1006, 270);
+  context.textAlign = "left";
+
+  const cardGap = 22;
+  const cardWidth = (932 - cardGap * 2) / 3;
+  const cardY = 342;
+  const cardHeight = 840;
+  levels.forEach((level, levelIndex) => {
+    const x = 74 + levelIndex * (cardWidth + cardGap);
+    const checks = [...level.querySelectorAll("[data-roadmap-check]")];
+    const levelDone = checks.filter((check) => check.checked).length;
+    context.fillStyle = levelIndex === 1 ? colors.green : colors.white;
+    context.fillRect(x, cardY, cardWidth, cardHeight);
+    context.fillStyle = levelIndex === 1 ? colors.white : colors.blue;
+    context.font = '800 27px "Space Grotesk", sans-serif';
+    context.fillText(`0${levelIndex + 1}`, x + 24, cardY + 48);
+    context.font = '800 40px "Handjet", "Space Grotesk", sans-serif';
+    const levelName = level.dataset.roadmapName || "";
+    wrapCanvasText(context, levelName.toLocaleUpperCase("pt-BR"), cardWidth - 48).slice(0, 2).forEach((line, lineIndex) => {
+      context.fillText(line, x + 24, cardY + 105 + lineIndex * 40);
+    });
+    context.fillStyle = colors.yellow;
+    context.fillRect(x + 24, cardY + 168, cardWidth - 48, 7);
+    context.fillStyle = levelIndex === 1 ? colors.white : colors.green;
+    context.font = '700 25px "Space Grotesk", sans-serif';
+    context.fillText(`${levelDone}/${checks.length}`, x + 24, cardY + 215);
+
+    let itemY = cardY + 270;
+    checks.forEach((check) => {
+      const itemText = check.closest("label")?.textContent.trim() || check.value;
+      context.strokeStyle = levelIndex === 1 ? colors.white : colors.blue;
+      context.lineWidth = 4;
+      context.strokeRect(x + 24, itemY - 19, 24, 24);
+      if (check.checked) {
+        context.fillStyle = colors.yellow;
+        context.fillRect(x + 24, itemY - 19, 24, 24);
+        context.strokeStyle = colors.blue;
+        context.lineWidth = 4;
+        context.beginPath();
+        context.moveTo(x + 29, itemY - 6);
+        context.lineTo(x + 35, itemY);
+        context.lineTo(x + 45, itemY - 13);
+        context.stroke();
+      }
+      context.fillStyle = levelIndex === 1 ? colors.white : colors.blue;
+      context.font = '600 21px "Space Grotesk", sans-serif';
+      const lines = wrapCanvasText(context, itemText, cardWidth - 86).slice(0, 2);
+      lines.forEach((line, lineIndex) => context.fillText(line, x + 62, itemY + lineIndex * 25));
+      itemY += Math.max(67, lines.length * 26 + 32);
+    });
+  });
+
+  context.fillStyle = colors.yellow;
+  context.font = '700 28px "Space Grotesk", sans-serif';
+  context.fillText("JUMPSTYLE.COM.BR", 74, 1265);
+  context.fillStyle = colors.white;
+  context.font = '500 23px "Space Grotesk", sans-serif';
+  context.fillText("MOVIMENTO • MEMÓRIA • COMUNIDADE", 74, 1305);
+
+  return new Promise((resolve, reject) => {
+    canvas.toBlob((blob) => blob ? resolve(blob) : reject(new Error("Falha ao gerar imagem")), "image/png", 1);
+  });
+}
+
+function downloadRoadmapImage(blob) {
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "meu-roadmap-jumpstyle-brasil.png";
+  document.body.append(link);
+  link.click();
+  link.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+roadmapSaveButton?.addEventListener("click", async () => {
+  roadmapSaveButton.disabled = true;
+  setRoadmapExportStatus("Preparando sua imagem...");
+  try {
+    downloadRoadmapImage(await createRoadmapImage());
+    setRoadmapExportStatus("Imagem salva em PNG.");
+  } catch {
+    setRoadmapExportStatus("Não foi possível salvar a imagem neste navegador.");
+  } finally {
+    roadmapSaveButton.disabled = false;
+  }
+});
+
+roadmapShareButton?.addEventListener("click", async () => {
+  roadmapShareButton.disabled = true;
+  setRoadmapExportStatus("Preparando seu compartilhamento...");
+  try {
+    const blob = await createRoadmapImage();
+    const file = new File([blob], "meu-roadmap-jumpstyle-brasil.png", { type: "image/png" });
+    if (navigator.share && navigator.canShare?.({ files: [file] })) {
+      await navigator.share({ files: [file], title: "Meu Roadmap Jumpstyle Brasil" });
+      setRoadmapExportStatus("Imagem compartilhada.");
+    } else {
+      downloadRoadmapImage(blob);
+      setRoadmapExportStatus("Imagem salva em PNG para você compartilhar.");
+    }
+  } catch (error) {
+    if (error?.name !== "AbortError") setRoadmapExportStatus("Não foi possível compartilhar a imagem neste navegador.");
+  } finally {
+    roadmapShareButton.disabled = false;
+  }
+});
 
 function updateScrollMeter() {
   const max = document.documentElement.scrollHeight - window.innerHeight;
