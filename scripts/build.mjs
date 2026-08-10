@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import crypto from "node:crypto";
 
 const root = process.cwd();
 const dist = path.join(root, "dist");
@@ -9,6 +10,11 @@ const translationData = readJson("src/data/translation-languages.json");
 const globalTimelineMarkdown = fs.readFileSync(path.join(root, "src/data/global-timeline.md"), "utf8");
 const globalTimeline = parseGlobalTimeline(globalTimelineMarkdown);
 const originalContent = readJson("src/data/original-content.json");
+const assetVersion = crypto.createHash("sha256")
+  .update(fs.readFileSync(path.join(root, "src/styles/site.css")))
+  .update(fs.readFileSync(path.join(root, "src/scripts/main.js")))
+  .digest("hex")
+  .slice(0, 12);
 const originalByPage = new Map(originalContent.pages.map((page) => [page.page, page]));
 const countryByName = new Map(junData.countries.map((country) => [country.name.toLocaleLowerCase("en"), country.code]));
 const countryCodes = new Set(junData.countries.map((country) => country.code));
@@ -120,7 +126,7 @@ function renderShell({ title, description, route, body }) {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Handjet:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="${sitePath("assets/site.css")}">
+  <link rel="stylesheet" href="${sitePath("assets/site.css")}?v=${assetVersion}">
   <script type="application/ld+json">${JSON.stringify(jsonLd())}</script>
 </head>
 <body class="${isFbs ? "fbs-page" : ""}">
@@ -152,11 +158,11 @@ function renderShell({ title, description, route, body }) {
         ${externalLink("instagram", "Instagram oficial")}
         ${externalLink("whatsapp", "Grupo WhatsApp")}
         ${externalLink("discord", "Servidor Discord")}
-        ${externalLink("jun", "Museu global JUN")}
+        <a class="button secondary" href="${siteData.externalLinks.jun.url}">${icon("globe")}Museu global JUN</a>
       </div>
     </div>
   </footer>
-  <script src="${sitePath("assets/main.js")}" defer></script>
+  <script src="${sitePath("assets/main.js")}?v=${assetVersion}" defer></script>
 </body>
 </html>`;
 }
@@ -198,7 +204,7 @@ function renderJunShell({ title, description, route, body }) {
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="${sitePath("assets/site.css")}">
+  <link rel="stylesheet" href="${sitePath("assets/site.css")}?v=${assetVersion}">
   <script type="application/ld+json">${JSON.stringify(jsonLd(route))}</script>
 </head>
 <body class="jun-page">
@@ -231,7 +237,7 @@ function renderJunShell({ title, description, route, body }) {
       <div class="link-grid"><a class="button secondary external" href="${junData.repositoryUrl}" target="_blank" rel="noopener noreferrer">Open repository</a><a class="button secondary external" href="${junData.timelineUrl}" target="_blank" rel="noopener noreferrer">Full timeline</a><a class="button secondary external" href="${junData.figuresUrl}" target="_blank" rel="noopener noreferrer">Key figures data</a><a class="button secondary" href="${sitePath()}">Jumpstyle Brasil</a></div>
     </div>
   </footer>
-  <script src="${sitePath("assets/main.js")}" defer></script>
+  <script src="${sitePath("assets/main.js")}?v=${assetVersion}" defer></script>
 </body>
 </html>`;
 }
@@ -360,7 +366,7 @@ function renderHistory() {
     <ol class="timeline">${siteData.timeline.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ol>
   </div></section>
   <section class="section"><div class="section-inner card-grid">
-    ${card("Museu global JUN", "Explore histórias, equipes e movimentos da cena mundial.", externalLink("jun", "Abrir museu"))}
+    ${card("Museu global JUN", "Explore histórias, equipes e movimentos da cena mundial.", `<a class="button" href="${siteData.externalLinks.jun.url}">${icon("globe")}Abrir museu</a>`)}
     ${card("Timeline global", "Veja a evolução do Jumpstyle em diferentes países.", externalLink("junTimeline", "Abrir timeline"))}
     ${card("Uma dança global", "Jumpstyle é uma dança digital, expressiva e competitiva que conecta jumpers do mundo inteiro.", "")}
   </div></section>`;
