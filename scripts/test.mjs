@@ -110,6 +110,8 @@ if (!faq.includes("data-faq-filter") || !faq.includes("data-faq-item")) errors.p
 
 const roadmap = fs.readFileSync("dist/roadmap/index.html", "utf8");
 if (!roadmap.includes("data-roadmap-check")) errors.push("Roadmap sem checklist reativo");
+if (!roadmap.includes("data-roadmap-save") || !roadmap.includes("data-roadmap-share") || !roadmap.includes("data-roadmap-ring")) errors.push("Roadmap sem painel visual de progresso e exportacao");
+if (!mainJs.includes("createRoadmapImage") || !mainJs.includes('meu-roadmap-jumpstyle-brasil.png') || !mainJs.includes("navigator.share")) errors.push("Roadmap sem geracao PNG e compartilhamento nativo");
 
 if (!fs.existsSync("dist/404.html")) errors.push("404.html ausente");
 if (fs.existsSync("dist/reference-renders")) errors.push("Evidencias internas copiadas para o site publico");
