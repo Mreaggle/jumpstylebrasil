@@ -386,7 +386,7 @@ async function createRoadmapImage() {
   context.fillRect(74, 280, 932, 12);
   context.fillStyle = colors.green;
   context.fillRect(74, 280, 932 * (percent / 100), 12);
-  context.fillStyle = colors.yellow;
+  context.fillStyle = colors.green;
   context.font = '800 58px "Handjet", "Space Grotesk", sans-serif';
   context.textAlign = "right";
   context.fillText(`${percent}%`, 1006, 270);
